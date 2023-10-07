@@ -5,7 +5,7 @@ import { Experience } from "@/components/Experience";
 export default function Home() {
   return (
     <>
-      <Box py="115px" px={4} maxWidth={600} mx="auto">
+      <Box py="115px" px={4} maxWidth={800} mx="auto">
         <Grid templateColumns="repeat(4, 1fr)" mb={10} alignItems="center">
           <GridItem colSpan={1}>
             <Avatar />
@@ -74,6 +74,12 @@ export default function Home() {
             side="LinkedIn"
             title="@maxfung"
             href="https://www.linkedin.com/in/maxfung/"
+            mb={4}
+          />
+          <Experience
+            side="Email"
+            title="maxhfung@gmail.com"
+            href="mailto:maxhfung@gmail.com?subject=Developer Inquiry"
             mb={4}
           />
         </Box>

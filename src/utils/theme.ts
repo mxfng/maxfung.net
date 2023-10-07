@@ -1,22 +1,18 @@
 import { extendTheme } from "@chakra-ui/react";
+import "@fontsource/inter";
 
 const fonts = {
-  body: `'Manrope', sans-serif`,
-  heading: `'Manrope', sans-serif`,
+  heading: `'Inter', sans-serif`,
+  body: `'Inter', sans-serif`,
 };
 
-const colors = {};
-
 export const theme = extendTheme({
-  config: {
-    initialColorMode: "system",
-    useSystemColorMode: true,
-  },
   fonts,
   styles: {
     global: {
       body: {
-        bg: "#d8ccb3",
+        fontSize: "sm",
+        bg: "#ffffff",
         color: "#1A090D",
       },
       a: {
@@ -30,17 +26,16 @@ export const theme = extendTheme({
     Heading: {
       baseStyle: {
         fontWeight: "400",
-        // color: 'white',
       },
       sizes: {
         lg: {
           fontSize: "2xl",
         },
         md: {
-          fontSize: "md",
+          fontSize: "sm",
         },
         sm: {
-          fontSize: "sm",
+          fontSize: "xs",
         },
       },
     },
