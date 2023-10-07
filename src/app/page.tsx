@@ -30,7 +30,7 @@ export default function Home() {
             Born and raised in Southern California to a family of musicians.
             I choose not to define myself by any singular pursuit or framework.
             I build creative products with intuitive experiences from start to finish.
-            I've worked as a professional in a variety of development mediums,
+            I&apos;ve worked as a professional in a variety of development mediums,
             including web and mobile.
           </Text>
         </Box>
