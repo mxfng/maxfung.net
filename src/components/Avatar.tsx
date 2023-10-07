@@ -14,7 +14,7 @@ export const Avatar = () => {
           <Image
             borderRadius="full"
             width={{ base: "80%" }}
-            src="/profile.jpeg"
+            src="/avatar.jpeg"
             alt="Max Fung"
           />
         </Flex>
