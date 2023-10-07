@@ -12,7 +12,7 @@ export const Experience: React.FC<any> = ({
 }) => (
   <Grid templateColumns="repeat(4, 1fr)" mb={10} {...props}>
     <GridItem colSpan={{ base: 4, sm: 1 }}>
-      <Text opacity={0.5}>
+      <Text opacity={0.5} mb={2}>
         {side}
       </Text>
     </GridItem>
