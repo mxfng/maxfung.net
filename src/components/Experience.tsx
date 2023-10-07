@@ -19,7 +19,7 @@ export const Experience: React.FC<any> = ({
     <GridItem colSpan={{ base: 4, sm: 3 }}>
       {image && <Image width="36px" mb={4} src={image} alt={title} />}
       <Heading
-        as={href ? 'a' : 'h3'}
+        as='a'
         href={href}
         target="_blank"
         size="md"
