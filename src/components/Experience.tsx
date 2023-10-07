@@ -1,5 +1,5 @@
-import React from 'react';
-import { Text, Heading, Grid, GridItem, Image } from '@chakra-ui/react';
+import React from "react";
+import { Text, Heading, Grid, GridItem, Image } from "@chakra-ui/react";
 
 export const Experience: React.FC<any> = ({
   side,
@@ -19,7 +19,7 @@ export const Experience: React.FC<any> = ({
     <GridItem colSpan={{ base: 4, sm: 3 }}>
       {image && <Image width="36px" mb={4} src={image} alt={title} />}
       <Heading
-        as='a'
+        as="a"
         href={href}
         target="_blank"
         size="md"
@@ -31,7 +31,7 @@ export const Experience: React.FC<any> = ({
           <Image
             ml={2}
             mb={1}
-            boxSize='15px'
+            boxSize="15px"
             src="/arrow-link.svg"
             alt={`link to ${title}`}
             transform="translateY(1px)"
@@ -39,11 +39,7 @@ export const Experience: React.FC<any> = ({
         )}
       </Heading>
       {desc && <Text my={2}>{desc}</Text>}
-      {stack && (
-        <Text opacity={0.5}>
-          {stack}
-        </Text>
-      )}
+      {stack && <Text opacity={0.5}>{stack}</Text>}
     </GridItem>
   </Grid>
 );

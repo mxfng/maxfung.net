@@ -1,29 +1,27 @@
-import { extendTheme } from '@chakra-ui/react';
+import { extendTheme } from "@chakra-ui/react";
 
 const fonts = {
   body: `'Manrope', sans-serif`,
   heading: `'Manrope', sans-serif`,
-}
+};
 
-const colors = {
-
-}
+const colors = {};
 
 export const theme = extendTheme({
   config: {
-    initialColorMode: 'system',
+    initialColorMode: "system",
     useSystemColorMode: true,
   },
   fonts,
   styles: {
     global: {
       body: {
-        bg: '#d8ccb3',
-        color: '#1A090D',
+        bg: "#d8ccb3",
+        color: "#1A090D",
       },
       a: {
         _hover: {
-          textDecoration: 'underline',
+          textDecoration: "underline",
         },
       },
     },
@@ -36,13 +34,13 @@ export const theme = extendTheme({
       },
       sizes: {
         lg: {
-          fontSize: '2xl',
+          fontSize: "2xl",
         },
         md: {
-          fontSize: 'md',
+          fontSize: "md",
         },
         sm: {
-          fontSize: 'sm',
+          fontSize: "sm",
         },
       },
     },
@@ -52,4 +50,4 @@ export const theme = extendTheme({
       },
     },
   },
-})
+});

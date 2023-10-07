@@ -1,7 +1,7 @@
-import { Box, Flex, Image } from "@chakra-ui/react"
+import { Box, Flex, Image } from "@chakra-ui/react";
 
 export const Navbar = () => {
-  return(
+  return (
     <Flex
       position="fixed"
       top={0}
@@ -11,7 +11,7 @@ export const Navbar = () => {
       alignItems="center"
       justifyContent="space-between"
     >
-      <Box boxSize='88px'>
+      <Box boxSize="88px">
         <Image src="/max-signature.svg" alt="Max Fung" />
       </Box>
     </Flex>

@@ -1,16 +1,12 @@
-import { Box, Text, Heading, Grid, GridItem } from '@chakra-ui/react'
-import { Avatar } from '@/components/Avatar';
-import { Experience } from '@/components/Experience';
+import { Box, Text, Heading, Grid, GridItem } from "@chakra-ui/react";
+import { Avatar } from "@/components/Avatar";
+import { Experience } from "@/components/Experience";
 
 export default function Home() {
   return (
     <>
       <Box py="115px" px={4} maxWidth={600} mx="auto">
-        <Grid
-          templateColumns="repeat(4, 1fr)"
-          mb={10}
-          alignItems="center"
-        >
+        <Grid templateColumns="repeat(4, 1fr)" mb={10} alignItems="center">
           <GridItem colSpan={1}>
             <Avatar />
           </GridItem>
@@ -27,11 +23,11 @@ export default function Home() {
             About
           </Heading>
           <Text>
-            Born and raised in Southern California to a family of musicians.
-            I choose not to define myself by any singular pursuit or framework.
-            I build creative products with intuitive experiences from start to finish.
-            I&apos;ve worked as a professional in a variety of development mediums,
-            including web and mobile.
+            Born and raised in Southern California to a family of musicians. I
+            choose not to define myself by any singular pursuit or framework. I
+            build creative products with intuitive experiences from start to
+            finish. I&apos;ve worked as a professional in a variety of
+            development mediums, including web and mobile.
           </Text>
         </Box>
         <Box mb={14}>
@@ -83,5 +79,5 @@ export default function Home() {
         </Box>
       </Box>
     </>
-  )
+  );
 }
