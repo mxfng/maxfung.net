@@ -38,19 +38,25 @@ export default function Home() {
             href="https://www.flexe.com/"
             side="2022 - present"
             title="Software Development Engineer — Flexe"
-            desc="I worked with a team of 8 to help build the warehouse management system for Flexe’s on-demand warehousing platform. I led development of our Android mobile app, and also designed and built back end services and RESTful APIs in Ruby and Kotlin."
+            desc="I worked with a team of 8 to help build the warehouse management system for Flexe’s on-demand warehousing platform.
+            <br />I led development of our Android mobile app, expanding its features, including more robust lookup and picking platforms, adding in crucial business functionalities in support of product launches, overhauling its data architecture for increased scalability, and designing a library of beautiful, reusable UI components.
+            <br />I also designed and built back end services and RESTful APIs in Ruby and Kotlin, helping to migrate code from our original monolithic server architecture to new Ktor microservices."
             stack="Ruby on Rails • Kotlin • Android • Ktor • Docker • Google Cloud"
           />
           <Experience
             side="2021 - 2022"
             title="Project Manager — Boeing"
-            desc="As a side project, I designed and maintained an automated production status report to consolidate large datasets from separate internal factory databases within a well-packaged, navigable spreadsheet hosted on the company network."
+            desc="I managed a complex portfolio of space electronics products totaling over $100,000,000 in value.
+            <br />As a side project, I put my coding skills back to work and designed an automated production status report to consolidate information from separate internal factory databases within a well-packaged, navigable spreadsheet.
+            <br />This tool became very popular across the project management organization and resulted in a pretty significant cost reduction (approximately $10,000 per week) by reducing our collective time spent tracking parts in manufacturing. This inspired me to pursue a career in software engineering."
             stack="Python • Pandas • Shell Scripting • SQL • AWS"
           />
           <Experience
             side="2018"
             title="Software Engineer — Aeroject Rocketdyne"
-            desc="As an intern, I independently developed a desktop application for pressure transducer calibration tests."
+            desc="I received a unique opportunity to independently develop a desktop application for pressure transducer calibration tests.
+            <br />I was tasked with migrating legacy code written in BASIC on a dying HP-86 computer to a modern language of my choice. I chose Python, and delivered an efficient test suite for the laboratory to use.
+            <br />I got to learn measurement theory from metrology engineers, work with lab technicians on UX and test accuracy, procure my own hardware, and above all else, discover my passion for programming."
             stack="Anaconda • Python • PyQt • NI-VISA"
           />
           <Heading as="h2" size="md" mb={10}>
