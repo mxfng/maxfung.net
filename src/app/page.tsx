@@ -65,7 +65,8 @@ export default function Home() {
           <Experience
             side="2023 - present"
             title="Streets For All"
-            desc="Working with a small volunteer developer team to provide support in web development, API building and integration, and other public facing projects to promote and advocate for a safer and more equitable Los Angeles."
+            desc="Working with a small volunteer developer team to provide support in web development, API building and integration, and other public facing projects to promote and advocate for a safer and more equitable Los Angeles.
+            <br />Some projects include a website in support of LA Metro's Hill to Sea corridor as well as a legislator report card website."
             stack="JavaScript • React • Python"
             image="/sfa-logo-square.png"
           />
