@@ -1,26 +1,32 @@
 "use client";
 
 import { Box, Flex, Image } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export const Avatar = () => {
-  const [avatarBg, setAvatarBg] = useState<string>();
+  const [hotBg, setHotBg] = useState<string>();
+  const [cachedBg, setCachedBg] = useState<string>();
+  const [loaded, setLoaded] = useState(true);
+  const imageRef = useRef<HTMLImageElement>(null);
 
   const toggleAvatar = () => {
-    setAvatarBg(getRandomBg());
+    // set hot-bg to new bg image
+    setHotBg(getRandomBg());
   };
 
   const getRandomBg = (): string => {
     const randomInteger = Math.floor(Math.random() * 10) + 1;
     const randomBg = `/gifs/${randomInteger}.gif`;
-    return randomBg === avatarBg ? getRandomBg() : randomBg;
+    return randomBg === hotBg ? getRandomBg() : randomBg;
   };
 
+  // on page load
   useEffect(() => {
-    setAvatarBg(getRandomBg);
+    setHotBg(getRandomBg);
   }, []);
 
-  const bgSrc = avatarBg;
+  const bgSrc = hotBg;
+  const bgSrcCache = "/checkers.jpg";
 
   return (
     <>
@@ -40,28 +46,30 @@ export const Avatar = () => {
             position="absolute"
             zIndex={1}
           />
+          {loaded ? (
+            <Image
+            ref={imageRef}
+              id="hot-bg"
+              borderRadius="full"
+              src={bgSrc}
+              width={{ base: "80%" }}
+              objectFit="cover"
+              position="absolute"
+              zIndex={0}
+              style={{ animation: "fade-in 1s linear" }}
+              onLoad={() => {
+                //toggleAvatar();
+              }}
+            />
+          ) : null}
           <Image
+            id="cached-bg"
             borderRadius="full"
-            src={bgSrc}
+            src={bgSrcCache}
             width={{ base: "80%" }}
             alt="Background Image"
             objectFit="cover"
-            position="absolute"
-            zIndex={0}
-            style={{
-              transition: "opacity 0.5s"
-            }}
-          />
-          <Image
-            borderRadius="full"
-            src={bgSrc}
-            width={{ base: "80%" }}
-            alt="Background Image"
-            objectFit="cover"
-            zIndex={0}
-            style={{
-              transition: "opacity 0.5s"
-            }}
+            zIndex={0.1}
           />
         </Flex>
       </Box>

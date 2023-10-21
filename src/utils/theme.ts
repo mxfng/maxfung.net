@@ -37,6 +37,14 @@ export const theme = extendTheme({
           fill: "red",
         },
       },
+      "@keyframes fade-in": {
+        from: {
+          opacity: 0,
+        },
+        to: {
+          opacity: 100,
+        },
+      },
     },
   },
   components: {
