@@ -35,13 +35,13 @@ export const Experience: React.FC<any> = ({
           size="md"
           display="flex"
           alignItems="center"
+          style={href ? {} : { textDecoration: "none" }}
         >
           {title}
           {href && (
             <Image
               ml={2}
-              mb={1}
-              boxSize="15px"
+              boxSize="18px"
               src="/arrow-link.svg"
               alt={`link to ${title}`}
               transform="translateY(1px)"
