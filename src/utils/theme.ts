@@ -20,6 +20,23 @@ export const theme = extendTheme({
           textDecoration: "underline",
         },
       },
+      "@keyframes colorChange": {
+        "0%": {
+          fill: "red",
+        },
+        "25%": {
+          fill: "blue",
+        },
+        "50%": {
+          fill: "green",
+        },
+        "75%": {
+          fill: "orange",
+        },
+        "100%": {
+          fill: "red",
+        },
+      },
     },
   },
   components: {
