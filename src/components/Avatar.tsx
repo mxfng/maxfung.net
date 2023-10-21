@@ -6,12 +6,20 @@ import { useEffect, useRef, useState } from "react";
 export const Avatar = () => {
   const [hotBg, setHotBg] = useState<string>();
   const [cachedBg, setCachedBg] = useState<string>();
-  const [loaded, setLoaded] = useState(true);
+  const [showBg, setShowBg] = useState(true);
+  const [imageLoaded, setimageLoaded] = useState(false);
   const imageRef = useRef<HTMLImageElement>(null);
 
-  const toggleAvatar = () => {
-    // set hot-bg to new bg image
-    setHotBg(getRandomBg());
+  const onImageLoaded = () => {
+    setShowBg(true);
+    setimageLoaded(true);
+  };
+
+  const onImageLoading = () => {
+    setShowBg(false);
+    setimageLoaded(false);
+    setHotBg(getRandomBg);
+    hotBg ? setCachedBg(hotBg) : null;
   };
 
   const getRandomBg = (): string => {
@@ -23,10 +31,15 @@ export const Avatar = () => {
   // on page load
   useEffect(() => {
     setHotBg(getRandomBg);
+    onImageLoading();
   }, []);
 
+  useEffect(() => {
+    onImageLoaded();
+  }, [imageLoaded]);
+
   const bgSrc = hotBg;
-  const bgSrcCache = "/checkers.jpg";
+  const bgSrcCache = cachedBg ? cachedBg : "/checkers.jpg";
 
   return (
     <>
@@ -35,7 +48,9 @@ export const Avatar = () => {
         _hover={{
           transform: "scale(1.03)",
         }}
-        onClick={toggleAvatar}
+        onClick={() => {
+          onImageLoading();
+        }}
       >
         <Flex alignItems="center" justifyContent="center" position="relative">
           <Image
@@ -46,9 +61,9 @@ export const Avatar = () => {
             position="absolute"
             zIndex={1}
           />
-          {loaded ? (
+          {showBg ? (
             <Image
-            ref={imageRef}
+              ref={imageRef}
               id="hot-bg"
               borderRadius="full"
               src={bgSrc}
@@ -57,9 +72,7 @@ export const Avatar = () => {
               position="absolute"
               zIndex={0}
               style={{ animation: "fade-in 1s linear" }}
-              onLoad={() => {
-                //toggleAvatar();
-              }}
+              onLoad={() => setimageLoaded(true)}
             />
           ) : null}
           <Image
