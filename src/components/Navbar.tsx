@@ -39,7 +39,7 @@ export const Navbar = () => {
       }
       position="fixed"
       width="full"
-      height="150px"
+      height="100px"
       p={5}
       as="header"
       zIndex={999}
