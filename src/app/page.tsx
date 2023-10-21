@@ -83,6 +83,12 @@ export default function Home() {
             Links
           </Heading>
           <Experience
+            side="Site Repo"
+            title="maxfung-2023.git"
+            href="https://github.com/mxfng/maxfung-2023"
+            mb={4}
+          />
+          <Experience
             side="Github"
             title="@mxfng"
             href="https://github.com/mxfng"
