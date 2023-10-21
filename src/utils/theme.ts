@@ -22,10 +22,10 @@ export const theme = extendTheme({
       },
       "@keyframes colorChange": {
         "0%": {
-          fill: "red",
+          fill: "rgb(240, 150, 243)",
         },
         "25%": {
-          fill: "blue",
+          fill: "rgb(128, 120, 249)",
         },
         "50%": {
           fill: "green",
@@ -34,7 +34,7 @@ export const theme = extendTheme({
           fill: "orange",
         },
         "100%": {
-          fill: "red",
+          fill: "rgb(240, 150, 243)",
         },
       },
       "@keyframes fade-in": {
