@@ -8,7 +8,6 @@ export const Avatar = () => {
   const [cachedBg, setCachedBg] = useState<string>();
   const [showBg, setShowBg] = useState(true);
   const [imageLoaded, setimageLoaded] = useState(false);
-  const imageRef = useRef<HTMLImageElement>(null);
 
   const onImageLoaded = () => {
     setShowBg(true);
@@ -19,7 +18,7 @@ export const Avatar = () => {
     setShowBg(false);
     setimageLoaded(false);
     setHotBg(getRandomBg);
-    hotBg ? setCachedBg(hotBg) : null;
+    setCachedBg(hotBg);
   };
 
   const getRandomBg = (): string => {
@@ -63,7 +62,6 @@ export const Avatar = () => {
           />
           {showBg ? (
             <Image
-              ref={imageRef}
               id="hot-bg"
               borderRadius="full"
               src={bgSrc}
