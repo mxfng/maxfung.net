@@ -5,7 +5,7 @@ import { Experience } from "@/components/Experience";
 export default function Home() {
   return (
     <>
-      <Box py="115px" px={4} maxWidth={800} mx="auto">
+      <Box py="115px" px={4} maxWidth={700} mx="auto">
         <Grid templateColumns="repeat(4, 1fr)" mb={10} alignItems="center">
           <GridItem colSpan={1}>
             <Avatar />
