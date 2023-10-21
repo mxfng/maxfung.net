@@ -23,7 +23,7 @@ export default function Home() {
             About
           </Heading>
           <Text>
-            Born and raised in Southern California to a family of musicians, entrepreneurs, and creative misfits.
+            Born and raised in Southern California to a family of musicians, entrepreneurs, and misfits.
             I choose not to define myself by any singular pursuit or framework.
             I build creative products with intuitive experiences from start to finish.
             I&apos;ve worked as a professional in a variety of development mediums, including web and mobile.
