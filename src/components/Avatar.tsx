@@ -4,22 +4,23 @@ import { Box, Flex, Image } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 export const Avatar = () => {
-  const [avatarState, setAvatarState] = useState<string>();
+  const [avatarBg, setAvatarBg] = useState<string>();
 
   const toggleAvatar = () => {
-    setAvatarState(randomGif());
+    setAvatarBg(getRandomBg());
   };
 
-  const randomGif = () => {
-    const randomAvatarNumber = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
-    return `/gifs/${randomAvatarNumber}.gif`;
+  const getRandomBg = (): string => {
+    const randomInteger = Math.floor(Math.random() * 10) + 1;
+    const randomBg = `/gifs/${randomInteger}.gif`;
+    return randomBg === avatarBg ? getRandomBg() : randomBg;
   };
 
   useEffect(() => {
-    setAvatarState(randomGif);
+    setAvatarBg(getRandomBg);
   }, []);
 
-  const bgSrc = avatarState;
+  const bgSrc = avatarBg;
 
   return (
     <>
@@ -36,9 +37,31 @@ export const Avatar = () => {
             width={{ base: "80%" }}
             src="/avatar.png"
             alt="Max Fung"
-            backgroundImage={bgSrc}
-            backgroundSize="cover"
-            style={{ transition: "background-image 0.5s" }}
+            position="absolute"
+            zIndex={1}
+          />
+          <Image
+            borderRadius="full"
+            src={bgSrc}
+            width={{ base: "80%" }}
+            alt="Background Image"
+            objectFit="cover"
+            position="absolute"
+            zIndex={0}
+            style={{
+              transition: "opacity 0.5s"
+            }}
+          />
+          <Image
+            borderRadius="full"
+            src={bgSrc}
+            width={{ base: "80%" }}
+            alt="Background Image"
+            objectFit="cover"
+            zIndex={0}
+            style={{
+              transition: "opacity 0.5s"
+            }}
           />
         </Flex>
       </Box>
