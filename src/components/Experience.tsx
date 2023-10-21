@@ -10,8 +10,6 @@ export const Experience: React.FC<any> = ({
   href,
   ...props
 }) => {
-  console.log(typeof desc)
-
   const descParagraphs = desc && typeof desc === "string"
     ? desc.split('<br />').map((paragraph, index) => (
         <Text key={index} my={2}>
