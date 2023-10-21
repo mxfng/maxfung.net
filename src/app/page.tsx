@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Box py="115px" px={4} maxWidth={900} mx="auto">
-        <Grid templateColumns="repeat(4, 1fr)" mb="70px" alignItems="center">
+        <Grid templateColumns="repeat(4, 1fr)" mb={10} alignItems="center">
           <GridItem colSpan={1}>
             <Avatar />
           </GridItem>
