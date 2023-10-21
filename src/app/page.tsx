@@ -23,11 +23,10 @@ export default function Home() {
             About
           </Heading>
           <Text>
-            Born and raised in Southern California to a family of musicians. I
-            choose not to define myself by any singular pursuit or framework. I
-            build creative products with intuitive experiences from start to
-            finish. I&apos;ve worked as a professional in a variety of
-            development mediums, including web and mobile.
+            Born and raised in Southern California to a family of musicians, entrepreneurs, and creative misfits.
+            I choose not to define myself by any singular pursuit or framework.
+            I build creative products with intuitive experiences from start to finish.
+            I&apos;ve worked as a professional in a variety of development mediums, including web and mobile.
           </Text>
         </Box>
         <Box mb={14}>
@@ -52,13 +51,12 @@ export default function Home() {
           <Experience
             side="2021 - 2022"
             title="Project Manager — Boeing"
-            desc="I managed a complex portfolio of space electronics products totaling over $100,000,000 in value.
-            <br />As a side project, I put my coding skills back to work and designed an automated production status report to consolidate information from separate internal factory databases within a well-packaged, navigable spreadsheet.
-            <br />This tool became very popular across the project management organization and resulted in a pretty significant cost reduction (approximately $10,000 per week) by reducing our collective time spent tracking parts in manufacturing. This inspired me to pursue a career in software engineering."
+            desc="As a project manager, I collaborated with engineers on tight deadlines and oversaw a diverse portfolio of space electronics projects worth over $100 million in value.
+            <br />Additionally, I revitalized my coding skills by creating an automated production status report for our in-house factory. This internal tool quickly gained popularity within the project management team, saving approximately $10,000 per week by streamlining part tracking in manufacturing. This success inspired my transition to a career in software engineering."
             stack="Python • Pandas • Shell Scripting • SQL • AWS"
           />
           <Experience
-            side="2018"
+            side="2018, 2019"
             title="Software Engineer — Aeroject Rocketdyne"
             desc="I received a unique opportunity to independently develop a desktop application for pressure transducer calibration tests.
             <br />I was tasked with migrating legacy code written in BASIC on a dying HP-86 computer to a modern language of my choice. I chose Python, and delivered an efficient test suite for the laboratory to use.
