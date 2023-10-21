@@ -7,7 +7,7 @@ export const Navbar = () => {
   const [scrolling, setScrolling] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const scrollThreshold = 250;
-  const [isBelowThreshold] = useMediaQuery("(max-width: 1000px)");
+  const [isBelowThreshold] = useMediaQuery("(max-width: 1200px)");
 
   useEffect(() => {
     const handleScroll = () => {

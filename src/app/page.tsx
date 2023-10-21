@@ -5,7 +5,7 @@ import { Experience } from "@/components/Experience";
 export default function Home() {
   return (
     <>
-      <Box py="115px" px={4} maxWidth={700} mx="auto">
+      <Box py="115px" px={4} maxWidth={900} mx="auto">
         <Grid templateColumns="repeat(4, 1fr)" mb={10} alignItems="center">
           <GridItem colSpan={1}>
             <Avatar />
@@ -64,7 +64,7 @@ export default function Home() {
           </Heading>
           <Experience
             side="2023 - present"
-            title="Streets For All"
+            title="Software Engineer — Streets For All"
             href="https://www.streetsforall.org/"
             desc="Working with a small volunteer developer team to provide support in web development, API building and integration, and other public facing projects to promote and advocate for a safer and more equitable Los Angeles.
             <br />Some projects include a website in support of LA Metro's Hill to Sea corridor as well as a legislator report card website."
