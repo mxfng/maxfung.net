@@ -35,6 +35,12 @@ export default function Home() {
             Work Experience
           </Heading>
           <Experience
+            side="2023 - present"
+            title="Web Designer & Developer — Freelance"
+            desc="I collaborate with a diverse clientele, including small agencies, start-ups, and individual clients, to develop immersive and results-driven web solutions. My expertise lies in crafting web products that are strategically aligned with business goals, delivering outstanding user experiences, and driving tangible results."
+            stack="React • Next.js • Redux • Styled Components • Framer Motion"
+          />
+          <Experience
             href="https://www.flexe.com/"
             side="2022 - present"
             title="Software Development Engineer — Flexe"
