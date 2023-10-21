@@ -46,7 +46,13 @@ export const Navbar = () => {
       transition="transform 0.3s ease-in-out"
       transform={scrolling ? "translateY(-100%)" : "translateY(0)"}
     >
-      <Box width="88px">
+      <Box
+        transition="0.25s cubic-bezier(0.68, -0.6, 0.32, 1.6)"
+        _hover={{
+          transform: "scale(1.09)",
+        }}
+        width="88px"
+      >
         <svg
           version="1.1"
           id="svg1"
