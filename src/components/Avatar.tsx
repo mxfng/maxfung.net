@@ -50,7 +50,6 @@ export const Avatar = () => {
         onClick={() => {
           onImageLoading();
         }}
-
       >
         <Flex alignItems="center" justifyContent="center" position="relative">
           <Image
@@ -83,28 +82,6 @@ export const Avatar = () => {
             objectFit="cover"
             position="absolute"
             zIndex={2}
-          />
-          { showBg ? (<Image
-            id="blur"
-            borderRadius="full"
-            src={bgSrc}
-            width={{ base: "80%" }}
-            alt="Background Image"
-            objectFit="cover"
-            zIndex={1}
-            position="absolute"
-            style={{ filter: "blur(26px)",
-            animation: "fade-in 1s linear" }} />) : null }
-          <Image
-            id="blur"
-            borderRadius="full"
-            src={bgSrcCache}
-            width={{ base: "80%" }}
-            alt="Background Image"
-            objectFit="cover"
-            zIndex={0}
-            position="absolute"
-            style={{ filter: "blur(26px)"}}
           />
         </Flex>
       </Box>
