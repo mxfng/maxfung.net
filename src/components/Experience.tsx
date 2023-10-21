@@ -10,13 +10,14 @@ export const Experience: React.FC<any> = ({
   href,
   ...props
 }) => {
-  const descParagraphs = desc && typeof desc === "string"
-    ? desc.split('<br />').map((paragraph, index) => (
-        <Text key={index} my={2}>
-          {paragraph}
-        </Text>
-      ))
-    : null;
+  const descParagraphs =
+    desc && typeof desc === "string"
+      ? desc.split("<br />").map((paragraph, index) => (
+          <Text key={index} my={2}>
+            {paragraph}
+          </Text>
+        ))
+      : null;
 
   return (
     <Grid templateColumns="repeat(4, 1fr)" mb={10} {...props}>

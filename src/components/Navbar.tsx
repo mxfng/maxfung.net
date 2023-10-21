@@ -3,7 +3,7 @@ import { Box, Flex, Image } from "@chakra-ui/react";
 export const Navbar = () => {
   return (
     <Flex
-      bg='linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)'
+      bg="linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)"
       position="fixed"
       top={0}
       width="full"

@@ -11,14 +11,13 @@ export const Avatar = () => {
   };
 
   const randomGif = () => {
-    const randomAvatarNumber = Math.floor(Math.random() * (10 -1 + 1)) + 1;
-    return `/gifs/${randomAvatarNumber}.gif`
-  }
+    const randomAvatarNumber = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+    return `/gifs/${randomAvatarNumber}.gif`;
+  };
 
   useEffect(() => {
     setAvatarState(randomGif);
-  }, [])
-
+  }, []);
 
   const bgSrc = avatarState;
 
@@ -39,7 +38,7 @@ export const Avatar = () => {
             alt="Max Fung"
             backgroundImage={bgSrc}
             backgroundSize="cover"
-            style={{transition: "background-image 0.5s"}}
+            style={{ transition: "background-image 0.5s" }}
           />
         </Flex>
       </Box>
