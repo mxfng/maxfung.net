@@ -3,8 +3,12 @@ import { Providers } from "./providers";
 import { Navbar } from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Max Fung - Full Stack Developer",
-  description: "Product and design focused full stack developer",
+  title: "Max Fung",
+  description: "Full Stack Developer",
+  openGraph: {
+    title: "Max Fung",
+    description: "Full Stack Developer"
+  }
 };
 
 export default function RootLayout({
