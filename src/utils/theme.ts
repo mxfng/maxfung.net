@@ -21,23 +21,23 @@ const styles = {
 
     "@keyframes colorChange": {
       "0%": {
-        fill: "rgb(240, 150, 243)",
+        stroke: "rgb(240, 150, 243)",
       },
       "25%": {
-        fill: "rgb(128, 120, 249)",
+        stroke: "rgb(128, 120, 249)",
       },
       "50%": {
-        fill: "green",
+        stroke: "green",
       },
       "75%": {
-        fill: "orange",
+        stroke: "orange",
       },
       "100%": {
-        fill: "rgb(240, 150, 243)",
+        stroke: "rgb(240, 150, 243)",
       },
     },
 
-    "@keyframes fade-in": {
+    "@keyframes fadeIn": {
       from: {
         opacity: 0,
       },
@@ -45,8 +45,17 @@ const styles = {
         opacity: 100,
       },
     },
+
+    "@keyframes brushStroke": {
+      from: {
+        strokeDashoffset: 600,
+      },
+      to: {
+        strokeDashoffset: 0,
+      },
+    },
   },
-}
+};
 
 const components = {
   Heading: {
@@ -72,7 +81,7 @@ const components = {
       opacity: "0.7",
     },
   },
-}
+};
 
 export const theme = extendTheme({
   fonts,

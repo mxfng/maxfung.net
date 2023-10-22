@@ -69,7 +69,7 @@ export const Avatar = () => {
               objectFit="cover"
               position="absolute"
               zIndex={3}
-              style={{ animation: "fade-in 1s linear" }}
+              style={{ animation: "fadeIn 1s linear" }}
               onLoad={() => setimageLoaded(true)}
             />
           ) : null}
