@@ -68,10 +68,10 @@ const components = {
         fontSize: ["xl", "2xl"],
       },
       md: {
-        fontSize: ["sm", "md"],
+        fontSize: ["md", "lg"],
       },
       sm: {
-        fontSize: ["xs", "sm"],
+        fontSize: ["sm", "md"],
       },
     },
   },
