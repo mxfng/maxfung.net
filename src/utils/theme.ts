@@ -77,7 +77,7 @@ const components = {
   },
   Text: {
     baseStyle: {
-      fontSize: ["xs", "lg"],
+      fontSize: ["sm", "lg"],
       opacity: "0.7",
     },
   },

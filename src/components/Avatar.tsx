@@ -43,6 +43,8 @@ export const Avatar = () => {
   return (
     <>
       <Box
+        maxHeight={250}
+        maxWidth={250}
         transition="0.25s cubic-bezier(0.68, -0.6, 0.32, 1.6)"
         _hover={{
           transform: "scale(1.03)",
