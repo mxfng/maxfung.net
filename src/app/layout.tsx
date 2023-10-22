@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   description: "Full Stack Developer",
   openGraph: {
     title: "Max Fung",
-    description: "Full Stack Developer"
-  }
+    description: "Full Stack Developer",
+  },
 };
 
 export default function RootLayout({

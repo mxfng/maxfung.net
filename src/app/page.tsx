@@ -6,7 +6,12 @@ export default function Home() {
   return (
     <>
       <Box py="115px" px={4} maxWidth={900} mx="auto">
-        <Grid h={[100, 150, 200]} templateColumns="repeat(4, 1fr)" mb={10} alignItems="center">
+        <Grid
+          h={[100, 150, 200]}
+          templateColumns="repeat(4, 1fr)"
+          mb={10}
+          alignItems="center"
+        >
           <GridItem colSpan={1}>
             <Avatar />
           </GridItem>
@@ -23,10 +28,12 @@ export default function Home() {
             About
           </Heading>
           <Text>
-            Born and raised in Southern California to a family of musicians, entrepreneurs, and misfits.
-            I choose not to define myself by any singular pursuit or framework.
-            I build creative products with intuitive experiences from start to finish.
-            I&apos;ve worked as a professional in a variety of development mediums, including web and mobile.
+            Born and raised in Southern California to a family of musicians,
+            entrepreneurs, and misfits. I choose not to define myself by any
+            singular pursuit or framework. I build creative products with
+            intuitive experiences from start to finish. I&apos;ve worked as a
+            professional in a variety of development mediums, including web and
+            mobile.
           </Text>
         </Box>
         <Box mb={14}>
