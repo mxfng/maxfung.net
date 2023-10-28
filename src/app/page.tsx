@@ -20,26 +20,35 @@ export default function Home() {
             <Heading as="h1" size="lg">
               Max Fung
             </Heading>
-            <Text>Full Stack Developer</Text>
-            <Text opacity={0.5}>+ Musician, Advocate</Text>
+            <Text>Software Development Engineer at Flexe</Text>
+            <Text opacity={0.5}>Los Angeles, CA, USA</Text>
           </GridItem>
         </Grid>
-        <Box mb={14}>
+        <Box mb={20}>
           <Heading as="h2" size="md" mb={2}>
             About
           </Heading>
-          <Text>
-            Born and raised in Southern California to a family of musicians,
-            entrepreneurs, and misfits. I choose not to define myself by any
-            singular pursuit or framework. I build creative products with
-            intuitive experiences from start to finish. I&apos;ve worked as a
-            professional in a variety of development mediums, including web and
-            mobile.
+          <Text mb={3}>
+            I&apos;m a full stack software engineer who loves crafting creative,
+            intuitive technology products from start to finish.
+          </Text>
+          <Text mb={3}>
+            As a self-taught software engineer, I&apos;ve never shied away from
+            tackling tough problems and gaining experience from my own
+            curiosity. I&apos;m proud of my ability to learn new concepts and
+            frameworks really quickly and also apply my creativity, attention to
+            detail, and design intuition to software development.
+          </Text>
+          <Text mb={3}>
+            I&apos;m passionate about both product and engineering, and love
+            developing cool stuff. When I&apos;m not coding, I&apos;m producing
+            my own music, surfing, snowboarding, taking photos with my film
+            camera, and out exploring the world.
           </Text>
         </Box>
-        <Box mb={14}>
+        <Box mb={30}>
           <Heading as="h2" size="md" mb={10}>
-            Work Experience
+            Experience
           </Heading>
           <Experience
             href="https://www.flexe.com/"
@@ -71,8 +80,10 @@ export default function Home() {
             stack="Anaconda • Python • PyQt • NI-VISA"
           />
           <ArrowLink title="View Full Résumé" href="/resume.pdf" />
+        </Box>
+        <Box mb={20}>
           <Heading as="h2" size="md" mt={10} mb={10}>
-            Side Projects
+            Projects
           </Heading>
           <Experience
             side="2023 - present"
@@ -85,6 +96,8 @@ export default function Home() {
             stack="JavaScript • React • Python"
             image="/sfa-logo-square.png"
           />
+        </Box>
+        <Box mb={20}>
           <Heading as="h2" size="md" mb={10}>
             Links
           </Heading>
