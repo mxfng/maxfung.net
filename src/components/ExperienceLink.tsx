@@ -23,10 +23,10 @@ export const ExperienceLink: React.FC<any> = ({ title, href }) => {
         mb={3}
       >
         <Heading
+          variant="link"
           as="a"
           href={href}
           target="_blank"
-          size="md"
           style={href ? { cursor: "pointer" } : { textDecoration: "none" }}
         >
           {title}
@@ -34,7 +34,7 @@ export const ExperienceLink: React.FC<any> = ({ title, href }) => {
         {href && (
           <Image
             ml={2}
-            boxSize="22px"
+            boxSize={4}
             src="/arrow-link.svg"
             alt={`↗`}
           />

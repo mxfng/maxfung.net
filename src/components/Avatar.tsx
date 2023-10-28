@@ -43,8 +43,8 @@ export const Avatar = () => {
   return (
     <>
       <Box
-        maxHeight={250}
-        maxWidth={250}
+      height={["150px", "210px"]}
+      width={["150px", "210px"]}
         transition="0.25s cubic-bezier(0.68, -0.6, 0.32, 1.6)"
         _hover={{
           transform: "scale(1.03)",
@@ -56,10 +56,12 @@ export const Avatar = () => {
         <Flex alignItems="center" justifyContent="center" position="relative">
           <Image
             borderRadius="full"
-            width={{ base: "80%" }}
+            width={{ base: "100%" }}
             src="/avatar.png"
             alt="Max Fung"
             position="absolute"
+            top="0px"
+            left="0px"
             zIndex={4}
           />
           {showBg ? (
@@ -67,9 +69,11 @@ export const Avatar = () => {
               id="hot-bg"
               borderRadius="full"
               src={bgSrc}
-              width={{ base: "80%" }}
+              width={{ base: "100%" }}
               objectFit="cover"
               position="absolute"
+              top="0px"
+            left="0px"
               zIndex={3}
               style={{ animation: "fadeIn 1s linear" }}
               onLoad={() => setimageLoaded(true)}
@@ -79,10 +83,12 @@ export const Avatar = () => {
             id="cached-bg"
             borderRadius="full"
             src={bgSrcCache}
-            width={{ base: "80%" }}
+            width={{ base: "100%" }}
             alt="Background Image"
             objectFit="cover"
             position="absolute"
+            top="0px"
+            left="0px"
             zIndex={2}
           />
         </Flex>

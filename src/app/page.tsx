@@ -9,7 +9,7 @@ export default function Home() {
       <Box py={100} px={4} maxWidth={900} mx="auto">
         <ProfileBanner />
         <Box mb={[10, 20]}>
-          <Heading as="h2" size="md" mb={3}>
+          <Heading variant="section" mb={3}>
             About
           </Heading>
           <Text mb={3}>
@@ -30,7 +30,7 @@ export default function Home() {
           </Text>
         </Box>
         <Box mb={[10, 40]}>
-          <Heading as="h2" size="md" mb={[3, 10]}>
+        <Heading variant="section" mb={[3, 10]}>
             Experience
           </Heading>
           <Experience
@@ -74,8 +74,8 @@ export default function Home() {
           <ArrowLink title="View Full Résumé" href="/resume.pdf" />
         </Box>
         <Box mb={[10, 40]}>
-          <Heading as="h2" size="md" mb={[3, 10]}>
-            Projects
+        <Heading variant="section" mb={[3, 10]}>
+            Featured Projects
           </Heading>
           <Experience
             side="2023 - present"
@@ -90,7 +90,7 @@ export default function Home() {
           />
         </Box>
         <Box mb={[10, 40]}>
-          <Heading as="h2" size="md" mb={[3, 10]}>
+        <Heading variant="section" mb={[3, 10]}>
             Links
           </Heading>
           <Experience

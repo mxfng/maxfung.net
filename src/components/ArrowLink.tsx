@@ -20,15 +20,14 @@ export const ArrowLink: React.FC<any> = ({ title, href }) => {
             transform: "translateX(8px)",
           },
         }}
-        mb={[10, 20]}
+        mb={[20, 40]}
         w="fit-content"
       >
         <Heading
+          variant="bigLink"
           as="a"
           href={href}
           target="_blank"
-          size="md"
-          style={{ fontWeight: 800 }}
         >
           {title}
         </Heading>

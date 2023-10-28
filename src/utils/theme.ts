@@ -1,9 +1,10 @@
 import { extendTheme } from "@chakra-ui/react";
-import "@fontsource/inter";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/victor-mono"
 
 const fonts = {
-  heading: `'Inter', sans-serif`,
-  body: `'Inter', sans-serif`,
+  heading: `'Inter Variable', sans-serif`,
+  body: `'Inter Variable', sans-serif`,
 };
 
 const styles = {
@@ -18,53 +19,6 @@ const styles = {
       transition: "text-decoration 500ms ease",
       _hover: {
         textDecorationColor: "white",
-      },
-    },
-
-    "@keyframes colorChange": {
-      "0%": {
-        color: "#f94144",
-        stroke: "#f94144",
-      },
-      "10%": {
-        color: "#f3722c",
-        stroke: "#f3722c",
-      },
-      "20%": {
-        color: "#f8961e",
-        stroke: "#f8961e",
-      },
-      "30%": {
-        color: "#f9844a",
-        stroke: "#f9844a",
-      },
-      "40%": {
-        color: "#f9c74f",
-        stroke: "#f9c74f",
-      },
-      "50%": {
-        color: "#90be6d",
-        stroke: "#90be6d",
-      },
-      "60%": {
-        color: "#43aa8b",
-        stroke: "#43aa8b",
-      },
-      "70%": {
-        color: "#4d908e",
-        stroke: "#4d908e",
-      },
-      "80%": {
-        color: "#577590",
-        stroke: "#577590",
-      },
-      "90%": {
-        color: "#277da1",
-        stroke: "#277da1",
-      },
-      "100%": {
-        color: "#f94144",
-        stroke: "#f94144",
       },
     },
 
@@ -93,23 +47,35 @@ const components = {
     baseStyle: {
       fontWeight: 500,
     },
-    sizes: {
-      lg: {
-        fontSize: ["2xl", "3xl"],
-        fontFamily: `'Inter Tight', sans-serif`,
+    variants: {
+      name: {
+        fontSize: ["1.8rem", "2rem", "3rem"],
+        fontWeight: 800,
+        letterSpacing: "-1px",
       },
-      md: {
-        fontSize: ["md", "lg"],
+      section: {
+        fontSize: ["0.6rem", "1.2rem", "1.5rem"],
+        fontWeight: 800,
+        letterSpacing: "-1px",
       },
-      sm: {
-        fontSize: ["sm", "md"],
+      link: {
+        fontSize: ["0.9rem", "1.2rem", "1.2rem"],
+        fontWeight: 500,
+        letterSpacing: ["-0.2px", "-0.5px"],
+      },
+      bigLink: {
+        fontFamily: `'Victor Mono Variable', sans-serif`,
+        fontSize: ["1.2rem", "1.2rem", "1.5rem"],
+        fontWeight: 100,
       },
     },
   },
   Text: {
     baseStyle: {
-      fontSize: ["sm", "lg"],
+      fontSize: ["0.9rem", "1.1rem"],
       color: "#a5a5a5",
+      letterSpacing: ["-0.2px", "-0.5px"],
+      fontWeight: 300,
     },
     variants: {
       darker: {
