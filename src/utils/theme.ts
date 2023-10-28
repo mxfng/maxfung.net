@@ -66,7 +66,7 @@ const components = {
       lg: {
         fontSize: ["2xl", "3xl"],
         fontFamily: `'Inter Tight', sans-serif`,
-        fontWeight: 500,
+        fontWeight: 600,
       },
       md: {
         fontSize: ["md", "lg"],
