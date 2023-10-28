@@ -85,11 +85,8 @@ export default function Home() {
           <Experience
             side="2023 - present"
             title="Software Engineer · Streets For All"
-            href="https://www.streetsforall.org/"
-            desc="Collaborate with other volunteer web
-            developers to support React front end
-            and Python API design for numerous
-            transportation advocacy websites"
+            href="https://github.com/streetsforall"
+            desc="Part of a team of volunteer web developers supporting full stack web design for a local transportation advocacy group"
             stack={["JavaScript", "React", "Python"]}
             image="/sfa-logo-square.png"
           />
