@@ -59,6 +59,7 @@ export const Avatar = () => {
             width={{ base: "100%" }}
             src="/avatar.png"
             alt="avatar"
+            textIndent="-9999px"
             position="absolute"
             top="0px"
             left="0px"
@@ -84,6 +85,7 @@ export const Avatar = () => {
             borderRadius="full"
             src={bgSrcCache}
             alt="cached-bg"
+            textIndent="-9999px"
             width={{ base: "100%" }}
             objectFit="cover"
             position="absolute"
