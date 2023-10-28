@@ -1,31 +1,15 @@
-import { Box, Text, Heading, Grid, GridItem } from "@chakra-ui/react";
-import { Avatar } from "@/components/Avatar";
+import { Box, Text, Heading } from "@chakra-ui/react";
 import { Experience } from "@/components/Experience";
 import { ArrowLink } from "@/components/ArrowLink";
+import { ProfileBanner } from "@/components/ProfileBanner";
 
 export default function Home() {
   return (
     <>
-      <Box py="115px" px={4} maxWidth={900} mx="auto">
-        <Grid
-          h={[100, 150, 200]}
-          templateColumns="repeat(4, 1fr)"
-          mb={10}
-          alignItems="center"
-        >
-          <GridItem colSpan={1}>
-            <Avatar />
-          </GridItem>
-          <GridItem colSpan={3}>
-            <Heading as="h1" size="lg">
-              Max Fung
-            </Heading>
-            <Text>Software Development Engineer at Flexe</Text>
-            <Text opacity={0.5}>Los Angeles, CA, USA</Text>
-          </GridItem>
-        </Grid>
-        <Box mb={20}>
-          <Heading as="h2" size="md" mb={2}>
+      <Box py={100} px={4} maxWidth={900} mx="auto">
+        <ProfileBanner />
+        <Box mb={[10,20]}>
+          <Heading as="h2" size="md" mb={3}>
             About
           </Heading>
           <Text mb={3}>
@@ -46,8 +30,8 @@ export default function Home() {
             camera, and out exploring the world.
           </Text>
         </Box>
-        <Box mb={30}>
-          <Heading as="h2" size="md" mb={10}>
+        <Box mb={[10,20]}>
+          <Heading as="h2" size="md" mb={[3,10]}>
             Experience
           </Heading>
           <Experience
@@ -81,8 +65,8 @@ export default function Home() {
           />
           <ArrowLink title="View Full Résumé" href="/resume.pdf" />
         </Box>
-        <Box mb={20}>
-          <Heading as="h2" size="md" mt={10} mb={10}>
+        <Box mb={[10,20]}>
+          <Heading as="h2" size="md" mb={[3, 10]}>
             Projects
           </Heading>
           <Experience
@@ -97,27 +81,27 @@ export default function Home() {
             image="/sfa-logo-square.png"
           />
         </Box>
-        <Box mb={20}>
-          <Heading as="h2" size="md" mb={10}>
+        <Box mb={[10,20]}>
+          <Heading as="h2" size="md" mb={[3,10]}>
             Links
           </Heading>
           <Experience
             side="Github"
             title="@mxfng"
             href="https://github.com/mxfng"
-            mb={4}
+            mb={0}
           />
           <Experience
             side="LinkedIn"
             title="@maxfung"
             href="https://www.linkedin.com/in/maxfung/"
-            mb={4}
+            mb={0}
           />
           <Experience
             side="Email"
             title="maxhfung@gmail.com"
             href="mailto:maxhfung@gmail.com?subject=Developer Inquiry"
-            mb={4}
+            mb={0}
           />
         </Box>
       </Box>

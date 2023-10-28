@@ -20,7 +20,7 @@ export const ArrowLink: React.FC<any> = ({ title, href }) => {
             transform: "translateX(8px)",
           },
         }}
-        mb={20}
+        mb={[10,20]}
         w="fit-content"
       >
         <Heading as="a" href={href} target="_blank" size="md">
