@@ -66,9 +66,10 @@ export const Avatar = () => {
           />
           {showBg ? (
             <Image
-              alt="hot-bg"
-              borderRadius="full"
               src={bgSrc}
+              alt="hot-bg"
+              textIndent="-9999px"
+              borderRadius="full"
               width={{ base: "100%" }}
               objectFit="cover"
               position="absolute"
