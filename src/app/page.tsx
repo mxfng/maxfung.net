@@ -46,7 +46,7 @@ export default function Home() {
             side="2022 - present"
             title="Software Development Engineer · Flexe"
             desc="Deliver high-quality, robust production code for Flexe’s proprietary warehouse management
-            system for a diverse array of large enterprise clients including Target, Walmart, Lowe’s, Home
+            system serving a diverse array of large enterprise clients including Target, Walmart, Lowe’s, Home
             Depot, Daiso, and more. Led the design and deployment of reusable mobile front end components,
             architected and deployed a refactored Android application, contributed to the decomposition of
             a monolithic Ruby on Rails application to a modern Kotlin microservices architecture, and built
