@@ -14,10 +14,10 @@ export const ProfileBanner: React.FC<any> = () => {
           <Avatar />
         </GridItem>
         <GridItem colSpan={3}>
-          <Heading as="h1" size="lg" mb={-1}>
+          <Heading as="h1" size="lg" mb={[-1,0]}>
             Max Fung
           </Heading>
-          <Text mb={-1}>Software Engineer at Flexe</Text>
+          <Text>Software Engineer at Flexe</Text>
           <Text opacity={0.5}>Los Angeles, CA, USA</Text>
         </GridItem>
       </Grid>
