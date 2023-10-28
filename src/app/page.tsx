@@ -8,30 +8,30 @@ export default function Home() {
     <>
       <Box py={100} px={4} maxWidth={900} mx="auto">
         <ProfileBanner />
-        <Box mb={[10,20]}>
+        <Box mb={[10, 20]}>
           <Heading as="h2" size="md" mb={3}>
             About
           </Heading>
           <Text mb={3}>
-            I&apos;m a full stack software engineer who loves crafting creative,
-            intuitive technology products from start to finish.
+            I&apos;m a full stack software engineer who loves designing,
+            building, and shipping creative products from start to finish.
           </Text>
           <Text mb={3}>
-            As a self-taught computer scientist, I&apos;ve never shied away from
-            tackling tough problems and gaining experience from my own
-            curiosity. I&apos;m proud of my ability to learn new concepts and
-            frameworks really quickly and also apply my creativity, attention to
-            detail, and design intuition to software development.
+            As a self-taught developer, I learned how to build code first,
+            breaking down tough problems into manageable bits and sharpening my
+            craft through curiosity and grit. I&apos;ve developed and
+            contributed to a variety of exciting projects, startups, and
+            applications since starting my journey back in 2018.
           </Text>
           <Text mb={3}>
             I&apos;m passionate about both product and engineering, and love
-            developing cool stuff. When I&apos;m not coding, I&apos;m producing
+            building cool stuff. When I&apos;m not coding, I&apos;m producing
             my own music, surfing, snowboarding, taking photos with my film
-            camera, and out exploring the world.
+            cameras, and out exploring the world.
           </Text>
         </Box>
-        <Box mb={[10,20]}>
-          <Heading as="h2" size="md" mb={[3,10]}>
+        <Box mb={[10, 20]}>
+          <Heading as="h2" size="md" mb={[3, 10]}>
             Experience
           </Heading>
           <Experience
@@ -65,7 +65,7 @@ export default function Home() {
           />
           <ArrowLink title="View Full Résumé" href="/resume.pdf" />
         </Box>
-        <Box mb={[10,20]}>
+        <Box mb={[10, 20]}>
           <Heading as="h2" size="md" mb={[3, 10]}>
             Projects
           </Heading>
@@ -81,8 +81,8 @@ export default function Home() {
             image="/sfa-logo-square.png"
           />
         </Box>
-        <Box mb={[10,20]}>
-          <Heading as="h2" size="md" mb={[3,10]}>
+        <Box mb={[10, 20]}>
+          <Heading as="h2" size="md" mb={[3, 10]}>
             Links
           </Heading>
           <Experience
