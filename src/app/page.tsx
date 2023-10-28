@@ -3,6 +3,7 @@ import { Experience } from "@/components/Experience";
 import { ArrowLink } from "@/components/ArrowLink";
 import { Banner } from "@/components/Banner";
 import { Section } from "@/components/Section";
+import { SocialLink } from "@/components/SocialLink";
 
 export default function Home() {
   const pageW = 900;
@@ -94,29 +95,25 @@ export default function Home() {
       </Box>
       <Box mb={[10, 20]}>
         <Section width={pageW} title="Links" mt={[0, 10]}>
-          <Experience
+          <SocialLink
             side="Email"
             title="maxhfung@gmail.com"
             href="mailto:maxhfung@gmail.com?subject=Hello Max"
-            mb={0}
           />
-          <Experience
+          <SocialLink
             side="Github"
             title="@mxfng"
             href="https://github.com/mxfng"
-            mb={0}
           />
-          <Experience
+          <SocialLink
             side="LinkedIn"
             title="@maxfung"
             href="https://www.linkedin.com/in/maxfung/"
-            mb={0}
           />
-          <Experience
+          <SocialLink
             side="Instagram"
             title="@fungkadelic"
             href="https://www.instagram.com/fungkadelic/"
-            mb={0}
           />
         </Section>
       </Box>

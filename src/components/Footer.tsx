@@ -16,10 +16,10 @@ export const Footer = ({ ...props }) => {
           />
         </Box>
         <Box>
-          <Text variant="darker">
-            Designed by Max Fung. This website was written in TypeScript using
-            Next.js and Chakra UI, and deployed with Vercel. Text is set in the
-            Inter and Victor Mono typefaces.
+          <Text variant="darker" fontSize={8}>
+            Designed by Max Fung in California. This website was written in
+            TypeScript using Next.js and Chakra UI, and deployed with Vercel.
+            Text is set in the Inter and Victor Mono typefaces.
           </Text>
         </Box>
       </Box>

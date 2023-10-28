@@ -21,6 +21,7 @@ export const ArrowLink: React.FC<any> = ({ title, href }) => {
           },
         }}
         w="fit-content"
+        pl={[3,5]}
       >
         <Heading variant="bigLink" as="a" href={href} target="_blank">
           {title}
