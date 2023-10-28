@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Heading, Grid, GridItem, Image } from "@chakra-ui/react";
+import { Text, Grid, GridItem, Image } from "@chakra-ui/react";
 import { ExperienceLink } from "./ExperienceLink";
 
 export const Experience: React.FC<any> = ({

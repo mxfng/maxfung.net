@@ -1,4 +1,4 @@
-import { Box, Text, Heading, Grid, GridItem, Image } from "@chakra-ui/react";
+import { Box, Text, Heading, Grid, GridItem } from "@chakra-ui/react";
 import { Avatar } from "@/components/Avatar";
 import { Experience } from "@/components/Experience";
 import { ArrowLink } from "@/components/ArrowLink";
