@@ -97,8 +97,6 @@ const components = {
       lg: {
         fontSize: ["2xl", "3xl"],
         fontFamily: `'Inter Tight', sans-serif`,
-        fontWeight: 100,
-        animation: "colorChange 10s linear infinite",
       },
       md: {
         fontSize: ["md", "lg"],
