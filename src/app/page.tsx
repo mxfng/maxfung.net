@@ -1,7 +1,7 @@
-import { Box, Text, Heading, Grid, GridItem } from "@chakra-ui/react";
+import { Box, Text, Heading, Grid, GridItem, Image } from "@chakra-ui/react";
 import { Avatar } from "@/components/Avatar";
 import { Experience } from "@/components/Experience";
-import Link from "next/link";
+import { ArrowLink } from "@/components/ArrowLink";
 
 export default function Home() {
   return (
@@ -70,9 +70,7 @@ export default function Home() {
             calibration tests using Python and PyQt5"
             stack="Anaconda • Python • PyQt • NI-VISA"
           />
-          <Heading as="a" href="/resume.pdf" target="_blank" size="md">
-            View Full Résumé
-          </Heading>
+          <ArrowLink title="View Full Résumé" href="/resume.pdf" />
           <Heading as="h2" size="md" mt={10} mb={10}>
             Side Projects
           </Heading>
@@ -88,22 +86,8 @@ export default function Home() {
             image="/sfa-logo-square.png"
           />
           <Heading as="h2" size="md" mb={10}>
-            Education
-          </Heading>
-          <Experience
-            side="2016 - 2020"
-            title="Loyola Marymount University"
-            desc="Bachelor of Science in Mechanical Engineering"
-          />
-          <Heading as="h2" size="md" mb={10}>
             Links
           </Heading>
-          <Experience
-            side="Site Repo"
-            title="maxfung-2023.git"
-            href="https://github.com/mxfng/maxfung-2023"
-            mb={4}
-          />
           <Experience
             side="Github"
             title="@mxfng"

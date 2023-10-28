@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, Heading, Grid, GridItem, Image } from "@chakra-ui/react";
+import { ExperienceLink } from "./ExperienceLink";
 
 export const Experience: React.FC<any> = ({
   side,
@@ -20,34 +21,15 @@ export const Experience: React.FC<any> = ({
       : null;
 
   return (
-    <Grid templateColumns="repeat(4, 1fr)" mb={10} {...props}>
-      <GridItem colSpan={{ base: 4, sm: 1 }}>
-        <Text opacity={0.5} mb={2} mr={1}>
+    <Grid templateColumns="repeat(5, 1fr)" mb={10} {...props}>
+      <GridItem colSpan={{ base: 5, md: 1 }}>
+        <Text opacity={0.5} mr={1}>
           {side}
         </Text>
       </GridItem>
-      <GridItem colSpan={{ base: 4, sm: 3 }}>
+      <GridItem colSpan={{ base: 5, md: 4 }} mt={1}>
         {image && <Image width="36px" mb={4} src={image} alt={title} />}
-        <Heading
-          as="a"
-          href={href}
-          target="_blank"
-          size="md"
-          display="flex"
-          alignItems="center"
-          style={href ? {} : { textDecoration: "none" }}
-        >
-          {title}
-          {href && (
-            <Image
-              ml={2}
-              boxSize="18px"
-              src="/arrow-link.svg"
-              alt={`link to ${title}`}
-              transform="translateY(1px)"
-            />
-          )}
-        </Heading>
+        <ExperienceLink title={title} href={href} />
         {descParagraphs}
         {stack && <Text opacity={0.5}>{stack}</Text>}
       </GridItem>

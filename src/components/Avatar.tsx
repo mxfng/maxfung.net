@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Flex, Image } from "@chakra-ui/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Avatar = () => {
   const [hotBg, setHotBg] = useState<string>();
