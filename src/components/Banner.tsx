@@ -1,7 +1,7 @@
 import { Box, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
 import { Avatar } from "@/components/Avatar";
 
-export const ProfileBanner: React.FC<any> = () => {
+export const Banner: React.FC<any> = () => {
   return (
     <>
       <Grid templateColumns="repeat(4, 1fr)" mb={[5, 10]}>

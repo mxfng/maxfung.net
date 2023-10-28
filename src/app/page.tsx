@@ -1,9 +1,8 @@
 import { Box, Text, Heading, Grid, GridItem, Image } from "@chakra-ui/react";
 import { Experience } from "@/components/Experience";
 import { ArrowLink } from "@/components/ArrowLink";
-import { ProfileBanner } from "@/components/ProfileBanner";
+import { Banner } from "@/components/Banner";
 import { Section } from "@/components/Section";
-import { Line } from "@/components/Line";
 
 export default function Home() {
   const pageW = 900;
@@ -11,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Box maxWidth={pageW} mx="auto" px="3">
-        <ProfileBanner />
+        <Banner />
       </Box>
       <Box mb={[10, 20]}>
         <Section title="About" width={pageW}>
