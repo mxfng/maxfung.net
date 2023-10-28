@@ -30,7 +30,7 @@ export const ArrowLink: React.FC<any> = ({ title, href }) => {
           ml={2}
           boxSize="20px"
           src="/arrow-forward.svg"
-          alt={`link to resume`}
+          alt={`→`}
         />
       </Box>
     </>

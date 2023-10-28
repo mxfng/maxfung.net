@@ -44,7 +44,7 @@ export default function Home() {
             architected and deployed a refactored Android application, contributed to the decomposition of
             a monolithic Ruby on Rails application to a modern Kotlin microservices architecture, and built
             other solutions that provided numerous improvements to freight and parcel fulfillment."
-            stack="Ruby on Rails • Kotlin • Android • Ktor • Docker • Google Cloud"
+            stack={["Kotlin", "Ruby on Rails", "Android", "Ktor", "React", "TypeScript", "Docker", "Google Cloud Platform"]}
           />
           <Experience
             side="2021 - 2022"
@@ -54,14 +54,14 @@ export default function Home() {
             production activities, increasing the department’s visibility to track materials and products through
             the entire supply chain, creating meaningful efficiency statistics to improve processes, and
             reducing overhead costs by around $5,000, per project, per week"
-            stack="Python • Pandas • Shell Scripting • SQL • AWS"
+            stack={["Python", "Pandas", "Shell Scripting", "SQL"]}
           />
           <Experience
             side="2018, 2019"
             title="Software Engineer · Aeroject Rocketdyne"
             desc="Independently architected an internal desktop application for pressure transducer and load cell
             calibration tests using Python and PyQt5"
-            stack="Anaconda • Python • PyQt • NI-VISA"
+            stack={["Python", "PyQt", "NI-VISA"]}
           />
           <ArrowLink title="View Full Résumé" href="/resume.pdf" />
         </Box>
@@ -77,7 +77,7 @@ export default function Home() {
             developers to support React front end
             and Python API design for numerous
             transportation advocacy websites"
-            stack="JavaScript • React • Python"
+            stack={["JavaScript", "React", "Python"]}
             image="/sfa-logo-square.png"
           />
         </Box>

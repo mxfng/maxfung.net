@@ -36,7 +36,7 @@ export const ExperienceLink: React.FC<any> = ({ title, href }) => {
             ml={2}
             boxSize="22px"
             src="/arrow-link.svg"
-            alt={`link to {title}`}
+            alt={`↗`}
           />
         )}
       </Box>

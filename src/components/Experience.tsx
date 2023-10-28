@@ -11,14 +11,9 @@ export const Experience: React.FC<any> = ({
   href,
   ...props
 }) => {
-  const descParagraphs =
-    desc && typeof desc === "string"
-      ? desc.split("<br />").map((paragraph, index) => (
-          <Text key={index} mb={3}>
-            {paragraph}
-          </Text>
-        ))
-      : null;
+  function formatStack(stack: string[]): string {
+    return stack.join(" • ");
+  }
 
   return (
     <>
@@ -31,8 +26,8 @@ export const Experience: React.FC<any> = ({
         <GridItem colSpan={{ base: 5, md: 4 }} mt={1}>
           {image && <Image width="36px" mb={4} src={image} alt={title} />}
           <ExperienceLink title={title} href={href} />
-          {descParagraphs}
-          {stack && <Text opacity={0.5}>{stack}</Text>}
+          <Text mb={[3, 5]}>{desc}</Text>
+          {stack && <Text color="gray">{formatStack(stack)}</Text>}
         </GridItem>
       </Grid>
     </>
