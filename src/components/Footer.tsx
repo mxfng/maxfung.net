@@ -6,8 +6,8 @@ export const Footer = ({ ...props }) => {
       <Box px={3} {...props}>
         <Box>
           <Image
-            width={["100px", "180px"]}
-            height={["100px", "180px"]}
+            width={["90px", "120px"]}
+            height={["90px", "120px"]}
             objectFit="cover"
             mb={4}
             src="/footer.jpg"
