@@ -33,7 +33,7 @@ export default function Home() {
             intuitive technology products from start to finish.
           </Text>
           <Text mb={3}>
-            As a self-taught software engineer, I&apos;ve never shied away from
+            As a self-taught computer scientist, I&apos;ve never shied away from
             tackling tough problems and gaining experience from my own
             curiosity. I&apos;m proud of my ability to learn new concepts and
             frameworks really quickly and also apply my creativity, attention to
