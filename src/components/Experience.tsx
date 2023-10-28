@@ -24,7 +24,15 @@ export const Experience: React.FC<any> = ({
           </Text>
         </GridItem>
         <GridItem colSpan={{ base: 5, md: 4 }} mt={1}>
-          {image && <Image width="36px" mb={4} src={image} alt={title} />}
+          {image && (
+            <Image
+              width="48px"
+              mb={4}
+              src={image}
+              alt={title}
+              borderRadius="full"
+            />
+          )}
           <ExperienceLink title={title} href={href} />
           <Text mb={[3, 5]}>{desc}</Text>
           {stack && <Text variant="darker">{formatStack(stack)}</Text>}

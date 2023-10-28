@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Providers } from "./providers";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { Box } from "@chakra-ui/react";
 
 export const metadata: Metadata = {
   title: "Max Fung",
@@ -21,7 +23,10 @@ export default function RootLayout({
       <body>
         <Providers>
           <Navbar />
-          {children}
+          <Box pt={100} overflow="hidden" maxWidth={900} mx="auto">
+            {children}
+          </Box>
+          <Footer pb={[50, 100]} maxWidth={900} mx="auto" />
         </Providers>
       </body>
     </html>

@@ -1,6 +1,6 @@
 import { extendTheme } from "@chakra-ui/react";
 import "@fontsource-variable/inter";
-import "@fontsource-variable/victor-mono"
+import "@fontsource-variable/victor-mono";
 
 const fonts = {
   heading: `'Inter Variable', sans-serif`,

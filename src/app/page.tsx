@@ -1,17 +1,20 @@
-import { Box, Text, Heading } from "@chakra-ui/react";
+import { Box, Text, Heading, Grid, GridItem, Image } from "@chakra-ui/react";
 import { Experience } from "@/components/Experience";
 import { ArrowLink } from "@/components/ArrowLink";
 import { ProfileBanner } from "@/components/ProfileBanner";
+import { Section } from "@/components/Section";
+import { Line } from "@/components/Line";
 
 export default function Home() {
+  const pageW = 900;
+
   return (
     <>
-      <Box py={100} px={4} maxWidth={900} mx="auto">
+      <Box maxWidth={pageW} mx="auto" px="3">
         <ProfileBanner />
-        <Box mb={[10, 20]}>
-          <Heading variant="section" mb={3}>
-            About
-          </Heading>
+      </Box>
+      <Box mb={[10, 20]}>
+        <Section title="About" width={pageW}>
           <Text mb={3}>
             I&apos;m a full stack software engineer who loves designing,
             building, and shipping intuitive products from start to finish.
@@ -22,17 +25,20 @@ export default function Home() {
             and contributed to a variety of exciting work since starting my
             journey back in 2018.
           </Text>
-          <Text mb={3}>
+          <Text mb={[6, 10]}>
             I&apos;m passionate about both product and engineering, and love
             putting my creativity to the test. When I&apos;m not coding,
             I&apos;m producing my own music, surfing, snowboarding, taking
             photos with my film cameras, and out exploring the world.
           </Text>
-        </Box>
-        <Box mb={[10, 40]}>
-        <Heading variant="section" mb={[3, 10]}>
-            Experience
-          </Heading>
+          <ArrowLink
+            title="Say Hello"
+            href="mailto:maxhfung@gmail.com?subject=Hello Max"
+          />
+        </Section>
+      </Box>
+      <Box mb={[10, 20]}>
+        <Section title="Experience" width={pageW}>
           <Experience
             href="https://www.flexe.com/"
             side="2022 - present"
@@ -72,11 +78,10 @@ export default function Home() {
             stack={["Python", "PyQt", "NI-VISA"]}
           />
           <ArrowLink title="View Full Résumé" href="/resume.pdf" />
-        </Box>
-        <Box mb={[10, 40]}>
-        <Heading variant="section" mb={[3, 10]}>
-            Featured Projects
-          </Heading>
+        </Section>
+      </Box>
+      <Box mb={[10, 20]}>
+        <Section title="Featured Projects" width={pageW}>
           <Experience
             side="2023 - present"
             title="Software Engineer · Streets For All"
@@ -88,11 +93,16 @@ export default function Home() {
             stack={["JavaScript", "React", "Python"]}
             image="/sfa-logo-square.png"
           />
-        </Box>
-        <Box mb={[10, 40]}>
-        <Heading variant="section" mb={[3, 10]}>
-            Links
-          </Heading>
+        </Section>
+      </Box>
+      <Box mb={[10, 20]}>
+        <Section width={pageW} title="Links" mt={10}>
+          <Experience
+            side="Email"
+            title="maxhfung@gmail.com"
+            href="mailto:maxhfung@gmail.com?subject=Hello Max"
+            mb={0}
+          />
           <Experience
             side="Github"
             title="@mxfng"
@@ -106,12 +116,12 @@ export default function Home() {
             mb={0}
           />
           <Experience
-            side="Email"
-            title="maxhfung@gmail.com"
-            href="mailto:maxhfung@gmail.com?subject=Developer Inquiry"
+            side="Instagram"
+            title="@fungkadelic"
+            href="https://www.instagram.com/fungkadelic/"
             mb={0}
           />
-        </Box>
+        </Section>
       </Box>
     </>
   );
