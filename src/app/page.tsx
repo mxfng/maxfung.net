@@ -1,6 +1,7 @@
 import { Box, Text, Heading, Grid, GridItem } from "@chakra-ui/react";
 import { Avatar } from "@/components/Avatar";
 import { Experience } from "@/components/Experience";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -41,44 +42,48 @@ export default function Home() {
             Work Experience
           </Heading>
           <Experience
-            side="2023 - present"
-            title="Web Designer & Developer — Freelance"
-            desc="I collaborate with a diverse clientele, including small agencies, start-ups, and individual clients, to develop immersive and results-driven web solutions. My expertise lies in crafting web products that are strategically aligned with business goals, delivering outstanding user experiences, and driving tangible results."
-            stack="React • Next.js • Redux • Styled Components • Framer Motion"
-          />
-          <Experience
             href="https://www.flexe.com/"
             side="2022 - present"
-            title="Software Development Engineer — Flexe"
-            desc="I worked with a team of 8 to help build the warehouse management system for Flexe’s on-demand warehousing platform.
-            <br />I led development of our Android mobile app, expanding its features, including more robust lookup and picking platforms, adding in crucial business functionalities in support of product launches, overhauling its data architecture for increased scalability, and designing a library of beautiful, reusable UI components.
-            <br />I also designed and built back end services and RESTful APIs in Ruby and Kotlin, helping to migrate code from our original monolithic server architecture to new Ktor microservices."
+            title="Software Development Engineer · Flexe"
+            desc="Deliver high-quality, robust production code for Flexe’s proprietary warehouse management
+            system for a diverse array of large enterprise clients including Target, Walmart, Lowe’s, Home
+            Depot, Daiso, and more. Led the design and deployment of reusable mobile front end components,
+            architected and deployed a refactored Android application, contributed to the decomposition of
+            a monolithic Ruby on Rails application to a modern Kotlin microservices architecture, and built
+            other solutions that provided numerous improvements to freight and parcel fulfillment."
             stack="Ruby on Rails • Kotlin • Android • Ktor • Docker • Google Cloud"
           />
           <Experience
             side="2021 - 2022"
-            title="Project Manager — Boeing"
-            desc="As a project manager, I collaborated with engineers on tight deadlines and oversaw a diverse portfolio of space electronics projects worth over $100 million in value.
-            <br />Additionally, I revitalized my coding skills by creating an automated production status report for our in-house factory. This internal tool quickly gained popularity within the project management team, saving approximately $10,000 per week by streamlining part tracking in manufacturing. This success inspired my transition to a career in software engineering."
+            title="Project Manager · Boeing"
+            desc="Independently developed, maintained, and shipped internal production tracking software using
+            Python and Excel, providing project managers with comprehensive data for materials, orders, and
+            production activities, increasing the department’s visibility to track materials and products through
+            the entire supply chain, creating meaningful efficiency statistics to improve processes, and
+            reducing overhead costs by around $5,000, per project, per week"
             stack="Python • Pandas • Shell Scripting • SQL • AWS"
           />
           <Experience
             side="2018, 2019"
-            title="Software Engineer — Aeroject Rocketdyne"
-            desc="I received a unique opportunity to independently develop a desktop application for pressure transducer calibration tests.
-            <br />I was tasked with migrating legacy code written in BASIC on a dying HP-86 computer to a modern language of my choice. I chose Python, and delivered an efficient test suite for the laboratory to use.
-            <br />I got to learn measurement theory from metrology engineers, work with lab technicians on UX and test accuracy, procure my own hardware, and above all else, discover my passion for programming."
+            title="Software Engineer · Aeroject Rocketdyne"
+            desc="Independently architected an internal desktop application for pressure transducer and load cell
+            calibration tests using Python and PyQt5"
             stack="Anaconda • Python • PyQt • NI-VISA"
           />
-          <Heading as="h2" size="md" mb={10}>
+          <Heading as="a" href="/resume.pdf" target="_blank" size="md">
+            View Full Résumé
+          </Heading>
+          <Heading as="h2" size="md" mt={10} mb={10}>
             Side Projects
           </Heading>
           <Experience
             side="2023 - present"
-            title="Software Engineer — Streets For All"
+            title="Software Engineer · Streets For All"
             href="https://www.streetsforall.org/"
-            desc="Working with a small volunteer developer team to provide support in web development, API building and integration, and other public facing projects to promote and advocate for a safer and more equitable Los Angeles.
-            <br />Some projects include a website in support of LA Metro's Hill to Sea corridor as well as a legislator report card website."
+            desc="Collaborate with other volunteer web
+            developers to support React front end
+            and Python API design for numerous
+            transportation advocacy websites"
             stack="JavaScript • React • Python"
             image="/sfa-logo-square.png"
           />

@@ -60,12 +60,13 @@ const styles = {
 const components = {
   Heading: {
     baseStyle: {
-      fontSize: ["2xl", "sm"],
-      fontWeight: "400",
+      fontWeight: 500,
     },
     sizes: {
       lg: {
-        fontSize: ["xl", "2xl"],
+        fontSize: ["2xl", "3xl"],
+        fontFamily: `'Inter Tight', sans-serif`,
+        fontWeight: 500,
       },
       md: {
         fontSize: ["md", "lg"],
