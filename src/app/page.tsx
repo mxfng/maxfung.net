@@ -38,7 +38,7 @@ export default function Home() {
         </Section>
       </Box>
       <Box mb={[10, 20]}>
-        <Section title="Experience" width={pageW}>
+        <Section title="Experience" width={pageW} mt={[0, 10]}>
           <Experience
             href="https://www.flexe.com/"
             side="2022 - present"
@@ -81,7 +81,7 @@ export default function Home() {
         </Section>
       </Box>
       <Box mb={[10, 20]}>
-        <Section title="Featured Projects" width={pageW}>
+        <Section title="Featured Projects" width={pageW} mt={[0, 10]}>
           <Experience
             side="2023 - present"
             title="Software Engineer · Streets For All"
@@ -96,7 +96,7 @@ export default function Home() {
         </Section>
       </Box>
       <Box mb={[10, 20]}>
-        <Section width={pageW} title="Links" mt={10}>
+        <Section width={pageW} title="Links" mt={[0, 10]}>
           <Experience
             side="Email"
             title="maxhfung@gmail.com"

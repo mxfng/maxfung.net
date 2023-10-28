@@ -54,7 +54,7 @@ const components = {
         letterSpacing: "-1px",
       },
       section: {
-        fontSize: ["0.6rem", "1.2rem", "1.5rem"],
+        fontSize: ["1.2rem", "1.2rem", "1.5rem"],
         fontWeight: 800,
         letterSpacing: "-1px",
       },
