@@ -20,18 +20,19 @@ export const ArrowLink: React.FC<any> = ({ title, href }) => {
             transform: "translateX(8px)",
           },
         }}
-        mb={[10,20]}
+        mb={[10, 20]}
         w="fit-content"
       >
-        <Heading as="a" href={href} target="_blank" size="md">
+        <Heading
+          as="a"
+          href={href}
+          target="_blank"
+          size="md"
+          style={{ fontWeight: 800 }}
+        >
           {title}
         </Heading>
-        <Image
-          ml={2}
-          boxSize="20px"
-          src="/arrow-forward.svg"
-          alt={`→`}
-        />
+        <Image ml={2} boxSize="20px" src="/arrow-forward.svg" alt={`→`} />
       </Box>
     </>
   );

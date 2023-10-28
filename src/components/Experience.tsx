@@ -19,7 +19,7 @@ export const Experience: React.FC<any> = ({
     <>
       <Grid templateColumns="repeat(5, 1fr)" mb={[10, 20]} {...props}>
         <GridItem colSpan={{ base: 5, md: 1 }}>
-          <Text opacity={0.5} mb={1} mr={1}>
+          <Text variant="darker" mb={1} mr={1}>
             {side}
           </Text>
         </GridItem>
@@ -27,7 +27,7 @@ export const Experience: React.FC<any> = ({
           {image && <Image width="36px" mb={4} src={image} alt={title} />}
           <ExperienceLink title={title} href={href} />
           <Text mb={[3, 5]}>{desc}</Text>
-          {stack && <Text color="gray">{formatStack(stack)}</Text>}
+          {stack && <Text variant="darker">{formatStack(stack)}</Text>}
         </GridItem>
       </Grid>
     </>

@@ -14,23 +14,22 @@ export default function Home() {
           </Heading>
           <Text mb={3}>
             I&apos;m a full stack software engineer who loves designing,
-            building, and shipping creative products from start to finish.
+            building, and shipping intuitive products from start to finish.
           </Text>
           <Text mb={3}>
             As a self-taught developer, I learned how to build code first,
-            breaking down tough problems into manageable bits and sharpening my
-            craft through curiosity and grit. I&apos;ve developed and
-            contributed to a variety of exciting projects, startups, and
-            applications since starting my journey back in 2018.
+            sharpening my craft through curiosity and grit. I&apos;ve developed
+            and contributed to a variety of exciting work since starting my
+            journey back in 2018.
           </Text>
           <Text mb={3}>
             I&apos;m passionate about both product and engineering, and love
-            building cool stuff. When I&apos;m not coding, I&apos;m producing
-            my own music, surfing, snowboarding, taking photos with my film
-            cameras, and out exploring the world.
+            putting my creativity to the test. When I&apos;m not coding,
+            I&apos;m producing my own music, surfing, snowboarding, taking
+            photos with my film cameras, and out exploring the world.
           </Text>
         </Box>
-        <Box mb={[10, 20]}>
+        <Box mb={[10, 40]}>
           <Heading as="h2" size="md" mb={[3, 10]}>
             Experience
           </Heading>
@@ -44,7 +43,16 @@ export default function Home() {
             architected and deployed a refactored Android application, contributed to the decomposition of
             a monolithic Ruby on Rails application to a modern Kotlin microservices architecture, and built
             other solutions that provided numerous improvements to freight and parcel fulfillment."
-            stack={["Kotlin", "Ruby on Rails", "Android", "Ktor", "React", "TypeScript", "Docker", "Google Cloud Platform"]}
+            stack={[
+              "Kotlin",
+              "Ruby on Rails",
+              "Android",
+              "Ktor",
+              "React",
+              "TypeScript",
+              "Docker",
+              "Google Cloud Platform",
+            ]}
           />
           <Experience
             side="2021 - 2022"
@@ -65,7 +73,7 @@ export default function Home() {
           />
           <ArrowLink title="View Full Résumé" href="/resume.pdf" />
         </Box>
-        <Box mb={[10, 20]}>
+        <Box mb={[10, 40]}>
           <Heading as="h2" size="md" mb={[3, 10]}>
             Projects
           </Heading>
@@ -81,7 +89,7 @@ export default function Home() {
             image="/sfa-logo-square.png"
           />
         </Box>
-        <Box mb={[10, 20]}>
+        <Box mb={[10, 40]}>
           <Heading as="h2" size="md" mb={[3, 10]}>
             Links
           </Heading>

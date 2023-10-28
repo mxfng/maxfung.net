@@ -10,12 +10,14 @@ const styles = {
   global: {
     body: {
       bg: "#000000",
-      color: "#ffffff",
+      color: "#f2f2f2",
     },
 
     a: {
+      textDecoration: "underline transparent",
+      transition: "text-decoration 500ms ease",
       _hover: {
-        textDecoration: "underline",
+        textDecorationColor: "white",
       },
     },
 
@@ -95,7 +97,7 @@ const components = {
       lg: {
         fontSize: ["2xl", "3xl"],
         fontFamily: `'Inter Tight', sans-serif`,
-        fontWeight: 600,
+        fontWeight: 100,
         animation: "colorChange 10s linear infinite",
       },
       md: {
@@ -109,7 +111,12 @@ const components = {
   Text: {
     baseStyle: {
       fontSize: ["sm", "lg"],
-      color: "gray",
+      color: "#a5a5a5",
+    },
+    variants: {
+      darker: {
+        color: "#595959",
+      },
     },
   },
 };
