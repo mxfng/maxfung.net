@@ -1,4 +1,4 @@
-import { Box, Text, Heading, Grid, GridItem, Image } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import { Experience } from "@/components/Experience";
 import { ArrowLink } from "@/components/ArrowLink";
 import { Banner } from "@/components/Banner";
@@ -16,12 +16,13 @@ export default function Home() {
         <Section title="About" width={pageW}>
           <Text mb={3}>
             I&apos;m a full stack software engineer who loves designing,
-            building, and shipping intuitive products from start to finish.
+            building, and shipping creative products with intuitive experiences
+            from start to finish.
           </Text>
           <Text mb={3}>
             As a self-taught developer, I learned how to build code first,
             sharpening my craft through curiosity and grit. I&apos;ve developed
-            and contributed to a variety of exciting work since starting my
+            and contributed to a variety of exciting projects since starting my
             journey back in 2018.
           </Text>
           <Text mb={[6, 10]}>
