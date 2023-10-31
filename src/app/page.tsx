@@ -7,13 +7,14 @@ import { SocialLink } from "@/components/link/SocialLink";
 
 export default function Home() {
   const pageW = 900;
+  const sectionSpacing = [20, "8rem"];
 
   return (
     <>
       <Box maxWidth={pageW} mx="auto" px="3">
         <Banner />
       </Box>
-      <Box mb={[10, 20]}>
+      <Box mb={sectionSpacing}>
         <Section title="About" width={pageW}>
           <Text mb={3}>
             I&apos;m a full stack software engineer who loves designing,
@@ -38,7 +39,7 @@ export default function Home() {
           />
         </Section>
       </Box>
-      <Box mb={[10, 20]}>
+      <Box mb={sectionSpacing}>
         <Section title="Experience" width={pageW} mt={[0, 10]}>
           <Experience
             href="https://www.flexe.com/"
@@ -81,7 +82,7 @@ export default function Home() {
           <ArrowLink title="View Full Résumé" href="/resume.pdf" />
         </Section>
       </Box>
-      <Box mb={[10, 20]}>
+      <Box mb={sectionSpacing}>
         <Section title="Featured Projects" width={pageW} mt={[0, 10]}>
           <Experience
             side="2023 - present"
@@ -93,7 +94,7 @@ export default function Home() {
           />
         </Section>
       </Box>
-      <Box mb={[10, 20]}>
+      <Box mb={sectionSpacing}>
         <Section width={pageW} title="Links" mt={[0, 10]}>
           <SocialLink
             side="Email"
