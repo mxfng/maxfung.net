@@ -1,9 +1,9 @@
 import { Box, Text } from "@chakra-ui/react";
 import { Experience } from "@/components/Experience";
-import { ArrowLink } from "@/components/ArrowLink";
+import { ArrowLink } from "@/components/link/ArrowLink";
 import { Banner } from "@/components/Banner";
 import { Section } from "@/components/Section";
-import { SocialLink } from "@/components/SocialLink";
+import { SocialLink } from "@/components/link/SocialLink";
 
 export default function Home() {
   const pageW = 900;

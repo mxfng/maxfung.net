@@ -3,10 +3,6 @@ import { Text, Grid, GridItem } from "@chakra-ui/react";
 import { ExperienceLink } from "./ExperienceLink";
 
 export const SocialLink: React.FC<any> = ({ side, title, href, ...props }) => {
-  function formatStack(stack: string[]): string {
-    return stack.join(" • ");
-  }
-
   return (
     <>
       <Grid templateColumns="repeat(5, 1fr)" {...props}>
