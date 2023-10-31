@@ -3,7 +3,7 @@ import { Box, Image, Text } from "@chakra-ui/react";
 export const Footer = ({ ...props }) => {
   return (
     <>
-      <Box px={3} {...props}>
+      <Box px={3} pb={30} {...props}>
         <Box>
           <Image
             width={["90px", "120px"]}
@@ -24,7 +24,7 @@ export const Footer = ({ ...props }) => {
         </Box>
         <Image
           src="/max-signature.svg"
-          width={"64px"}
+          width={["48px", "64px"]}
           float="right"
           pt={3}
           mr={10}
