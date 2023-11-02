@@ -20,7 +20,7 @@ export const Spotify: React.FC<any> = ({
               songUrl={nowPlaying.songUrl}
               albumImageUrl={nowPlaying.albumImageUrl}
             />
-          ) : (
+          ) : recentlyPlayed ? (
             <SpotifyTrack
               artist={recentlyPlayed.artist}
               title={recentlyPlayed.title}
@@ -28,18 +28,24 @@ export const Spotify: React.FC<any> = ({
               albumImageUrl={recentlyPlayed.albumImageUrl}
               metadata={recentlyPlayed.metadata}
             />
+          ) : (
+            <SpotifyTrack />
           )}
         </GridItem>
         <GridItem colSpan={{ base: 2, md: 1 }}>
           <Heading variant="section" mb={[3, 8]}>
             Song of the Month
           </Heading>
-          <SpotifyTrack
-            artist={songOfTheMonth.artist}
-            title={songOfTheMonth.title}
-            songUrl={songOfTheMonth.songUrl}
-            albumImageUrl={songOfTheMonth.albumImageUrl}
-          />
+          {songOfTheMonth ? (
+            <SpotifyTrack
+              artist={songOfTheMonth.artist}
+              title={songOfTheMonth.title}
+              songUrl={songOfTheMonth.songUrl}
+              albumImageUrl={songOfTheMonth.albumImageUrl}
+            />
+          ) : (
+            <SpotifyTrack />
+          )}
         </GridItem>
       </Grid>
     </>
