@@ -102,6 +102,7 @@ export default async function Home() {
           ]}
         />
         <Experience
+          href="https://www.boeing.com/"
           side="2021 - 2022"
           title="Project Manager · Boeing"
           desc="Independently developed, maintained, and shipped internal production tracking software using
@@ -112,6 +113,7 @@ export default async function Home() {
           stack={["Python", "Pandas", "Shell Scripting", "SQL"]}
         />
         <Experience
+          href="https://www.l3harris.com/company/aerojet-rocketdyne"
           side="2018, 2019"
           title="Software Engineer · Aeroject Rocketdyne"
           desc="Independently architected an internal desktop application for pressure transducer and load cell
