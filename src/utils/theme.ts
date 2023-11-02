@@ -83,6 +83,17 @@ const components = {
       },
     },
   },
+  Link: {
+    baseStyle: {
+      fontWeight: 500,
+      color: "white",
+      textDecoration: "underline transparent",
+      transition: "text-decoration 500ms ease",
+      _hover: {
+        textDecorationColor: "white",
+      },
+    },
+  },
   Text: {
     baseStyle: {
       fontSize: ["0.9rem", "1.1rem"],

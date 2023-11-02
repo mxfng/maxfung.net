@@ -1,4 +1,12 @@
-import { Box, Grid, GridItem, Heading, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Grid,
+  GridItem,
+  Heading,
+  Image,
+  Link,
+  Text,
+} from "@chakra-ui/react";
 import { ExperienceLink } from "../link/ExperienceLink";
 
 export const SpotifyTrack: React.FC<any> = ({
@@ -19,6 +27,10 @@ export const SpotifyTrack: React.FC<any> = ({
           transform: "translateX(0) translateY(3px)",
           transition: "all 0.2s ease",
         },
+        "& .underline-link": {
+          textDecoration: "underline transparent",
+          transition: "text-decoration 500ms ease",
+        },
       }}
       _hover={{
         cursor: "pointer",
@@ -33,6 +45,7 @@ export const SpotifyTrack: React.FC<any> = ({
         },
       }}
       href={songUrl}
+      target="_blank"
     >
       <Grid templateColumns="repeat(4, 1fr)">
         <GridItem colSpan={{ base: 1 }} my="auto">
@@ -47,7 +60,15 @@ export const SpotifyTrack: React.FC<any> = ({
         <GridItem colSpan={{ base: 3 }} my="auto" px={[0, 3]}>
           {artist && title ? (
             <>
-              <ExperienceLink title={title} href={songUrl} mb={0} />
+              <Link
+                fontSize={["1rem", "1.2rem"]}
+                fontWeight="500"
+                href={songUrl}
+                mb={0}
+                className="underline-link"
+              >
+                {title}
+              </Link>
               <Text variant="darker" style={{ textDecoration: "none" }}>
                 {artist}
               </Text>

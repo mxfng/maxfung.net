@@ -19,7 +19,7 @@ export const Spotify: React.FC<any> = ({
 
   return (
     <>
-      <Grid templateColumns="repeat(2, 1fr)" px={3} gap={8}>
+      <Grid templateColumns="repeat(2, 1fr)" gap={8}>
         <GridItem colSpan={{ base: 2, md: 1 }}>
           <HStack alignItems="start" mb={[3, 8]}>
             <Heading variant="section" my="auto">

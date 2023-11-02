@@ -1,4 +1,4 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Link, Text } from "@chakra-ui/react";
 import { Experience } from "@/components/Experience";
 import { ArrowLink } from "@/components/link/ArrowLink";
 import { Banner } from "@/components/Banner";
@@ -40,11 +40,27 @@ export default async function Home() {
         </Section>
       </Box>
       <Box mb={sectionSpacing}>
-        <Spotify
-          nowPlaying={_nowPlaying}
-          recentlyPlayed={_recentlyPlayed}
-          songOfTheMonth={_songOfTheMonth}
-        />
+        <Section width={pageW} title="Records" mt={[0, 10]}>
+          <Text mb={[8, 12]}>
+            Music is an essential aspect of my life. When I'm not working on my
+            own music, I'm listening to songs that put me in the zone to do my
+            best work. Here are my favorite records, updated live using the{" "}
+            <Link
+              href="https://developer.spotify.com/documentation/web-api"
+              target="_blank"
+              color="white"
+              fontWeight={500}
+              className="underline-link"
+            >
+              Spotify Web API.
+            </Link>
+          </Text>
+          <Spotify
+            nowPlaying={_nowPlaying}
+            recentlyPlayed={_recentlyPlayed}
+            songOfTheMonth={_songOfTheMonth}
+          />
+        </Section>
       </Box>
     </>
   );
@@ -65,9 +81,11 @@ export default async function Home() {
         </Text>
         <Text mb={[6, 10]}>
           I&apos;m passionate about both product and engineering, and love
-          putting my creativity to the test. When I&apos;m not coding, I&apos;m
-          producing my own music, surfing, snowboarding, taking photos with my
-          film cameras, and out exploring the world.
+          putting my creativity to the test. I love the art of a great user
+          experience, where a robust front end and back end are crucial. When
+          I&apos;m not coding, I&apos;m producing my own music, surfing,
+          snowboarding, taking photos with my film cameras, and out exploring
+          the world.
         </Text>
         <ArrowLink
           title="Say Hello"
