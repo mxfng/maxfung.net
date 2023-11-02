@@ -4,53 +4,14 @@ import { ArrowLink } from "@/components/link/ArrowLink";
 import { Banner } from "@/components/Banner";
 import { Section } from "@/components/Section";
 import { SocialLink } from "@/components/link/SocialLink";
-import { getNowPlaying, getTopTracks } from "@/utils/spotify";
+import { nowPlaying, songOfTheMonth } from "@/utils/spotify";
 import { Spotify } from "@/components/spotify/Spotify";
-
-const topTrack = async () => {
-  const res = await getTopTracks();
-  const { items } = await res.json();
-
-  return items.slice(0, 1).map((track: any) => ({
-    artist: track.artists.map((_artist: any) => _artist.name).join(", "),
-    songUrl: track.external_urls.spotify,
-    title: track.name,
-    albumImageUrl: track.album.images[1].url,
-  }))[0];
-};
-
-const nowPlaying = async () => {
-  const res = await getNowPlaying();
-
-  if (res.status === 204 || res.status > 400) {
-    return { isPlaying: false };
-  }
-
-  const song = await res.json();
-  const isPlaying = song.is_playing;
-  const title = song.item.name;
-  const artist = song.item.artists
-    .map((_artist: any) => _artist.name)
-    .join(", ");
-  const album = song.item.album.name;
-  const albumImageUrl = song.item.album.images[0].url;
-  const songUrl = song.item.external_urls.spotify;
-
-  return {
-    album,
-    albumImageUrl,
-    artist,
-    isPlaying,
-    songUrl,
-    title,
-  };
-};
 
 export default async function Home() {
   const pageW = 900;
   const sectionSpacing = [20, "8rem"];
-  const spotifyTopTrack = await topTrack();
-  const spotifyNowPlaying = await nowPlaying();
+  const _songOfTheMonth = await songOfTheMonth();
+  const _nowPlaying = await nowPlaying();
 
   return (
     <>
@@ -162,7 +123,7 @@ export default async function Home() {
         </Section>
       </Box>
       <Box mb={sectionSpacing}>
-        <Spotify topTrack={spotifyTopTrack} nowPlaying={spotifyNowPlaying} />
+        <Spotify songOfTheMonth={_songOfTheMonth} nowPlaying={_nowPlaying} />
       </Box>
     </>
   );

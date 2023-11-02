@@ -58,8 +58,7 @@ export const Avatar = () => {
             borderRadius="full"
             width={{ base: "100%" }}
             src="/avatar.png"
-            alt="avatar"
-            textIndent="-9999px"
+            alt=""
             position="absolute"
             top="0px"
             left="0px"
@@ -68,8 +67,7 @@ export const Avatar = () => {
           {showBg ? (
             <Image
               src={bgSrc}
-              alt="hot-bg"
-              textIndent="-9999px"
+              alt=""
               borderRadius="full"
               width={{ base: "100%" }}
               objectFit="cover"
@@ -84,8 +82,7 @@ export const Avatar = () => {
           <Image
             borderRadius="full"
             src={bgSrcCache}
-            alt="cached-bg"
-            textIndent="-9999px"
+            alt=""
             width={{ base: "100%" }}
             objectFit="cover"
             position="absolute"

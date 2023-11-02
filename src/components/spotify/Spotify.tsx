@@ -1,16 +1,7 @@
-import {
-  Box,
-  Grid,
-  GridItem,
-  HStack,
-  Heading,
-  Link,
-  Text,
-} from "@chakra-ui/react";
+import { Grid, GridItem, Heading } from "@chakra-ui/react";
 import { SpotifyTrack } from "./SpotifyTrack";
-import { ExperienceLink } from "../link/ExperienceLink";
 
-export const Spotify: React.FC<any> = ({ topTrack, nowPlaying }) => {
+export const Spotify: React.FC<any> = ({ songOfTheMonth, nowPlaying }) => {
   return (
     <>
       <Grid templateColumns="repeat(2, 1fr)" px={3} gap={8}>
@@ -34,10 +25,10 @@ export const Spotify: React.FC<any> = ({ topTrack, nowPlaying }) => {
             Song of the Month
           </Heading>
           <SpotifyTrack
-            artist={topTrack.artist}
-            title={topTrack.title}
-            songUrl={topTrack.songUrl}
-            albumImageUrl={topTrack.albumImageUrl}
+            artist={songOfTheMonth.artist}
+            title={songOfTheMonth.title}
+            songUrl={songOfTheMonth.songUrl}
+            albumImageUrl={songOfTheMonth.albumImageUrl}
           />
         </GridItem>
       </Grid>

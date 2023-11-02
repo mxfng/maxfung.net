@@ -25,7 +25,7 @@ const getAccessToken = async () => {
   return response.json();
 };
 
-export const getNowPlaying = async () => {
+const getNowPlaying = async () => {
   const { access_token } = await getAccessToken();
 
   return fetch(NOW_PLAYING_ENDPOINT, {
@@ -38,7 +38,7 @@ export const getNowPlaying = async () => {
   });
 };
 
-export const getTopTracks = async () => {
+const getSongOfTheMonth = async () => {
   const { access_token } = await getAccessToken();
 
   return fetch(TOP_TRACKS_ENDPOINT, {
@@ -49,4 +49,43 @@ export const getTopTracks = async () => {
       Authorization: `Bearer ${access_token}`,
     },
   });
+};
+
+export const songOfTheMonth = async () => {
+  const res = await getSongOfTheMonth();
+  const { items } = await res.json();
+
+  return items.slice(0, 1).map((track: any) => ({
+    artist: track.artists.map((_artist: any) => _artist.name).join(", "),
+    songUrl: track.external_urls.spotify,
+    title: track.name,
+    albumImageUrl: track.album.images[1].url,
+  }))[0];
+};
+
+export const nowPlaying = async () => {
+  const res = await getNowPlaying();
+
+  if (res.status === 204 || res.status > 400) {
+    return { isPlaying: false };
+  }
+
+  const song = await res.json();
+  const isPlaying = song.is_playing;
+  const title = song.item.name;
+  const artist = song.item.artists
+    .map((_artist: any) => _artist.name)
+    .join(", ");
+  const album = song.item.album.name;
+  const albumImageUrl = song.item.album.images[0].url;
+  const songUrl = song.item.external_urls.spotify;
+
+  return {
+    album,
+    albumImageUrl,
+    artist,
+    isPlaying,
+    songUrl,
+    title,
+  };
 };
