@@ -26,7 +26,7 @@ export const Waveform = ({ isPlaying }: { isPlaying: boolean }) => {
         alignItems="center"
         position="relative"
         ml={1}
-        top={["0.4em", "0.4em", "0.6em"]}
+        top={["0.35em", "0.4em", "0.45em"]}
       >
         {delays.map((delay, index) => waveBox(delay, index))}
       </Box>
