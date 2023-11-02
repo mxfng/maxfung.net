@@ -24,6 +24,7 @@ export const Footer = ({ ...props }) => {
         </Box>
         <Image
           src="/max-signature.svg"
+          alt=""
           width={["48px", "64px"]}
           float="right"
           pt={3}
