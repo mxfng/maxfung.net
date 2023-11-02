@@ -28,11 +28,19 @@ export const ExperienceLink: React.FC<any> = ({ title, href, ...props }) => {
           as="a"
           href={href}
           target="_blank"
+          className="underline-link"
           style={href ? { cursor: "pointer" } : { textDecoration: "none" }}
         >
           {title}
         </Heading>
-        {href && <Image boxSize={4} src="/arrow-link.svg" alt={`↗`} />}
+        {href && (
+          <Image
+            boxSize={4}
+            src="/arrow-link.svg"
+            alt={`↗`}
+            className="experience-link-arrow"
+          />
+        )}
       </HStack>
     </>
   );

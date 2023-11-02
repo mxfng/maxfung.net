@@ -18,7 +18,7 @@ const styles = {
       fontSize: "16px",
     },
 
-    a: {
+    "& .underline-link": {
       textDecoration: "underline transparent",
       transition: "text-decoration 500ms ease",
       _hover: {
