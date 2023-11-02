@@ -1,34 +1,33 @@
-import { Grid, GridItem, Heading } from "@chakra-ui/react";
+import { Box, Grid, GridItem, HStack, Heading } from "@chakra-ui/react";
 import { SpotifyTrack } from "./SpotifyTrack";
+import { Waveform } from "./Waveform";
 
 export const Spotify: React.FC<any> = ({
   nowPlaying,
   recentlyPlayed,
   songOfTheMonth,
 }) => {
+  const renderTrack = (track: any) => (
+    <SpotifyTrack
+      artist={track.artist}
+      title={track.title}
+      songUrl={track.songUrl}
+      albumImageUrl={track.albumImageUrl}
+      metadata={track.metadata}
+    />
+  );
+
   return (
     <>
       <Grid templateColumns="repeat(2, 1fr)" px={3} gap={8}>
         <GridItem colSpan={{ base: 2, md: 1 }}>
-          <Heading variant="section" mb={[3, 8]}>
-            {nowPlaying.isPlaying ? "Now Playing" : "Recently Played"}
-          </Heading>
-          {nowPlaying.isPlaying ? (
-            <SpotifyTrack
-              artist={nowPlaying.artist}
-              title={nowPlaying.title}
-              songUrl={nowPlaying.songUrl}
-              albumImageUrl={nowPlaying.albumImageUrl}
-            />
-          ) : recentlyPlayed ? (
-            <SpotifyTrack
-              artist={recentlyPlayed.artist}
-              title={recentlyPlayed.title}
-              songUrl={recentlyPlayed.songUrl}
-              albumImageUrl={recentlyPlayed.albumImageUrl}
-              metadata={recentlyPlayed.metadata}
-            />
-          ) : (
+          <HStack alignItems="start" mb={[3, 8]}>
+            <Heading variant="section" my="auto">
+              {nowPlaying.isPlaying ? "Now Playing" : "Recently Played"}
+            </Heading>
+            <Waveform isPlaying={nowPlaying.isPlaying} />
+          </HStack>
+          {renderTrack(nowPlaying.isPlaying ? nowPlaying : recentlyPlayed) || (
             <SpotifyTrack />
           )}
         </GridItem>
@@ -36,16 +35,7 @@ export const Spotify: React.FC<any> = ({
           <Heading variant="section" mb={[3, 8]}>
             Song of the Month
           </Heading>
-          {songOfTheMonth ? (
-            <SpotifyTrack
-              artist={songOfTheMonth.artist}
-              title={songOfTheMonth.title}
-              songUrl={songOfTheMonth.songUrl}
-              albumImageUrl={songOfTheMonth.albumImageUrl}
-            />
-          ) : (
-            <SpotifyTrack />
-          )}
+          {renderTrack(songOfTheMonth) || <SpotifyTrack />}
         </GridItem>
       </Grid>
     </>

@@ -39,6 +39,15 @@ const styles = {
         strokeDashoffset: 0,
       },
     },
+
+    "@keyframes wave": {
+      "50%": {
+        height: "20%",
+      },
+      "100%": {
+        height: "100%",
+      },
+    },
   },
 };
 
