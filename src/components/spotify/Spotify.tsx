@@ -8,12 +8,12 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { SpotifyTrack } from "./SpotifyTrack";
-import { ExperienceLink } from "./link/ExperienceLink";
+import { ExperienceLink } from "../link/ExperienceLink";
 
 export const Spotify: React.FC<any> = ({ topTrack, nowPlaying }) => {
   return (
     <>
-      <Grid templateColumns="repeat(2, 1fr)" px={3}>
+      <Grid templateColumns="repeat(2, 1fr)" px={3} gap={8}>
         <GridItem colSpan={{ base: 2, md: 1 }}>
           <Heading variant="section" mb={[3, 8]}>
             Now Playing

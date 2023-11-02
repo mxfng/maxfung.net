@@ -5,7 +5,7 @@ import { Banner } from "@/components/Banner";
 import { Section } from "@/components/Section";
 import { SocialLink } from "@/components/link/SocialLink";
 import { getNowPlaying, getTopTracks } from "@/utils/spotify";
-import { Spotify } from "@/components/Spotify";
+import { Spotify } from "@/components/spotify/Spotify";
 
 const topTrack = async () => {
   const res = await getTopTracks();

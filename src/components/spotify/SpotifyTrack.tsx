@@ -1,6 +1,6 @@
 import { Grid, GridItem, Image, Text } from "@chakra-ui/react";
-import { ArrowLink } from "./link/ArrowLink";
-import { ExperienceLink } from "./link/ExperienceLink";
+import { ArrowLink } from "../link/ArrowLink";
+import { ExperienceLink } from "../link/ExperienceLink";
 
 export const SpotifyTrack: React.FC<any> = ({
   artist,
@@ -13,8 +13,10 @@ export const SpotifyTrack: React.FC<any> = ({
       <GridItem colSpan={{ base: 1 }}>
         <Image
           src={albumImageUrl ? albumImageUrl : "/placeholder.png"}
-          style={{ width: "80%" }}
+          alt="album art"
+          width={{ base: "70%", md: "80%" }}
           borderRadius="full"
+          mx="auto"
         />
       </GridItem>
       <GridItem colSpan={{ base: 3 }} my="auto">
