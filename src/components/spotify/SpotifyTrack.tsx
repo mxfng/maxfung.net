@@ -7,15 +7,15 @@ export const SpotifyTrack: React.FC<any> = ({
   title,
   songUrl,
   albumImageUrl,
+  metadata,
 }) => {
   return (
     <Grid templateColumns="repeat(4, 1fr)">
-      <GridItem colSpan={{ base: 1 }}>
+      <GridItem colSpan={{ base: 1 }} my="auto">
         <Image
           src={albumImageUrl ? albumImageUrl : "/placeholder.png"}
           alt="album art"
           width={{ base: "70%", md: "80%" }}
-          borderRadius="full"
           mx="auto"
         />
       </GridItem>
@@ -27,6 +27,9 @@ export const SpotifyTrack: React.FC<any> = ({
           color={albumImageUrl ? "" : "#595959"}
         />
         <Text variant="darker">{artist}</Text>
+        <Text variant="darker" fontSize="8px">
+          {metadata}
+        </Text>
       </GridItem>
     </Grid>
   );

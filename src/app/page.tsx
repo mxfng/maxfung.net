@@ -4,14 +4,15 @@ import { ArrowLink } from "@/components/link/ArrowLink";
 import { Banner } from "@/components/Banner";
 import { Section } from "@/components/Section";
 import { SocialLink } from "@/components/link/SocialLink";
-import { nowPlaying, songOfTheMonth } from "@/utils/spotify";
+import { nowPlaying, recentlyPlayed, songOfTheMonth } from "@/utils/spotify";
 import { Spotify } from "@/components/spotify/Spotify";
 
 export default async function Home() {
   const pageW = 900;
   const sectionSpacing = [20, "8rem"];
-  const _songOfTheMonth = await songOfTheMonth();
   const _nowPlaying = await nowPlaying();
+  const _recentlyPlayed = await recentlyPlayed();
+  const _songOfTheMonth = await songOfTheMonth();
 
   return (
     <>
@@ -123,7 +124,11 @@ export default async function Home() {
         </Section>
       </Box>
       <Box mb={sectionSpacing}>
-        <Spotify songOfTheMonth={_songOfTheMonth} nowPlaying={_nowPlaying} />
+        <Spotify
+          nowPlaying={_nowPlaying}
+          recentlyPlayed={_recentlyPlayed}
+          songOfTheMonth={_songOfTheMonth}
+        />
       </Box>
     </>
   );

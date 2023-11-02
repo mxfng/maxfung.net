@@ -1,13 +1,17 @@
 import { Grid, GridItem, Heading } from "@chakra-ui/react";
 import { SpotifyTrack } from "./SpotifyTrack";
 
-export const Spotify: React.FC<any> = ({ songOfTheMonth, nowPlaying }) => {
+export const Spotify: React.FC<any> = ({
+  nowPlaying,
+  recentlyPlayed,
+  songOfTheMonth,
+}) => {
   return (
     <>
       <Grid templateColumns="repeat(2, 1fr)" px={3} gap={8}>
         <GridItem colSpan={{ base: 2, md: 1 }}>
           <Heading variant="section" mb={[3, 8]}>
-            Now Playing
+            {nowPlaying.isPlaying ? "Now Playing" : "Recently Played"}
           </Heading>
           {nowPlaying.isPlaying ? (
             <SpotifyTrack
@@ -17,7 +21,13 @@ export const Spotify: React.FC<any> = ({ songOfTheMonth, nowPlaying }) => {
               albumImageUrl={nowPlaying.albumImageUrl}
             />
           ) : (
-            <SpotifyTrack artist="It's quiet in here..." title="Not Playing" />
+            <SpotifyTrack
+              artist={recentlyPlayed.artist}
+              title={recentlyPlayed.title}
+              songUrl={recentlyPlayed.songUrl}
+              albumImageUrl={recentlyPlayed.albumImageUrl}
+              metadata={recentlyPlayed.metadata}
+            />
           )}
         </GridItem>
         <GridItem colSpan={{ base: 2, md: 1 }}>

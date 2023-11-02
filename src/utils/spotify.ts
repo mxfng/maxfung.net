@@ -6,6 +6,7 @@ const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
 
 const basic = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
 const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
+const RECENTLY_PLAYED_ENDPOINT = `https://api.spotify.com/v1/me/player/recently-played?limit=1`;
 const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=1`;
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 
@@ -38,6 +39,19 @@ const getNowPlaying = async () => {
   });
 };
 
+const getRecentlyPlayed = async () => {
+  const { access_token } = await getAccessToken();
+
+  return fetch(RECENTLY_PLAYED_ENDPOINT, {
+    next: {
+      revalidate: 60,
+    },
+    headers: {
+      Authorization: `Bearer ${access_token}`,
+    },
+  });
+};
+
 const getSongOfTheMonth = async () => {
   const { access_token } = await getAccessToken();
 
@@ -51,18 +65,6 @@ const getSongOfTheMonth = async () => {
   });
 };
 
-export const songOfTheMonth = async () => {
-  const res = await getSongOfTheMonth();
-  const { items } = await res.json();
-
-  return items.slice(0, 1).map((track: any) => ({
-    artist: track.artists.map((_artist: any) => _artist.name).join(", "),
-    songUrl: track.external_urls.spotify,
-    title: track.name,
-    albumImageUrl: track.album.images[1].url,
-  }))[0];
-};
-
 export const nowPlaying = async () => {
   const res = await getNowPlaying();
 
@@ -71,21 +73,47 @@ export const nowPlaying = async () => {
   }
 
   const song = await res.json();
-  const isPlaying = song.is_playing;
-  const title = song.item.name;
-  const artist = song.item.artists
-    .map((_artist: any) => _artist.name)
-    .join(", ");
-  const album = song.item.album.name;
-  const albumImageUrl = song.item.album.images[0].url;
-  const songUrl = song.item.external_urls.spotify;
 
   return {
-    album,
-    albumImageUrl,
-    artist,
-    isPlaying,
-    songUrl,
-    title,
+    title: song.item.name,
+    artist: song.item.artists.map((_artist: any) => _artist.name).join(", "),
+    songUrl: song.item.external_urls.spotify,
+    albumImageUrl: song.item.album.images[0].url,
+    isPlaying: song.is_playing,
+  };
+};
+
+export const recentlyPlayed = async () => {
+  const res = await getRecentlyPlayed();
+  const { items } = await res.json();
+  const song = items[0].track;
+  const playedAt = new Date(items[0].played_at);
+  const formattedDate = playedAt.toLocaleDateString();
+  const formattedTime = playedAt.toLocaleTimeString("en-US", {
+    hour12: false,
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+  const metadata = `${formattedDate} ${formattedTime}`;
+
+  return {
+    title: song.name,
+    artist: song.artists.map((_artist: any) => _artist.name).join(", "),
+    songUrl: song.external_urls.spotify,
+    albumImageUrl: song.album.images[1].url,
+    metadata: metadata,
+  };
+};
+
+export const songOfTheMonth = async () => {
+  const res = await getSongOfTheMonth();
+  const { items } = await res.json();
+  const song = items[0];
+
+  return {
+    title: song.name,
+    artist: song.artists.map((_artist: any) => _artist.name).join(", "),
+    songUrl: song.external_urls.spotify,
+    albumImageUrl: song.album.images[1].url,
   };
 };
