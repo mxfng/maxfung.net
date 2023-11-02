@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
+import { Grid, GridItem, Heading, Text } from "@chakra-ui/react";
 import { Avatar } from "@/components/Avatar";
 
 export const Banner: React.FC<any> = () => {
