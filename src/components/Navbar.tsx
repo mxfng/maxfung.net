@@ -78,8 +78,7 @@ export const Navbar = () => {
                   strokeWidth: "6",
                   strokeDasharray: "600",
                   strokeDashoffset: "0",
-                  animation:
-                    "brushStroke 3s linear 1",
+                  animation: "brushStroke 3s linear 1",
                 }}
                 stroke="white"
                 mask="url(#mask)"
