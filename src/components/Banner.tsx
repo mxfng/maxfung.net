@@ -9,7 +9,7 @@ export const Banner: React.FC<any> = () => {
           <Heading variant="name" mb={[-1, 0]}>
             Max Henry Fung
           </Heading>
-          <Text>Software Engineer</Text>
+          <Text>Software Engineer and Web Designer</Text>
           <Text variant="darker">Los Angeles, California</Text>
         </GridItem>
         <GridItem colSpan={{ base: 4, md: 1 }} pt="20px" pb={["20px", "0px"]}>
