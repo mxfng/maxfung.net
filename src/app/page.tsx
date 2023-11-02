@@ -7,7 +7,7 @@ import { SocialLink } from "@/components/link/SocialLink";
 import { getNowPlaying, getTopTracks } from "@/utils/spotify";
 import { Spotify } from "@/components/Spotify";
 
-export const topTrack = async () => {
+const topTrack = async () => {
   const res = await getTopTracks();
   const { items } = await res.json();
 
@@ -19,7 +19,7 @@ export const topTrack = async () => {
   }))[0];
 };
 
-export const nowPlaying = async () => {
+const nowPlaying = async () => {
   const res = await getNowPlaying();
 
   if (res.status === 204 || res.status > 400) {
