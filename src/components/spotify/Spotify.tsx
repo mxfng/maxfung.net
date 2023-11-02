@@ -22,7 +22,7 @@ export const Spotify: React.FC<any> = ({ topTrack, nowPlaying }) => {
             <SpotifyTrack
               artist={nowPlaying.artist}
               title={nowPlaying.title}
-              songUrl={topTrack.songUrl}
+              songUrl={nowPlaying.songUrl}
               albumImageUrl={nowPlaying.albumImageUrl}
             />
           ) : (
