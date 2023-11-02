@@ -1,11 +1,11 @@
-import { Image } from "@chakra-ui/react";
+import { HStack, Image } from "@chakra-ui/react";
 import { Box, Heading } from "@chakra-ui/react";
 import React from "react";
 
-export const ExperienceLink: React.FC<any> = ({ title, href }) => {
+export const ExperienceLink: React.FC<any> = ({ title, href, ...props }) => {
   return (
     <>
-      <Box
+      <HStack
         display="flex"
         alignItems="center"
         __css={{
@@ -21,6 +21,7 @@ export const ExperienceLink: React.FC<any> = ({ title, href }) => {
         }}
         w="fit-content"
         mb={3}
+        {...props}
       >
         <Heading
           variant="link"
@@ -31,15 +32,8 @@ export const ExperienceLink: React.FC<any> = ({ title, href }) => {
         >
           {title}
         </Heading>
-        {href && (
-          <Image
-            ml={2}
-            boxSize={4}
-            src="/arrow-link.svg"
-            alt={`↗`}
-          />
-        )}
-      </Box>
+        {href && <Image boxSize={4} src="/arrow-link.svg" alt={`↗`} />}
+      </HStack>
     </>
   );
 };
