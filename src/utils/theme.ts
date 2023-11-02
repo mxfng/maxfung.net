@@ -14,6 +14,10 @@ const styles = {
       color: "#f2f2f2",
     },
 
+    html: {
+      fontSize: "16px",
+    },
+
     a: {
       textDecoration: "underline transparent",
       transition: "text-decoration 500ms ease",
