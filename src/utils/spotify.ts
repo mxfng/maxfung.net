@@ -86,6 +86,12 @@ export const nowPlaying = async () => {
 export const recentlyPlayed = async () => {
   const res = await getRecentlyPlayed();
   const { items } = await res.json();
+
+  if (typeof items === "undefined") {
+    console.error(res.statusText);
+    return { error: res.status };
+  }
+
   const song = items[0].track;
   const playedAt = new Date(items[0].played_at);
   const formattedDate = playedAt.toLocaleDateString();
@@ -109,6 +115,12 @@ export const recentlyPlayed = async () => {
 export const songOfTheMonth = async () => {
   const res = await getSongOfTheMonth();
   const { items } = await res.json();
+
+  if (typeof items === "undefined") {
+    console.error(res.statusText);
+    return { error: res.status };
+  }
+
   const song = items[0];
 
   return {
