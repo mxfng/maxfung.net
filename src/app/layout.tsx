@@ -4,12 +4,36 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Box } from "@chakra-ui/react";
 
+const metadatabase_url: string = process.env.VERCEL_URL!!;
+
 export const metadata: Metadata = {
-  title: "Max Fung",
-  description: "Full Stack Developer",
+  title: {
+    template: "%s | Max Fung",
+    default: "Max Fung",
+  },
+
+  description:
+    "A full stack software engineer who loves designing, building, and shipping creative products with intuitive experiences from start to finish.",
+
+  keywords: [
+    "Max Fung",
+    "Engineer",
+    "Music",
+    "Software",
+    "Developer",
+    "Full Stack",
+    "Web Design",
+  ],
+
+  creator: "Max Fung",
+
+  category: "technology",
+
   openGraph: {
     title: "Max Fung",
-    description: "Full Stack Developer",
+    description:
+      "A full stack software engineer who loves designing, building, and shipping creative products with intuitive experiences from start to finish.",
+    images: "/og-image.png",
   },
 };
 
