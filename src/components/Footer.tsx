@@ -1,4 +1,5 @@
 import { Box, Image, Text } from "@chakra-ui/react";
+import { SignatureLogo } from "./svg/SignatureLogo";
 
 export const Footer = ({ ...props }) => {
   return (
@@ -22,9 +23,8 @@ export const Footer = ({ ...props }) => {
             Text is set in the Inter and Victor Mono typefaces.
           </Text>
         </Box>
-        <Image
-          src="/max-signature.svg"
-          alt=""
+        <SignatureLogo
+          fill="var(--chakra-colors-palette-300)"
           width={["48px", "64px"]}
           float="right"
           pt={3}

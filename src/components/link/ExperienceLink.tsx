@@ -1,6 +1,7 @@
-import { Flex, HStack, Image, Text } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import { Box, Heading } from "@chakra-ui/react";
 import React from "react";
+import { ArrowUp } from "../svg/ArrowUp";
 
 export const ExperienceLink: React.FC<any> = ({ title, href, ...props }) => {
   return (
@@ -12,7 +13,7 @@ export const ExperienceLink: React.FC<any> = ({ title, href, ...props }) => {
           target="_blank"
           direction="row"
           __css={{
-            "& img": {
+            "& .external-arrow": {
               transform: "translateX(0) translateY(3px)",
               transition: "all 0.2s ease",
             },
@@ -22,7 +23,7 @@ export const ExperienceLink: React.FC<any> = ({ title, href, ...props }) => {
             },
           }}
           _hover={{
-            "& img": {
+            "& .external-arrow": {
               transform: "translateX(3px)",
             },
             "& a": {
@@ -38,12 +39,11 @@ export const ExperienceLink: React.FC<any> = ({ title, href, ...props }) => {
             {title}
           </Heading>
           {href && (
-            <Image
+            <ArrowUp
+              stroke="var(--chakra-colors-palette-900)"
+              width="16px"
               ml={[1, 2]}
               my="auto"
-              boxSize={4}
-              src="/arrow-link.svg"
-              alt={`↗`}
               display="inline-flex"
               className="external-arrow"
             />

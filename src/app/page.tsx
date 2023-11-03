@@ -1,11 +1,12 @@
 import { Box, Flex, Image, Link, Text } from "@chakra-ui/react";
 import { Experience } from "@/components/Experience";
-import { ArrowLink } from "@/components/link/ArrowLink";
+import { BigLink } from "@/components/link/BigLink";
 import { Banner } from "@/components/Banner";
 import { Section } from "@/components/Section";
 import { SocialLink } from "@/components/link/SocialLink";
 import { nowPlaying, recentlyPlayed, songOfTheMonth } from "@/utils/spotify";
 import { Spotify } from "@/components/spotify/Spotify";
+import { SpotifyLogo } from "@/components/svg/SpotifyLogo";
 
 export default async function Home() {
   const pageW = 900;
@@ -36,36 +37,7 @@ export default async function Home() {
       </Box>
       <Box mb={sectionSpacing}>
         <Section width={pageW} title="Records" mt={[0, 10]}>
-          <Flex>
-            <Text mb={[8, 12]}>
-              Music is an essential aspect of my life. When I&apos;m not working
-              on my own music, I&apos;m listening to songs that put me in the
-              zone to do my best work. Here are some of my favorite records,
-              updated live using the{" "}
-              <Link
-                href="https://developer.spotify.com/documentation/web-api"
-                target="_blank"
-                fontWeight={500}
-                className="underline-link"
-              >
-                Spotify Web API
-              </Link>
-              <Image
-                ml={[1, 2]}
-                my="auto"
-                boxSize={4}
-                src="/spotify.svg"
-                alt={`↗`}
-                display="inline-flex"
-              />
-              .
-            </Text>
-          </Flex>
-          <Spotify
-            nowPlaying={_nowPlaying}
-            recentlyPlayed={_recentlyPlayed}
-            songOfTheMonth={_songOfTheMonth}
-          />
+          {renderRecords()}
         </Section>
       </Box>
       <Box mb={[20, "6rem"]}>
@@ -98,7 +70,7 @@ export default async function Home() {
           snowboarding, taking photos with my film cameras, and out exploring
           the world.
         </Text>
-        <ArrowLink
+        <BigLink
           title="Say Hello"
           href="mailto:maxhfung@gmail.com?subject=Hello Max"
         />
@@ -149,7 +121,7 @@ export default async function Home() {
             calibration tests using Python and PyQt5"
           stack={["Python", "PyQt", "NI-VISA"]}
         />
-        <ArrowLink title="View Full Résumé" href="/resume.pdf" />
+        <BigLink title="View Full Résumé" href="/resume.pdf" />
       </>
     );
   }
@@ -164,6 +136,42 @@ export default async function Home() {
           desc="Part of a team of volunteer web developers supporting full stack web design for a local transportation advocacy group"
           stack={["JavaScript", "React", "Python"]}
           image="/sfa-logo-square.png"
+        />
+      </>
+    );
+  }
+
+  function renderRecords() {
+    return (
+      <>
+        <Flex>
+          <Text mb={[8, 12]}>
+            Music is an essential aspect of my life. When I&apos;m not working
+            on my own music, I&apos;m listening to songs that put me in the zone
+            to do my best work. I like to collect physical vinyl, so this is a
+            digital manifestation of that habit. Here are some of my favorite
+            records, updated live and direct using the{" "}
+            <Link
+              href="https://developer.spotify.com/documentation/web-api"
+              target="_blank"
+              fontWeight={500}
+            >
+              Spotify Web API{" "}
+            </Link>
+            <SpotifyLogo
+              fill="var(--chakra-colors-palette-900)"
+              width={["16px", "18px"]}
+              display="inline-flex"
+              ml={[0, 1]}
+              my="auto"
+            />
+            .
+          </Text>
+        </Flex>
+        <Spotify
+          nowPlaying={_nowPlaying}
+          recentlyPlayed={_recentlyPlayed}
+          songOfTheMonth={_songOfTheMonth}
         />
       </>
     );
