@@ -149,10 +149,9 @@ export default async function Home() {
         <Flex>
           <Text mb={[8, 12]}>
             Music is an essential aspect of my life. When I&apos;m not working
-            on my own music, I&apos;m listening to songs that put me in the zone
-            to do my best work. I like to collect physical vinyl, so this is a
-            digital manifestation of that habit. Here are some of my favorite
-            records, updated live and direct using the{" "}
+            on my own music, I&apos;m listening to songs that put me in the
+            zone. Here are some of my favorite records, updated live and direct
+            using the{" "}
             <Link
               href="https://developer.spotify.com/documentation/web-api"
               target="_blank"

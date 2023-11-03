@@ -27,7 +27,7 @@ export const SpotifyTrack: React.FC<any> = ({
               <Text variant="darker" px={2} style={{ textDecoration: "none" }}>
                 {artist}
               </Text>
-              <Text variant="darker" fontSize={["0.7rem", "0.9rem"]}>
+              <Text variant="darker" px={2} fontSize={["0.7rem", "0.9rem"]}>
                 {metadata}
               </Text>
             </>

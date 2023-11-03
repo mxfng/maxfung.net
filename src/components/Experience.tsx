@@ -17,8 +17,16 @@ export const Experience: React.FC<any> = ({
 
   return (
     <>
-      <Box as="a" href={href} target="_blank" className="linkify">
-        <Grid templateColumns="repeat(5, 1fr)" mb={[10, 20]} {...props}>
+      <Box>
+        <Grid
+          as="a"
+          href={href}
+          target="_blank"
+          className="linkify"
+          templateColumns="repeat(5, 1fr)"
+          mb={[10, 20]}
+          {...props}
+        >
           <GridItem colSpan={{ base: 5, md: 1 }}>
             <Text variant="darker" mb={1} mr={1}>
               {side}
