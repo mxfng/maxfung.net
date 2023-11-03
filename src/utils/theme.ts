@@ -105,6 +105,11 @@ const components = {
         textDecorationColor: "palette.900",
       },
     },
+    variants: {
+      darker: {
+        color: "palette.400",
+      },
+    },
   },
   Text: {
     baseStyle: {

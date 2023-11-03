@@ -1,4 +1,4 @@
-import { Box, Image, Text } from "@chakra-ui/react";
+import { Box, Image, Link, Text } from "@chakra-ui/react";
 import { SignatureLogo } from "./svg/SignatureLogo";
 
 export const Footer = ({ ...props }) => {
@@ -18,9 +18,47 @@ export const Footer = ({ ...props }) => {
         </Box>
         <Box>
           <Text variant="darker" fontSize="10pt">
-            Designed by Max Fung in California. This website was written in
-            TypeScript using Next.js and Chakra UI, and deployed with Vercel.
-            Text is set in the Inter and Victor Mono typefaces.
+            Designed by Max Fung in California.{" "}
+            <Link
+              href="https://github.com/mxfng/maxfung-2023"
+              target="_blank"
+              variant="darker"
+            >
+              This website
+            </Link>{" "}
+            was written in TypeScript using{" "}
+            <Link href="https://nextjs.org/" target="_blank" variant="darker">
+              Next.js
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="https://chakra-ui.com/"
+              target="_blank"
+              variant="darker"
+            >
+              Chakra UI
+            </Link>
+            , and deployed with{" "}
+            <Link href="https://vercel.com/" target="_blank" variant="darker">
+              Vercel
+            </Link>
+            . Text is set in the{" "}
+            <Link
+              href="https://fonts.google.com/specimen/Inter"
+              target="_blank"
+              variant="darker"
+            >
+              Inter
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="https://fonts.google.com/specimen/Victor+Mono"
+              target="_blank"
+              variant="darker"
+            >
+              Victor Mono
+            </Link>{" "}
+            typefaces.
           </Text>
         </Box>
         <SignatureLogo
