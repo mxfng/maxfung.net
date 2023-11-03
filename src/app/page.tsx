@@ -35,11 +35,6 @@ export default async function Home() {
         </Section>
       </Box>
       <Box mb={sectionSpacing}>
-        <Section width={pageW} title="Links" mt={[0, 10]}>
-          {renderLinks()}
-        </Section>
-      </Box>
-      <Box mb={sectionSpacing}>
         <Section width={pageW} title="Records" mt={[0, 10]}>
           <Text mb={[8, 12]}>
             Music is an essential aspect of my life. When I'm not working on my
@@ -60,6 +55,11 @@ export default async function Home() {
             recentlyPlayed={_recentlyPlayed}
             songOfTheMonth={_songOfTheMonth}
           />
+        </Section>
+      </Box>
+      <Box mb={[20, "6rem"]}>
+        <Section width={pageW} title="Links" mt={[0, 10]}>
+          {renderLinks()}
         </Section>
       </Box>
     </>
@@ -116,7 +116,7 @@ export default async function Home() {
             "React",
             "TypeScript",
             "Docker",
-            "Google Cloud Platform",
+            "GCP",
           ]}
         />
         <Experience

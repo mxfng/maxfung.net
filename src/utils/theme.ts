@@ -18,14 +18,6 @@ const styles = {
       fontSize: "16px",
     },
 
-    "& .underline-link": {
-      textDecoration: "underline transparent",
-      transition: "text-decoration 500ms ease",
-      _hover: {
-        textDecorationColor: "white",
-      },
-    },
-
     "@keyframes fadeIn": {
       from: {
         opacity: 0,

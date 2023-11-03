@@ -33,7 +33,7 @@ export const Experience: React.FC<any> = ({
               borderRadius="full"
             />
           )}
-          <ExperienceLink title={title} href={href} />
+          <ExperienceLink title={title} href={href} mb={[1, 5]} />
           <Text mb={[3, 5]}>{desc}</Text>
           {stack && <Text variant="darker">{formatStack(stack)}</Text>}
         </GridItem>

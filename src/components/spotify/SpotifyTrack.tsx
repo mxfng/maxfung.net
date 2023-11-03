@@ -60,15 +60,7 @@ export const SpotifyTrack: React.FC<any> = ({
         <GridItem colSpan={{ base: 3 }} my="auto" px={[0, 3]}>
           {artist && title ? (
             <>
-              <Link
-                fontSize={["1rem", "1.2rem"]}
-                fontWeight="500"
-                href={songUrl}
-                mb={0}
-                className="underline-link"
-              >
-                {title}
-              </Link>
+              <ExperienceLink title={title} href={songUrl} />
               <Text variant="darker" style={{ textDecoration: "none" }}>
                 {artist}
               </Text>
