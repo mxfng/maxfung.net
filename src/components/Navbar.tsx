@@ -9,7 +9,7 @@ export const Navbar = () => {
   const [isVisible, setIsVisible] = useState(!isBelowThreshold);
 
   const handleScroll = () => {
-    if (window.scrollY > 0) {
+    if (window.scrollY > 10) {
       setIsVisible(false);
     } else {
       setIsVisible(true);
