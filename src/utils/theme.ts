@@ -1,20 +1,11 @@
 import { extendTheme } from "@chakra-ui/react";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/victor-mono";
+import dark from "./themes/dark";
 
 const fonts = {
   heading: `'Inter Variable', sans-serif`,
   body: `'Inter Variable', sans-serif`,
-};
-
-const colors = {
-  palette: {
-    100: "#000000",
-    200: "#333333",
-    300: "#595959",
-    400: "#A5A5A5",
-    900: "#f2f2f2",
-  },
 };
 
 const styles = {
@@ -127,7 +118,11 @@ const components = {
 };
 
 export const theme = extendTheme({
-  colors,
+  config: {
+    initialColorMode: "system",
+    useSystemColorMode: true,
+  },
+  colors: dark.colors,
   fonts,
   styles,
   components,
