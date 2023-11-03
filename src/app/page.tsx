@@ -1,4 +1,4 @@
-import { Box, Link, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Link, Text } from "@chakra-ui/react";
 import { Experience } from "@/components/Experience";
 import { ArrowLink } from "@/components/link/ArrowLink";
 import { Banner } from "@/components/Banner";
@@ -36,21 +36,31 @@ export default async function Home() {
       </Box>
       <Box mb={sectionSpacing}>
         <Section width={pageW} title="Records" mt={[0, 10]}>
-          <Text mb={[8, 12]}>
-            Music is an essential aspect of my life. When I&apos;m not working
-            on my own music, I&apos;m listening to songs that put me in the zone
-            to do my best work. Here are my favorite records, updated live using
-            the{" "}
-            <Link
-              href="https://developer.spotify.com/documentation/web-api"
-              target="_blank"
-              color="white"
-              fontWeight={500}
-              className="underline-link"
-            >
-              Spotify Web API.
-            </Link>
-          </Text>
+          <Flex>
+            <Text mb={[8, 12]}>
+              Music is an essential aspect of my life. When I&apos;m not working
+              on my own music, I&apos;m listening to songs that put me in the
+              zone to do my best work. Here are some of my favorite records,
+              updated live using the{" "}
+              <Link
+                href="https://developer.spotify.com/documentation/web-api"
+                target="_blank"
+                fontWeight={500}
+                className="underline-link"
+              >
+                Spotify Web API
+              </Link>
+              <Image
+                ml={[1, 2]}
+                my="auto"
+                boxSize={4}
+                src="/spotify.svg"
+                alt={`↗`}
+                display="inline-flex"
+              />
+              .
+            </Text>
+          </Flex>
           <Spotify
             nowPlaying={_nowPlaying}
             recentlyPlayed={_recentlyPlayed}

@@ -26,7 +26,7 @@ export const ExperienceLink: React.FC<any> = ({ title, href, ...props }) => {
               transform: "translateX(3px)",
             },
             "& a": {
-              textDecorationColor: "white",
+              textDecorationColor: "palette.900",
             },
           }}
         >

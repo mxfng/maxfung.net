@@ -41,7 +41,7 @@ export const SpotifyTrack: React.FC<any> = ({
           transform: "translateX(3px)",
         },
         "& ._link": {
-          textDecorationColor: "white",
+          textDecorationColor: "palette.900",
         },
       }}
       href={songUrl}
@@ -73,7 +73,7 @@ export const SpotifyTrack: React.FC<any> = ({
               <Box
                 width="130px"
                 height="1.2rem"
-                bg="#595959"
+                bg="palette.300"
                 mb={2}
                 opacity={0.5}
                 borderRadius="4px"
@@ -81,7 +81,7 @@ export const SpotifyTrack: React.FC<any> = ({
               <Box
                 width="100px"
                 height={["0.9rem", "1.1rem"]}
-                bg="#595959"
+                bg="#palette.300"
                 mb={2}
                 opacity={0.5}
                 borderRadius="4px"

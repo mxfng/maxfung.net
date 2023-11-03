@@ -7,11 +7,21 @@ const fonts = {
   body: `'Inter Variable', sans-serif`,
 };
 
+const colors = {
+  palette: {
+    100: "#000000",
+    200: "#333333",
+    300: "#595959",
+    400: "#A5A5A5",
+    900: "#f2f2f2",
+  },
+};
+
 const styles = {
   global: {
     body: {
-      bg: "#000000",
-      color: "#f2f2f2",
+      bg: "palette.100",
+      color: "palette.900",
     },
 
     html: {
@@ -78,30 +88,31 @@ const components = {
   Link: {
     baseStyle: {
       fontWeight: 500,
-      color: "white",
+      color: "palette.900",
       textDecoration: "underline transparent",
       transition: "text-decoration 500ms ease",
       _hover: {
-        textDecorationColor: "white",
+        textDecorationColor: "palette.900",
       },
     },
   },
   Text: {
     baseStyle: {
       fontSize: ["0.9rem", "1.1rem"],
-      color: "#a5a5a5",
+      color: "palette.400",
       letterSpacing: ["-0.2px", "-0.5px"],
       fontWeight: 300,
     },
     variants: {
       darker: {
-        color: "#595959",
+        color: "palette.300",
       },
     },
   },
 };
 
 export const theme = extendTheme({
+  colors,
   fonts,
   styles,
   components,
