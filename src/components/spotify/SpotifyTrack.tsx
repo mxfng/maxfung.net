@@ -23,11 +23,11 @@ export const SpotifyTrack: React.FC<any> = ({
         "& .album-art": {
           transition: "0.25s cubic-bezier(0.68, -0.6, 0.32, 1.6)",
         },
-        "& .experience-link-arrow": {
+        "& .external-arrow": {
           transform: "translateX(0) translateY(3px)",
           transition: "all 0.2s ease",
         },
-        "& .underline-link": {
+        "& ._link": {
           textDecoration: "underline transparent",
           transition: "text-decoration 500ms ease",
         },
@@ -37,10 +37,10 @@ export const SpotifyTrack: React.FC<any> = ({
         "& .album-art": {
           transform: "scale(1.1)",
         },
-        "& .experience-link-arrow": {
+        "& .external-arrow": {
           transform: "translateX(3px)",
         },
-        "& .underline-link": {
+        "& ._link": {
           textDecorationColor: "white",
         },
       }}
@@ -60,7 +60,7 @@ export const SpotifyTrack: React.FC<any> = ({
         <GridItem colSpan={{ base: 3 }} my="auto" px={[0, 3]}>
           {artist && title ? (
             <>
-              <ExperienceLink title={title} href={songUrl} />
+              <ExperienceLink title={title} href={songUrl} className="_link" />
               <Text variant="darker" style={{ textDecoration: "none" }}>
                 {artist}
               </Text>
