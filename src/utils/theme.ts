@@ -113,6 +113,11 @@ const components = {
       darker: {
         color: "palette.300",
       },
+      big: {
+        fontFamily: `'Victor Mono Variable', sans-serif`,
+        fontSize: ["1.2rem", "1.2rem", "1.5rem"],
+        fontWeight: 100,
+      },
     },
   },
 };

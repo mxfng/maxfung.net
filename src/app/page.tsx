@@ -51,7 +51,7 @@ export default async function Home() {
   function renderAbout() {
     return (
       <>
-        <Text mb={3}>
+        <Text mb={[3, 6]} variant="big">
           I&apos;m a full stack software engineer who loves designing, building,
           and shipping creative products with intuitive experiences from start
           to finish.
@@ -62,13 +62,15 @@ export default async function Home() {
           and contributed to a variety of exciting projects since starting my
           journey back in 2018.
         </Text>
+        <Text mb={3}>
+          I work best at the intersection of boundless creativity and unwavering
+          precision, where imaginative design meets methodical development.
+        </Text>
         <Text mb={[6, 10]}>
           I&apos;m passionate about both product and engineering, and love
-          putting my creativity to the test. I love the art of a great user
-          experience, where a robust front end and back end are crucial. When
-          I&apos;m not coding, I&apos;m producing my own music, surfing,
-          snowboarding, taking photos with my film cameras, and out exploring
-          the world.
+          putting my problem solving skills to the test. When I&apos;m not
+          coding, I&apos;m producing my own music, surfing, snowboarding, taking
+          photos with my film cameras, and out exploring the world.
         </Text>
         <BigLink
           title="Say Hello"
