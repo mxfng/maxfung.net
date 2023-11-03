@@ -27,7 +27,9 @@ export const Spotify: React.FC<any> = ({
             </Heading>
             <Waveform isPlaying={nowPlaying.isPlaying} />
           </HStack>
-          {renderTrack(nowPlaying.isPlaying ? nowPlaying : recentlyPlayed) || (
+          {recentlyPlayed ? (
+            renderTrack(nowPlaying.isPlaying ? nowPlaying : recentlyPlayed)
+          ) : (
             <SpotifyTrack />
           )}
         </GridItem>
@@ -35,7 +37,7 @@ export const Spotify: React.FC<any> = ({
           <Heading variant="section" mb={[3, 8]}>
             Song of the Month
           </Heading>
-          {renderTrack(songOfTheMonth) || <SpotifyTrack />}
+          {songOfTheMonth ? renderTrack(songOfTheMonth) : <SpotifyTrack />}
         </GridItem>
       </Grid>
     </>

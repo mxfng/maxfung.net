@@ -1,13 +1,13 @@
-import {
-  Box,
-  Grid,
-  GridItem,
-  Heading,
-  Image,
-  Link,
-  Text,
-} from "@chakra-ui/react";
-import { ExperienceLink } from "../link/ExperienceLink";
+import { Box, Flex, Grid, GridItem, Image, Text } from "@chakra-ui/react";
+import { ArrowUp } from "../svg/ArrowUp";
+
+function truncateString(str: string, maxLength: number): string {
+  if (str.length <= maxLength) {
+    return str;
+  } else {
+    return str.substring(0, maxLength - 3) + "...";
+  }
+}
 
 export const SpotifyTrack: React.FC<any> = ({
   artist,
@@ -17,36 +17,7 @@ export const SpotifyTrack: React.FC<any> = ({
   metadata,
 }) => {
   return (
-    <Box
-      as="a"
-      __css={{
-        "& .album-art": {
-          transition: "0.25s cubic-bezier(0.68, -0.6, 0.32, 1.6)",
-        },
-        "& .external-arrow": {
-          transform: "translateX(0) translateY(3px)",
-          transition: "all 0.2s ease",
-        },
-        "& ._link": {
-          textDecoration: "underline transparent",
-          transition: "text-decoration 500ms ease",
-        },
-      }}
-      _hover={{
-        cursor: "pointer",
-        "& .album-art": {
-          transform: "scale(1.1)",
-        },
-        "& .external-arrow": {
-          transform: "translateX(3px)",
-        },
-        "& ._link": {
-          textDecorationColor: "palette.900",
-        },
-      }}
-      href={songUrl}
-      target="_blank"
-    >
+    <Flex as="a" href={songUrl} target="_blank" className="linkify">
       <Grid templateColumns="repeat(4, 1fr)">
         <GridItem colSpan={{ base: 1 }} my="auto">
           <Image
@@ -60,7 +31,18 @@ export const SpotifyTrack: React.FC<any> = ({
         <GridItem colSpan={{ base: 3 }} my="auto" px={[0, 3]}>
           {artist && title ? (
             <>
-              <ExperienceLink title={title} href={songUrl} className="_link" />
+              <Flex display="inline-flex">
+                <Text variant="link" className="text" width="max-content">
+                  {truncateString(title, 38)}
+                </Text>
+                <ArrowUp
+                  stroke="var(--chakra-colors-palette-900)"
+                  width="16px"
+                  ml={[1, 2]}
+                  my="auto"
+                  className="icon"
+                />
+              </Flex>
               <Text variant="darker" style={{ textDecoration: "none" }}>
                 {artist}
               </Text>
@@ -90,6 +72,6 @@ export const SpotifyTrack: React.FC<any> = ({
           )}
         </GridItem>
       </Grid>
-    </Box>
+    </Flex>
   );
 };

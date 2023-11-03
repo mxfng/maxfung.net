@@ -2,7 +2,7 @@ import { Box } from "@chakra-ui/react";
 
 export const SpotifyLogo: React.FC<any> = ({ fill, size, ...params }) => {
   return (
-    <Box {...params}>
+    <Box as="span" {...params}>
       <svg
         fill={fill}
         xmlns="http://www.w3.org/2000/svg"

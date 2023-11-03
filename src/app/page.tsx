@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Link, Text } from "@chakra-ui/react";
+import { Box, Flex, Link, Text } from "@chakra-ui/react";
 import { Experience } from "@/components/Experience";
 import { BigLink } from "@/components/link/BigLink";
 import { Banner } from "@/components/Banner";
@@ -159,14 +159,14 @@ export default async function Home() {
               fontWeight={500}
             >
               Spotify Web API{" "}
+              <SpotifyLogo
+                fill="var(--chakra-colors-palette-900)"
+                width={["16px", "18px"]}
+                display="inline-flex"
+                ml={[0, 1]}
+                my="auto"
+              />
             </Link>
-            <SpotifyLogo
-              fill="var(--chakra-colors-palette-900)"
-              width={["16px", "18px"]}
-              display="inline-flex"
-              ml={[0, 1]}
-              my="auto"
-            />
             .
           </Text>
         </Flex>

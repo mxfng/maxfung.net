@@ -19,6 +19,32 @@ const styles = {
       fontSize: "16px",
     },
 
+    "& .linkify": {
+      "& .album-art": {
+        transition: "0.25s cubic-bezier(0.68, -0.6, 0.32, 1.6)",
+      },
+      "& .icon": {
+        transform: "translateX(0) translateY(3px)",
+        transition: "all 0.2s ease",
+      },
+      "& .text": {
+        textDecoration: "underline transparent",
+        transition: "text-decoration 500ms ease",
+      },
+      _hover: {
+        cursor: "pointer",
+        "& .album-art": {
+          transform: "scale(1.1)",
+        },
+        "& .icon": {
+          transform: "translateX(3px)",
+        },
+        "& .text": {
+          textDecorationColor: "palette.900",
+        },
+      },
+    },
+
     "@keyframes fadeIn": {
       from: {
         opacity: 0,
@@ -118,6 +144,17 @@ const components = {
         fontSize: ["1.2rem", "1.2rem", "1.5rem"],
         fontWeight: 100,
         color: "palette.900",
+      },
+      link: {
+        color: "palette.900",
+        fontWeight: "500",
+        display: "inline-flex",
+        className: "experience-text",
+        textDecoration: "underline transparent",
+        transition: "text-decoration 500ms ease",
+        _hover: {
+          textDecorationColor: "palette.900",
+        },
       },
     },
   },
