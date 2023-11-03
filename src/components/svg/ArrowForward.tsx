@@ -12,9 +12,9 @@ export const ArrowForward: React.FC<any> = ({ stroke, size, ...params }) => {
       >
         <path
           d="M13 6L19 12M19 12L13 18M19 12H5"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     </Box>
