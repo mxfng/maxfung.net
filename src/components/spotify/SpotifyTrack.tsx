@@ -1,13 +1,5 @@
 import { Box, Flex, Grid, GridItem, Image, Text } from "@chakra-ui/react";
-import { ArrowUp } from "../svg/ArrowUp";
-
-function truncateString(str: string, maxLength: number): string {
-  if (str.length <= maxLength) {
-    return str;
-  } else {
-    return str.substring(0, maxLength - 3) + "...";
-  }
-}
+import { AutoScrollText } from "./AutoScrollText";
 
 export const SpotifyTrack: React.FC<any> = ({
   artist,
@@ -31,19 +23,8 @@ export const SpotifyTrack: React.FC<any> = ({
         <GridItem colSpan={{ base: 3 }} my="auto" px={[0, 3]}>
           {artist && title ? (
             <>
-              <Flex display="inline-flex">
-                <Text variant="link" className="text" width="max-content">
-                  {truncateString(title, 38)}
-                </Text>
-                <ArrowUp
-                  stroke="var(--chakra-colors-palette-900)"
-                  width="16px"
-                  ml={[1, 2]}
-                  my="auto"
-                  className="icon"
-                />
-              </Flex>
-              <Text variant="darker" style={{ textDecoration: "none" }}>
+              <AutoScrollText text={title} />
+              <Text variant="darker" px={2} style={{ textDecoration: "none" }}>
                 {artist}
               </Text>
               <Text variant="darker" fontSize={["0.7rem", "0.9rem"]}>

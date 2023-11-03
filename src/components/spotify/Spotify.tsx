@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, HStack, Heading } from "@chakra-ui/react";
+import { Grid, GridItem, HStack, Heading } from "@chakra-ui/react";
 import { SpotifyTrack } from "./SpotifyTrack";
 import { Waveform } from "./Waveform";
 

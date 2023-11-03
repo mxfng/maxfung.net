@@ -19,6 +19,16 @@ const styles = {
       fontSize: "16px",
     },
 
+    ".navbar-visible": {
+      transform: "translateY(0)",
+      transition: "transform 0.3s ease-in-out",
+    },
+
+    ".navbar-hidden": {
+      transform: "translateY(-100%)",
+      transition: "transform 0.3s ease-in-out",
+    },
+
     "& .linkify": {
       "& .album-art": {
         transition: "0.25s cubic-bezier(0.68, -0.6, 0.32, 1.6)",
@@ -72,14 +82,11 @@ const styles = {
       },
     },
 
-    ".navbar-visible": {
-      transform: "translateY(0)",
-      transition: "transform 0.3s ease-in-out",
-    },
-
-    ".navbar-hidden": {
-      transform: "translateY(-100%)",
-      transition: "transform 0.3s ease-in-out",
+    "@keyframes scrollText": {
+      "25%": { transform: "translateX(0%)" },
+      "50%": { transform: "translateX(-60%)" },
+      "75%": { transform: "translateX(-60%)" },
+      "100%": { transform: "translateX(0%)" },
     },
   },
 };
