@@ -1,27 +1,20 @@
 "use client";
 
-import { Box, useMediaQuery, Center } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
+import { Box, Center, useMediaQuery } from "@chakra-ui/react";
 import { SignatureLogoAnimated } from "./svg/SignatureLogoAnimated";
+import { useEffect, useState } from "react";
 
 export const Navbar = () => {
-  const [scrolling, setScrolling] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const scrollThreshold = 250;
-  const [isBelowThreshold] = useMediaQuery("(max-width: 1200px)");
+  const isBelowThreshold = useMediaQuery("(max-width: 1200px)");
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentPosition = window.scrollY;
-      const isScrollingPastThreshold = currentPosition > scrollThreshold;
-
-      if (isScrollingPastThreshold && isBelowThreshold) {
-        setScrolling(currentPosition > scrollPosition);
+      if (window.scrollY > 0) {
+        setIsVisible(false);
       } else {
-        setScrolling(false);
+        setIsVisible(true);
       }
-
-      setScrollPosition(currentPosition);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -29,10 +22,13 @@ export const Navbar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [scrollPosition, isBelowThreshold]);
+  }, []);
 
   return (
     <Box
+      className={
+        isVisible && isBelowThreshold ? "navbar-visible" : "navbar-hidden"
+      }
       bg={
         isBelowThreshold
           ? "linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)"
@@ -44,8 +40,6 @@ export const Navbar = () => {
       p={5}
       as="header"
       zIndex={999}
-      transition="transform 0.3s ease-in-out"
-      transform={scrolling ? "translateY(-100%)" : "translateY(0)"}
     >
       <Center>
         {/* Navbar Contents */}
