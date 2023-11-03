@@ -1,6 +1,6 @@
 import React from "react";
-import { Text, Grid, GridItem } from "@chakra-ui/react";
-import { ExperienceLink } from "./ExperienceLink";
+import { Text, Grid, GridItem, Flex } from "@chakra-ui/react";
+import { ArrowUp } from "../svg/ArrowUp";
 
 export const SocialLink: React.FC<any> = ({
   icon,
@@ -17,8 +17,27 @@ export const SocialLink: React.FC<any> = ({
             {side}
           </Text>
         </GridItem>
-        <GridItem colSpan={{ base: 4 }} my="auto">
-          <ExperienceLink title={title} href={href} />
+        <GridItem
+          as="a"
+          href={href}
+          target="_blank"
+          colSpan={{ base: 4 }}
+          className="linkify"
+          my="auto"
+          width="fit-content"
+        >
+          <Flex display="inline-flex">
+            <Text variant="link" className="text" width="max-content">
+              {title}
+            </Text>
+            <ArrowUp
+              stroke="var(--chakra-colors-palette-900)"
+              width="16px"
+              ml={[1, 2]}
+              my="auto"
+              className="icon"
+            />
+          </Flex>
         </GridItem>
       </Grid>
     </>
