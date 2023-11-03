@@ -4,8 +4,6 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Box } from "@chakra-ui/react";
 
-const metadatabase_url: string = process.env.VERCEL_URL!!;
-
 export const metadata: Metadata = {
   title: {
     template: "%s | Max Fung",
