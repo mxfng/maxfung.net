@@ -107,10 +107,10 @@ export default async function Home() {
         <Experience
           href="https://www.boeing.com/"
           side="2021 - 2022"
-          title="Project Manager · Boeing"
-          desc="Independently developed, maintained, and shipped internal production tracking software using
+          title="Project Manager and Technologist · Boeing"
+          desc="Developed, maintained, and shipped internal production tracking software using
             Python and Excel, providing project managers with comprehensive data for materials, orders, and
-            production activities, increasing the department’s visibility to track materials and products through
+            production activities, increasing the department’s visibility to track products through
             the entire supply chain, creating meaningful efficiency statistics to improve processes, and
             reducing overhead costs by around $5,000, per project, per week"
           stack={["Python", "Pandas", "Shell Scripting", "SQL"]}

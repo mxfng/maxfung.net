@@ -117,6 +117,7 @@ const components = {
         fontFamily: `'Victor Mono Variable', sans-serif`,
         fontSize: ["1.2rem", "1.2rem", "1.5rem"],
         fontWeight: 100,
+        color: "palette.900",
       },
     },
   },
