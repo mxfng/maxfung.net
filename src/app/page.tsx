@@ -188,7 +188,7 @@ export default async function Home() {
           href="mailto:maxhfung@gmail.com?subject=Hello Max"
         />
         <SocialLink
-          side="Github"
+          side="GitHub"
           title="@mxfng"
           href="https://github.com/mxfng"
         />
