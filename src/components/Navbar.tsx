@@ -57,7 +57,7 @@ export const Navbar = () => {
             }}
           >
             <SignatureLogoAnimated
-              stroke="var(--chakra-colors-palette-900)"
+              stroke="var(--chakra-colors-primary)"
               width="120px"
             />
           </Box>

@@ -159,7 +159,7 @@ export default async function Home() {
             >
               Spotify Web API{" "}
               <SpotifyLogo
-                fill="var(--chakra-colors-palette-900)"
+                fill="var(--chakra-colors-primary)"
                 width={["16px", "18px"]}
                 display="inline-flex"
                 ml={[0, 1]}

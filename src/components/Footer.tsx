@@ -62,7 +62,7 @@ export const Footer = ({ ...props }) => {
           </Text>
         </Box>
         <SignatureLogo
-          fill="var(--chakra-colors-palette-300)"
+          fill="var(--chakra-colors-tertiary)"
           width={["48px", "64px"]}
           float="right"
           pt={3}

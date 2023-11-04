@@ -11,10 +11,10 @@ const fonts = {
 const styles = {
   global: {
     body: {
-      bg: "palette.100",
+      bg: "bg",
       backgroundImage:
         "linear-gradient(171deg, rgba(0,0,0,0.92), rgba(0,0,0,0.89)), url('grain.svg')",
-      color: "palette.900",
+      color: "primary",
     },
 
     html: {
@@ -52,7 +52,7 @@ const styles = {
           transform: "translateX(3px)",
         },
         "& .text": {
-          textDecorationColor: "palette.900",
+          textDecorationColor: "primary",
         },
       },
     },
@@ -124,45 +124,45 @@ const components = {
   Link: {
     baseStyle: {
       fontWeight: 500,
-      color: "palette.900",
+      color: "primary",
       textDecoration: "underline transparent",
       transition: "text-decoration 500ms ease",
       _hover: {
-        textDecorationColor: "palette.900",
+        textDecorationColor: "primary",
       },
     },
     variants: {
       darker: {
-        color: "palette.400",
+        color: "tertiary",
       },
     },
   },
   Text: {
     baseStyle: {
       fontSize: ["0.9rem", "1.1rem"],
-      color: "palette.400",
+      color: "secondary",
       letterSpacing: ["-0.2px", "-0.5px"],
       fontWeight: 300,
     },
     variants: {
       darker: {
-        color: "palette.300",
+        color: "tertiary",
       },
       big: {
         fontFamily: `'Victor Mono Variable', sans-serif`,
         fontSize: ["1.2rem", "1.2rem", "1.5rem"],
         fontWeight: 100,
-        color: "palette.900",
+        color: "primary",
       },
       link: {
-        color: "palette.900",
+        color: "primary",
         fontWeight: "500",
         display: "inline-flex",
         className: "experience-text",
         textDecoration: "underline transparent",
         transition: "text-decoration 500ms ease",
         _hover: {
-          textDecorationColor: "palette.900",
+          textDecorationColor: "primary",
         },
       },
     },
@@ -175,6 +175,14 @@ export const theme = extendTheme({
     useSystemColorMode: true,
   },
   colors: dark.colors,
+  semanticTokens: {
+    colors: {
+      bg: dark.colors.primary[100],
+      tertiary: dark.colors.primary[500],
+      secondary: dark.colors.primary[700],
+      primary: dark.colors.primary[900],
+    },
+  },
   fonts,
   styles,
   components,

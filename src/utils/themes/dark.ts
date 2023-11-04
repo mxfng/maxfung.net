@@ -4,7 +4,7 @@ interface AppTheme {
   name: string;
   id: string;
   colors: {
-    palette: ColorHues;
+    primary: ColorHues;
   };
 }
 
@@ -12,17 +12,17 @@ const dark: AppTheme = {
   id: "dark",
   name: "Dark",
   colors: {
-    palette: {
-      50: "#000000",
-      100: "#000000", // background
-      200: "#333333", // darkest
-      300: "#595959", // darker
-      400: "#A5A5A5", // gray
-      500: "#A5A5A5",
-      600: "#A5A5A5",
-      700: "#f2f2f2",
-      800: "#f2f2f2",
-      900: "#f2f2f2", // highlight
+    primary: {
+      50: "rgb(13, 13, 13)",
+      100: "rgb(38, 38, 38)",
+      200: "rgb(64, 64, 64)",
+      300: "rgb(89, 89, 89)",
+      400: "rgb(115, 115, 115)",
+      500: "rgb(140, 140, 140)",
+      600: "rgb(166, 166, 166)",
+      700: "rgb(191, 191, 191)",
+      800: "rgb(242, 242, 242)",
+      900: "rgb(250, 250, 250)",
     },
   },
 };

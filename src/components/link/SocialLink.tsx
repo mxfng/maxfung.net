@@ -31,7 +31,7 @@ export const SocialLink: React.FC<any> = ({
               {title}
             </Text>
             <ArrowUp
-              stroke="var(--chakra-colors-palette-900)"
+              stroke="var(--chakra-colors-primary)"
               width="16px"
               ml={[1, 2]}
               my="auto"

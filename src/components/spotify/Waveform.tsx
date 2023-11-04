@@ -8,7 +8,7 @@ export const Waveform = ({ isPlaying }: { isPlaying: boolean }) => {
       key={index}
       display="block"
       position="relative"
-      background={isPlaying ? "palette.900" : "palette.300"}
+      background={isPlaying ? "primary" : "primary"}
       height={isPlaying ? (index === 1 ? "80%" : "100%") : "20%"}
       width="3px"
       borderRadius="10px"

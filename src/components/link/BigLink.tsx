@@ -26,7 +26,7 @@ export const BigLink: React.FC<any> = ({ title, href }) => {
           {title}
         </Heading>
         <ArrowForward
-          stroke="var(--chakra-colors-palette-900)"
+          stroke="var(--chakra-colors-primary)"
           width={["18px", "25px"]}
           ml={2}
           className="icon"
