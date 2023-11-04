@@ -75,6 +75,15 @@ const styles = {
       },
     },
 
+    "@keyframes unblur": {
+      "0%": {
+        filter: "blur(50px)",
+      },
+      "100%": {
+        filter: "blur(0px)",
+      },
+    },
+
     "@keyframes wave": {
       "50%": {
         height: "20%",
