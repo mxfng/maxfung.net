@@ -191,6 +191,12 @@ const components = {
         fontWeight: 800,
         letterSpacing: "-1px",
       },
+      experienceSub: {
+        color: "primary",
+        fontSize: ["1.2rem", "1.2rem", "1.6rem"],
+        fontWeight: 600,
+        letterSpacing: "-1px",
+      },
     },
   },
 };

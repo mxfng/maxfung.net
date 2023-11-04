@@ -88,6 +88,7 @@ export default async function Home() {
             architected  a refactored Android application, and contributed to the decomposition of
             a monolithic Ruby on Rails application to a modern Kotlin microservices architecture."
           stack={["Kotlin", "Rails", "Android", "React", "TS"]}
+          long={true}
         />
         <Experience
           href="https://www.boeing.com/"
@@ -99,6 +100,7 @@ export default async function Home() {
             Python and Excel, providing project managers with comprehensive data to track products through
             the entire supply chain, reducing overhead costs by around $5,000, per project, per week"
           stack={["Python", "Analytics", "Shell", "SQL"]}
+          long={true}
         />
         <Experience
           href="https://www.l3harris.com/company/aerojet-rocketdyne"
@@ -109,6 +111,7 @@ export default async function Home() {
           desc="Independently architected an internal desktop application for pressure transducer and load cell
             calibration tests using Python and PyQt5"
           stack={["Python", "PyQt", "NI-VISA"]}
+          long={true}
         />
         <BigLink title="View Full Résumé" href="/resume.pdf" />
       </>

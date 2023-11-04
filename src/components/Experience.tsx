@@ -18,7 +18,6 @@ import { SP } from "next/dist/shared/lib/utils";
 import { Line } from "./Line";
 
 export const Experience: React.FC<any> = ({
-  side,
   from,
   to,
   title,
@@ -27,6 +26,7 @@ export const Experience: React.FC<any> = ({
   stack,
   image,
   href,
+  long = false,
   ...props
 }) => {
   const stackLength = stack.length;
@@ -44,13 +44,6 @@ export const Experience: React.FC<any> = ({
           mb={[10, 20]}
           {...props}
         >
-          {side && (
-            <GridItem colSpan={2}>
-              <Text variant="darker" mb={1} mr={1}>
-                {side}
-              </Text>
-            </GridItem>
-          )}
           {from && (
             <GridItem colSpan={2}>
               <Flex>
@@ -81,7 +74,10 @@ export const Experience: React.FC<any> = ({
               />
             )}
           </GridItem>
-          <GridItem colSpan={{ base: 2, md: 1 }}>
+          <GridItem
+            id="experienceTitle"
+            colSpan={long ? { base: 2, md: 1 } : { base: 1 }}
+          >
             <Flex display="inline-flex">
               <Text variant="experience" className="text" width="max-content">
                 {title}
@@ -95,13 +91,18 @@ export const Experience: React.FC<any> = ({
               />
             </Flex>
           </GridItem>
-          <GridItem colSpan={{ base: 2, md: 1 }}>
+          <GridItem
+            id="experienceCompany"
+            colSpan={long ? { base: 2, md: 1 } : { base: 1 }}
+          >
             <Box
               w="fit-content"
-              mr={{ base: "auto", md: 0 }}
-              ml={{ base: 0, md: "auto" }}
+              mr={long ? { base: "auto", md: 0 } : { base: 0 }}
+              ml={long ? { base: 0, md: "auto" } : { base: "auto" }}
             >
-              <Text variant="experience">{company}</Text>
+              <Text variant={long ? "experienceSub" : "experience"}>
+                {company}
+              </Text>
             </Box>
           </GridItem>
           <GridItem colSpan={2}>
