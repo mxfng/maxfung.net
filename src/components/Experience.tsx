@@ -105,7 +105,7 @@ export const Experience: React.FC<any> = ({
           </GridItem>
           <GridItem colSpan={2}>
             {desc && (
-              <Box textAlign="justify">
+              <Box my={4} textAlign="justify">
                 <Text mb={[2, 2]}>{desc}</Text>
               </Box>
             )}

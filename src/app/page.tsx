@@ -1,8 +1,9 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
 import { Experience } from "@/components/Experience";
 import { BigLink } from "@/components/link/BigLink";
 import { Banner } from "@/components/Banner";
 import { Section } from "@/components/Section";
+import { Line } from "@/components/Line";
 
 export default async function Home() {
   const pageW = 900;
@@ -34,31 +35,42 @@ export default async function Home() {
   function renderAbout() {
     return (
       <>
-        <Flex>
-          <Text mb={3} pb={6} variant="big">
-            I&apos;m a full stack software engineer who loves designing,
-            building, and shipping creative products with intuitive experiences
-            from start to finish.
-          </Text>
-        </Flex>
-        <Text mb={3}>
-          As a self-taught developer, I learned how to build code first,
-          sharpening my craft through curiosity and grit. I&apos;ve developed
-          and contributed to a variety of exciting projects since starting my
-          journey back in 2018. I work best at the intersection of boundless
-          creativity and unwavering precision, where imaginative design meets
-          methodical development.
-        </Text>
-        <Text mb={[10, 14]}>
-          I&apos;m passionate about both product and engineering, and love
-          putting my problem solving skills to the test. When I&apos;m not
-          coding, I&apos;m producing my own music, surfing, snowboarding, taking
-          photos with my film cameras, and out exploring the world.
-        </Text>
-        <BigLink
-          title="Say Hello"
-          href="mailto:maxhfung@gmail.com?subject=Hello Max"
-        />
+        <Grid templateColumns="repeat(2, 1fr)">
+          <GridItem p={4} colSpan={{ base: 2, lg: 1 }}>
+            <Flex>
+              <Text variant="big">
+                I&apos;m a full stack software engineer who loves designing,
+                building, and shipping creative products with intuitive
+                experiences from start to finish.
+              </Text>
+            </Flex>
+          </GridItem>
+          <GridItem p={4} textAlign="justify" colSpan={{ base: 2, lg: 1 }}>
+            <Text>
+              As a self-taught developer, I learned how to build code first,
+              sharpening my craft through curiosity and grit. I&apos;ve
+              developed and contributed to a variety of exciting projects since
+              starting my journey back in 2018. When I&apos;m not coding,
+              I&apos;m producing my own music, surfing, snowboarding, taking
+              photos with my film cameras, and out exploring the world.
+            </Text>
+          </GridItem>
+          <GridItem p={4} textAlign="justify" colSpan={{ base: 2, lg: 1 }}>
+            <Text>
+              I work best at the intersection of boundless creativity and
+              unwavering precision, where imaginative design meets methodical
+              development. I&apos;m passionate about both product and
+              engineering, and love putting my problem solving skills to the
+              test.
+            </Text>
+          </GridItem>
+          <GridItem p={4} colSpan={{ base: 2, lg: 1 }} overflow="hidden">
+            <BigLink
+              title="Say Hello"
+              href="mailto:maxhfung@gmail.com?subject=Hello Max"
+            />
+          </GridItem>
+        </Grid>
       </>
     );
   }
@@ -116,8 +128,5 @@ export default async function Home() {
         />
       </>
     );
-  }
-  function renderLinks() {
-    return <></>;
   }
 }
