@@ -12,6 +12,8 @@ const styles = {
   global: {
     body: {
       bg: "palette.100",
+      backgroundImage:
+        "linear-gradient(171deg, rgba(0,0,0,0.92), rgba(0,0,0,0.89)), url('grain.svg')",
       color: "palette.900",
     },
 
