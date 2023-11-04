@@ -1,12 +1,14 @@
-import { Flex, Heading } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import React from "react";
 import { ArrowForward } from "../svg/ArrowForward";
 
-export const BigLink: React.FC<any> = ({ title, href }) => {
+export const BigLink: React.FC<any> = ({ title, href, children }) => {
   return (
     <>
-      <Flex
-        alignItems="center"
+      <Box
+        h="100%"
+        outline="1px solid var(--chakra-colors-tertiary)"
+        p={8}
         css={{
           "& .icon": {
             transform: "translateX(0)",
@@ -19,19 +21,18 @@ export const BigLink: React.FC<any> = ({ title, href }) => {
             transform: "translateX(8px)",
           },
         }}
-        w="fit-content"
-        pl={[3, 5]}
+        position="relative"
       >
-        <Heading variant="bigLink" as="a" href={href} target="_blank">
-          {title}
-        </Heading>
-        <ArrowForward
-          stroke="var(--chakra-colors-primary)"
-          width={["18px", "25px"]}
-          ml={2}
-          className="icon"
-        />
-      </Flex>
+        {children}
+        <Box position="absolute" bottom="8" right="8">
+          <ArrowForward
+            stroke="var(--chakra-colors-primary)"
+            width={["36px", "48px"]}
+            ml={2}
+            className="icon"
+          />
+        </Box>
+      </Box>
     </>
   );
 };

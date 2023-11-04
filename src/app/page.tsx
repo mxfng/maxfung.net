@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
+import { Box, Flex, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
 import { Experience } from "@/components/Experience";
 import { BigLink } from "@/components/link/BigLink";
 import { Banner } from "@/components/Banner";
@@ -67,7 +67,12 @@ export default async function Home() {
             <BigLink
               title="Say Hello"
               href="mailto:maxhfung@gmail.com?subject=Hello Max"
-            />
+            >
+              <Box>
+                <Heading variant="big">Say</Heading>
+                <Heading variant="big">Hello!</Heading>
+              </Box>
+            </BigLink>
           </GridItem>
         </Grid>
       </>
