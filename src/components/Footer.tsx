@@ -1,12 +1,15 @@
 import { Box, Center, Image, Link, Text } from "@chakra-ui/react";
 import { SignatureLogo } from "./svg/SignatureLogo";
 import { Spotify } from "./spotify/Spotify";
+import { Links } from "./Links";
 
-export const Footer = ({ ...props }) => {
+export const Footer: React.FC<any> = ({ children, ...props }) => {
   return (
     <>
-      <Box px={3} py={0} {...props}>
-        <Box textAlign="justify">
+      <Box py={0} {...props}>
+        <Links />
+        {children}
+        <Box px={3} textAlign="justify">
           <Text variant="tiny" pb={2}>
             Designed by Max Fung in California.{" "}
           </Text>
@@ -45,8 +48,9 @@ export const Footer = ({ ...props }) => {
         </Box>
         <SignatureLogo
           fill="var(--chakra-colors-primary)"
-          width={["48px", "64px"]}
+          width={["64px", "88px"]}
           pt={4}
+          px={3}
         />
       </Box>
     </>

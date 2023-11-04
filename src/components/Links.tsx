@@ -3,26 +3,19 @@ import React from "react";
 import { Line } from "./Line";
 import { SocialLink } from "./link/SocialLink";
 
-export const Links: React.FC<any> = ({
-  width,
-  contentWidth,
-  title,
-  children,
-  ...props
-}) => {
+export const Links: React.FC<any> = ({ width, contentWidth, title }) => {
   return (
     <>
       <Box overflow="hidden">
-        <Line mb={[3, 3]} />
-        <Grid templateColumns="repeat(5, 1fr)">
+        <Line mb={[4, 4]} />
+        <Grid px={3} templateColumns="repeat(5, 1fr)">
           <GridItem colSpan={1}>
             <Heading
               variant="section"
-              mb={[3, 8]}
+              mb={[10, 10]}
               maxW={width}
               mx="auto"
               my="auto"
-              px={3}
             >
               Links
             </Heading>
@@ -56,9 +49,6 @@ export const Links: React.FC<any> = ({
             />
           </GridItem>
         </Grid>
-        <Box maxW={width} mx="auto" px={3} {...props}>
-          {children}
-        </Box>
       </Box>
     </>
   );

@@ -55,14 +55,14 @@ export default async function RootLayout({
           <Box pt={100} overflow="hidden" maxWidth={900} mx="auto">
             {children}
           </Box>
-          <Box id="coolFooter" pb={[20, 20]} maxWidth={900} mx="auto">
-            <Links />
-            <Spotify
-              nowPlaying={_nowPlaying}
-              recentlyPlayed={_recentlyPlayed}
-              songOfTheMonth={_songOfTheMonth}
-            />
-            <Footer />
+          <Box id="coolFooter" pb={4} maxWidth={900} mx="auto">
+            <Footer>
+              <Spotify
+                nowPlaying={_nowPlaying}
+                recentlyPlayed={_recentlyPlayed}
+                songOfTheMonth={_songOfTheMonth}
+              />
+            </Footer>
           </Box>
         </Providers>
       </body>

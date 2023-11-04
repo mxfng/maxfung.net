@@ -1,4 +1,5 @@
 import {
+  Box,
   Flex,
   Grid,
   GridItem,
@@ -34,7 +35,9 @@ export const Spotify: React.FC<any> = ({
             <Heading px={3} variant="section" my="auto">
               {nowPlaying.isPlaying ? "Now Playing" : "Recently Played"}
             </Heading>
-            <Waveform isPlaying={nowPlaying.isPlaying} />
+            <Box my="auto">
+              <Waveform isPlaying={nowPlaying.isPlaying} />
+            </Box>
           </HStack>
           {recentlyPlayed ? (
             renderTrack(nowPlaying.isPlaying ? nowPlaying : recentlyPlayed)
