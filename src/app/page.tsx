@@ -88,11 +88,9 @@ export default async function Home() {
           side="2022 - present"
           title="Software Development Engineer · Flexe"
           desc="Deliver high-quality, robust production code for Flexe’s proprietary warehouse management
-            system serving a diverse array of large enterprise clients including Target, Walmart, Lowe’s, Home
-            Depot, Daiso, and more. Led the design and deployment of reusable mobile front end components,
-            architected and deployed a refactored Android application, contributed to the decomposition of
-            a monolithic Ruby on Rails application to a modern Kotlin microservices architecture, and built
-            other solutions that provided numerous improvements to freight and parcel fulfillment."
+            system serving a diverse array of large enterprise clients. Led the design and deployment of reusable mobile front end components,
+            architected  a refactored Android application, and contributed to the decomposition of
+            a monolithic Ruby on Rails application to a modern Kotlin microservices architecture."
           stack={[
             "Kotlin",
             "Ruby on Rails",
@@ -109,10 +107,8 @@ export default async function Home() {
           side="2021 - 2022"
           title="Project Manager and Technologist · Boeing"
           desc="Developed, maintained, and shipped internal production tracking software using
-            Python and Excel, providing project managers with comprehensive data for materials, orders, and
-            production activities, increasing the department’s visibility to track products through
-            the entire supply chain, creating meaningful efficiency statistics to improve processes, and
-            reducing overhead costs by around $5,000, per project, per week"
+            Python and Excel, providing project managers with comprehensive data to track products through
+            the entire supply chain, reducing overhead costs by around $5,000, per project, per week"
           stack={["Python", "Pandas", "Shell Scripting", "SQL"]}
         />
         <Experience
