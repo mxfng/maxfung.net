@@ -1,13 +1,16 @@
-import { Box, Image, Link, Text } from "@chakra-ui/react";
+import { Box, Center, Image, Link, Text } from "@chakra-ui/react";
 import { SignatureLogo } from "./svg/SignatureLogo";
+import { Spotify } from "./spotify/Spotify";
 
 export const Footer = ({ ...props }) => {
   return (
     <>
-      <Box px={3} pb={30} {...props}>
-        <Box>
-          <Text fontSize="10pt">
+      <Box px={3} py={0} {...props}>
+        <Box textAlign="justify">
+          <Text variant="tiny" pb={2}>
             Designed by Max Fung in California.{" "}
+          </Text>
+          <Text variant="tiny">
             <Link href="https://github.com/mxfng/maxfung-2023" target="_blank">
               This website
             </Link>{" "}
@@ -41,11 +44,9 @@ export const Footer = ({ ...props }) => {
           </Text>
         </Box>
         <SignatureLogo
-          fill="var(--chakra-colors-tertiary)"
+          fill="var(--chakra-colors-primary)"
           width={["48px", "64px"]}
-          float="right"
-          pt={3}
-          mr={10}
+          pt={4}
         />
       </Box>
     </>

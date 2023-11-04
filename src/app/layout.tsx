@@ -3,6 +3,8 @@ import { Providers } from "./providers";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Box } from "@chakra-ui/react";
+import { nowPlaying, recentlyPlayed, songOfTheMonth } from "@/utils/spotify";
+import { Spotify } from "@/components/spotify/Spotify";
 
 export const metadata: Metadata = {
   title: {
@@ -35,11 +37,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const _nowPlaying = await nowPlaying();
+  const _recentlyPlayed = await recentlyPlayed();
+  const _songOfTheMonth = await songOfTheMonth();
+
   return (
     <html lang="en">
       <body>
@@ -48,7 +54,14 @@ export default function RootLayout({
           <Box pt={100} overflow="hidden" maxWidth={900} mx="auto">
             {children}
           </Box>
-          <Footer pb={[50, 100]} maxWidth={900} mx="auto" />
+          <Box id="coolFooter" pb={[20, 20]} maxWidth={900} mx="auto">
+            <Spotify
+              nowPlaying={_nowPlaying}
+              recentlyPlayed={_recentlyPlayed}
+              songOfTheMonth={_songOfTheMonth}
+            />
+            <Footer />
+          </Box>
         </Providers>
       </body>
     </html>

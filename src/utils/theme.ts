@@ -96,6 +96,8 @@ const styles = {
   },
 };
 
+const lg = ["2rem", "2.2rem", "3.2rem"];
+
 const components = {
   Heading: {
     baseStyle: {
@@ -103,7 +105,7 @@ const components = {
     },
     variants: {
       name: {
-        fontSize: ["2rem", "2.2rem", "3.2rem"],
+        fontSize: lg,
         fontWeight: 800,
         letterSpacing: "-1px",
       },
@@ -161,6 +163,22 @@ const components = {
         _hover: {
           textDecorationColor: "primary",
         },
+      },
+      experience: {
+        color: "primary",
+        fontSize: ["1.4rem", "1.4rem", "1.8rem"],
+        fontWeight: 800,
+        letterSpacing: "-1px",
+      },
+      wide: {
+        color: "primary",
+        fontSize: ["1.0rem", "1.2rem"],
+        letterSpacing: "2px",
+      },
+      tiny: {
+        color: "primary",
+        fontSize: "0.88rem",
+        letterSpacing: "2px",
       },
     },
   },

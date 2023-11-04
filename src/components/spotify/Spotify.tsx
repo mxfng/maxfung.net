@@ -1,6 +1,15 @@
-import { Grid, GridItem, HStack, Heading } from "@chakra-ui/react";
+import {
+  Flex,
+  Grid,
+  GridItem,
+  HStack,
+  Heading,
+  Link,
+  Text,
+} from "@chakra-ui/react";
 import { SpotifyTrack } from "./SpotifyTrack";
 import { Waveform } from "./Waveform";
+import { SpotifyLogo } from "../svg/SpotifyLogo";
 
 export const Spotify: React.FC<any> = ({
   nowPlaying,
@@ -19,7 +28,7 @@ export const Spotify: React.FC<any> = ({
 
   return (
     <>
-      <Grid templateColumns="repeat(2, 1fr)" gap={8}>
+      <Grid templateColumns="repeat(2, 1fr)" gap={8} pb={8}>
         <GridItem colSpan={{ base: 2, md: 1 }}>
           <HStack alignItems="start" mb={[3, 8]}>
             <Heading variant="section" my="auto">
@@ -40,6 +49,31 @@ export const Spotify: React.FC<any> = ({
           {songOfTheMonth ? renderTrack(songOfTheMonth) : <SpotifyTrack />}
         </GridItem>
       </Grid>
+      <Flex pt={2} px={3}>
+        <Text variant="tiny" pb={2}>
+          Here are some of my favorite records, updated live using the{" "}
+          <Link
+            href="https://developer.spotify.com/documentation/web-api"
+            target="_blank"
+            fontWeight={500}
+          >
+            Spotify Web API{" "}
+          </Link>
+        </Text>
+        <Link
+          href="https://developer.spotify.com/documentation/web-api"
+          target="_blank"
+          fontWeight={500}
+        >
+          <SpotifyLogo
+            fill="var(--chakra-colors-primary)"
+            width={["10px", "20px"]}
+            display="inline-flex"
+            ml={[0, 1]}
+            my="auto"
+          />
+        </Link>
+      </Flex>
     </>
   );
 };

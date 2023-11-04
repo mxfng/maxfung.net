@@ -5,6 +5,7 @@ import { ArrowUp } from "./svg/ArrowUp";
 export const Experience: React.FC<any> = ({
   side,
   title,
+  company,
   desc,
   stack,
   image,
@@ -23,16 +24,16 @@ export const Experience: React.FC<any> = ({
           href={href}
           target="_blank"
           className="linkify"
-          templateColumns="repeat(5, 1fr)"
+          templateColumns="repeat(1, 1fr)"
           mb={[10, 20]}
           {...props}
         >
-          <GridItem colSpan={{ base: 5, md: 1 }}>
+          <GridItem colSpan={1}>
             <Text variant="darker" mb={1} mr={1}>
               {side}
             </Text>
           </GridItem>
-          <GridItem colSpan={{ base: 5, md: 4 }} mt={1}>
+          <GridItem colSpan={1} mt={1}>
             {image && (
               <Image
                 width="48px"
@@ -43,7 +44,7 @@ export const Experience: React.FC<any> = ({
               />
             )}
             <Flex display="inline-flex" mb={[1, 5]}>
-              <Text variant="link" className="text" width="max-content">
+              <Text variant="experience" className="text" width="max-content">
                 {title}
               </Text>
               <ArrowUp

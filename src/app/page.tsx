@@ -5,15 +5,11 @@ import { Banner } from "@/components/Banner";
 import { Section } from "@/components/Section";
 import { SocialLink } from "@/components/link/SocialLink";
 import { nowPlaying, recentlyPlayed, songOfTheMonth } from "@/utils/spotify";
-import { Spotify } from "@/components/spotify/Spotify";
 import { SpotifyLogo } from "@/components/svg/SpotifyLogo";
 
 export default async function Home() {
   const pageW = 900;
   const sectionSpacing = [20, "8rem"];
-  const _nowPlaying = await nowPlaying();
-  const _recentlyPlayed = await recentlyPlayed();
-  const _songOfTheMonth = await songOfTheMonth();
 
   return (
     <>
@@ -33,11 +29,6 @@ export default async function Home() {
       <Box mb={sectionSpacing}>
         <Section title="Featured Projects" mt={[0, 10]}>
           {renderFeaturedProjects()}
-        </Section>
-      </Box>
-      <Box mb={sectionSpacing}>
-        <Section title="Records" mt={[0, 10]}>
-          {renderRecords()}
         </Section>
       </Box>
       <Box mb={[20, "6rem"]}>
@@ -138,42 +129,6 @@ export default async function Home() {
       </>
     );
   }
-
-  function renderRecords() {
-    return (
-      <>
-        <Flex>
-          <Text mb={[8, 12]}>
-            Music is an essential aspect of my life. When I&apos;m not working
-            on my own music, I&apos;m listening to songs that put me in the zone
-            to do my best work. Here are some of my favorite records, updated
-            live using the{" "}
-            <Link
-              href="https://developer.spotify.com/documentation/web-api"
-              target="_blank"
-              fontWeight={500}
-            >
-              Spotify Web API{" "}
-              <SpotifyLogo
-                fill="var(--chakra-colors-primary)"
-                width={["16px", "18px"]}
-                display="inline-flex"
-                ml={[0, 1]}
-                my="auto"
-              />
-            </Link>
-            .
-          </Text>
-        </Flex>
-        <Spotify
-          nowPlaying={_nowPlaying}
-          recentlyPlayed={_recentlyPlayed}
-          songOfTheMonth={_songOfTheMonth}
-        />
-      </>
-    );
-  }
-
   function renderLinks() {
     return (
       <>
