@@ -6,36 +6,27 @@ export const Footer = ({ ...props }) => {
     <>
       <Box px={3} pb={30} {...props}>
         <Box>
-          <Text variant="darker" fontSize="10pt">
+          <Text fontSize="10pt">
             Designed by Max Fung in California.{" "}
-            <Link
-              href="https://github.com/mxfng/maxfung-2023"
-              target="_blank"
-              variant="darker"
-            >
+            <Link href="https://github.com/mxfng/maxfung-2023" target="_blank">
               This website
             </Link>{" "}
             was written in TypeScript using{" "}
-            <Link href="https://nextjs.org/" target="_blank" variant="darker">
+            <Link href="https://nextjs.org/" target="_blank">
               Next.js
             </Link>{" "}
             and{" "}
-            <Link
-              href="https://chakra-ui.com/"
-              target="_blank"
-              variant="darker"
-            >
+            <Link href="https://chakra-ui.com/" target="_blank">
               Chakra UI
             </Link>
             , and deployed with{" "}
-            <Link href="https://vercel.com/" target="_blank" variant="darker">
+            <Link href="https://vercel.com/" target="_blank">
               Vercel
             </Link>
             . Text is set in the{" "}
             <Link
               href="https://fonts.google.com/specimen/Inter"
               target="_blank"
-              variant="darker"
             >
               Inter
             </Link>{" "}
@@ -43,7 +34,6 @@ export const Footer = ({ ...props }) => {
             <Link
               href="https://fonts.google.com/specimen/Victor+Mono"
               target="_blank"
-              variant="darker"
             >
               Victor Mono
             </Link>{" "}

@@ -17,7 +17,7 @@ export default async function Home() {
 
   return (
     <>
-      <Box maxWidth={pageW} mx="auto" px="3">
+      <Box mx="auto" px="3">
         <Banner />
       </Box>
       <Box mb={sectionSpacing}>
@@ -26,22 +26,22 @@ export default async function Home() {
         </Section>
       </Box>
       <Box mb={sectionSpacing}>
-        <Section title="Experience" width={pageW} mt={[0, 10]}>
+        <Section title="Experience" mt={[0, 10]}>
           {renderExperience()}
         </Section>
       </Box>
       <Box mb={sectionSpacing}>
-        <Section title="Featured Projects" width={pageW} mt={[0, 10]}>
+        <Section title="Featured Projects" mt={[0, 10]}>
           {renderFeaturedProjects()}
         </Section>
       </Box>
       <Box mb={sectionSpacing}>
-        <Section width={pageW} title="Records" mt={[0, 10]}>
+        <Section title="Records" mt={[0, 10]}>
           {renderRecords()}
         </Section>
       </Box>
       <Box mb={[20, "6rem"]}>
-        <Section width={pageW} title="Links" mt={[0, 10]}>
+        <Section title="Links" mt={[0, 10]}>
           {renderLinks()}
         </Section>
       </Box>
@@ -52,7 +52,7 @@ export default async function Home() {
     return (
       <>
         <Flex>
-          <Text mb={3} pb={10} variant="big">
+          <Text mb={3} pb={6} variant="big">
             I&apos;m a full stack software engineer who loves designing,
             building, and shipping creative products with intuitive experiences
             from start to finish.
@@ -66,7 +66,7 @@ export default async function Home() {
           creativity and unwavering precision, where imaginative design meets
           methodical development.
         </Text>
-        <Text mb={[6, 10]}>
+        <Text mb={[10, 14]}>
           I&apos;m passionate about both product and engineering, and love
           putting my problem solving skills to the test. When I&apos;m not
           coding, I&apos;m producing my own music, surfing, snowboarding, taking
@@ -149,9 +149,9 @@ export default async function Home() {
         <Flex>
           <Text mb={[8, 12]}>
             Music is an essential aspect of my life. When I&apos;m not working
-            on my own music, I&apos;m listening to songs that put me in the
-            zone. Here are some of my favorite records, updated live and direct
-            using the{" "}
+            on my own music, I&apos;m listening to songs that put me in the zone
+            to do my best work. Here are some of my favorite records, updated
+            live using the{" "}
             <Link
               href="https://developer.spotify.com/documentation/web-api"
               target="_blank"

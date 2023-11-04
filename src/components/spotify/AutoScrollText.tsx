@@ -28,6 +28,7 @@ export const AutoScrollText: React.FC<any> = ({ text }) => {
             whiteSpace="nowrap"
             position="relative"
             px={2}
+            fontSize="1.2rem"
           >
             {text}
           </Text>

@@ -147,9 +147,8 @@ const components = {
         color: "tertiary",
       },
       big: {
-        fontFamily: `'Victor Mono Variable', sans-serif`,
         fontSize: ["1.6rem", "1.8rem", "2rem"],
-        fontWeight: 100,
+        fontWeight: 300,
         color: "primary",
       },
       link: {
@@ -176,8 +175,8 @@ export const theme = extendTheme({
   semanticTokens: {
     colors: {
       bg: "black",
-      tertiary: dark.colors.primary[500],
-      secondary: dark.colors.primary[700],
+      tertiary: dark.colors.primary[300],
+      secondary: dark.colors.primary[600],
       primary: dark.colors.primary[900],
     },
   },
