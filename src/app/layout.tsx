@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Box } from "@chakra-ui/react";
 import { nowPlaying, recentlyPlayed, songOfTheMonth } from "@/utils/spotify";
 import { Spotify } from "@/components/spotify/Spotify";
+import { Links } from "@/components/Links";
 
 export const metadata: Metadata = {
   title: {
@@ -55,6 +56,7 @@ export default async function RootLayout({
             {children}
           </Box>
           <Box id="coolFooter" pb={[20, 20]} maxWidth={900} mx="auto">
+            <Links />
             <Spotify
               nowPlaying={_nowPlaying}
               recentlyPlayed={_recentlyPlayed}

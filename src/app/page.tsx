@@ -31,11 +31,6 @@ export default async function Home() {
           {renderFeaturedProjects()}
         </Section>
       </Box>
-      <Box mb={[20, "6rem"]}>
-        <Section title="Links" mt={[0, 10]}>
-          {renderLinks()}
-        </Section>
-      </Box>
     </>
   );
 
@@ -130,29 +125,6 @@ export default async function Home() {
     );
   }
   function renderLinks() {
-    return (
-      <>
-        <SocialLink
-          side="Email"
-          title="maxhfung@gmail.com"
-          href="mailto:maxhfung@gmail.com?subject=Hello Max"
-        />
-        <SocialLink
-          side="GitHub"
-          title="@mxfng"
-          href="https://github.com/mxfng"
-        />
-        <SocialLink
-          side="LinkedIn"
-          title="@maxfung"
-          href="https://www.linkedin.com/in/maxfung/"
-        />
-        <SocialLink
-          side="Instagram"
-          title="@fungkadelic"
-          href="https://www.instagram.com/fungkadelic/"
-        />
-      </>
-    );
+    return <></>;
   }
 }

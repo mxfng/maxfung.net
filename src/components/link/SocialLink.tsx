@@ -11,35 +11,18 @@ export const SocialLink: React.FC<any> = ({
 }) => {
   return (
     <>
-      <Grid templateColumns="repeat(5, 1fr)" mb={[3, 6]} {...props}>
-        <GridItem colSpan={{ base: 1 }} my="auto">
-          <Text variant="darker" mr={1}>
-            {side}
-          </Text>
-        </GridItem>
-        <GridItem
-          as="a"
-          href={href}
-          target="_blank"
-          colSpan={{ base: 4 }}
-          className="linkify"
+      <Flex as="a" href={href} mr={0} ml="auto" w="fit-content">
+        <Text variant="link" my="auto">
+          {side}
+        </Text>
+        <ArrowUp
+          stroke="var(--chakra-colors-primary)"
+          width="16px"
+          ml={[1, 2]}
           my="auto"
-          width="fit-content"
-        >
-          <Flex display="inline-flex">
-            <Text variant="link" className="text" width="max-content">
-              {title}
-            </Text>
-            <ArrowUp
-              stroke="var(--chakra-colors-primary)"
-              width="16px"
-              ml={[1, 2]}
-              my="auto"
-              className="icon"
-            />
-          </Flex>
-        </GridItem>
-      </Grid>
+          className="icon"
+        />
+      </Flex>
     </>
   );
 };

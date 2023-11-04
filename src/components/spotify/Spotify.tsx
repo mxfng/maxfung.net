@@ -31,7 +31,7 @@ export const Spotify: React.FC<any> = ({
       <Grid templateColumns="repeat(2, 1fr)" gap={8} pb={8}>
         <GridItem colSpan={{ base: 2, md: 1 }}>
           <HStack alignItems="start" mb={[3, 8]}>
-            <Heading variant="section" my="auto">
+            <Heading px={3} variant="section" my="auto">
               {nowPlaying.isPlaying ? "Now Playing" : "Recently Played"}
             </Heading>
             <Waveform isPlaying={nowPlaying.isPlaying} />
@@ -43,7 +43,7 @@ export const Spotify: React.FC<any> = ({
           )}
         </GridItem>
         <GridItem colSpan={{ base: 2, md: 1 }}>
-          <Heading variant="section" mb={[3, 8]}>
+          <Heading variant="section" px={3} mb={[3, 8]}>
             Song of the Month
           </Heading>
           {songOfTheMonth ? renderTrack(songOfTheMonth) : <SpotifyTrack />}

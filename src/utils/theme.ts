@@ -153,6 +153,21 @@ const components = {
         fontWeight: 300,
         color: "primary",
       },
+      wide: {
+        color: "primary",
+        fontSize: ["1.0rem", "1.2rem"],
+        letterSpacing: "2px",
+      },
+      little: {
+        color: "primary",
+        fontSize: "1.0rem",
+        letterSpacing: "2px",
+      },
+      tiny: {
+        color: "primary",
+        fontSize: "0.88rem",
+        letterSpacing: "2px",
+      },
       link: {
         color: "primary",
         fontWeight: "500",
@@ -169,16 +184,6 @@ const components = {
         fontSize: ["1.4rem", "1.4rem", "1.8rem"],
         fontWeight: 800,
         letterSpacing: "-1px",
-      },
-      wide: {
-        color: "primary",
-        fontSize: ["1.0rem", "1.2rem"],
-        letterSpacing: "2px",
-      },
-      tiny: {
-        color: "primary",
-        fontSize: "0.88rem",
-        letterSpacing: "2px",
       },
     },
   },
