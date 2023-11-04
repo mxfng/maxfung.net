@@ -40,6 +40,7 @@ export const Experience: React.FC<any> = ({
           target="_blank"
           className="linkify"
           templateColumns="repeat(2, 1fr)"
+          mt={[6, 0]}
           mb={[10, 20]}
           {...props}
         >

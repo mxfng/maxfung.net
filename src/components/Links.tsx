@@ -6,7 +6,7 @@ import { SocialLink } from "./link/SocialLink";
 export const Links: React.FC<any> = ({ width, contentWidth, title }) => {
   return (
     <>
-      <Box overflow="hidden">
+      <Box mb={[4, 0]} overflow="hidden">
         <Line mb={[4, 4]} />
         <Grid px={3} templateColumns="repeat(5, 1fr)">
           <GridItem colSpan={1}>

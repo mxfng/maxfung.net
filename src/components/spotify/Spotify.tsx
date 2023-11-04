@@ -59,6 +59,7 @@ export const Spotify: React.FC<any> = ({
             href="https://developer.spotify.com/documentation/web-api"
             target="_blank"
             fontWeight={500}
+            display="inline-flex"
           >
             Spotify Web API{" "}
           </Link>

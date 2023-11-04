@@ -3,7 +3,6 @@ import { Experience } from "@/components/Experience";
 import { BigLink } from "@/components/link/BigLink";
 import { Banner } from "@/components/Banner";
 import { Section } from "@/components/Section";
-import { Line } from "@/components/Line";
 
 export default async function Home() {
   const pageW = 900;
