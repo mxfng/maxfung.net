@@ -75,7 +75,13 @@ export const Avatar = () => {
               top="0px"
               left="0px"
               zIndex={3}
-              style={{ animation: "fadeIn 1s linear" }}
+              css={{
+                "mask-image":
+                  "radial-gradient(circle, rgba(0,0,0, 1) 70%, rgba(0, 0, 0, 0) 71%)",
+              }}
+              style={{
+                animation: "fadeIn 1s linear",
+              }}
               onLoad={() => setimageLoaded(true)}
             />
           ) : null}
@@ -89,6 +95,10 @@ export const Avatar = () => {
             top="0px"
             left="0px"
             zIndex={2}
+            css={{
+              "mask-image":
+                "radial-gradient(circle, rgba(0,0,0, 1) 69.5%, rgba(0, 0, 0, 0) 70.5%)",
+            }}
           />
         </Flex>
       </Box>
