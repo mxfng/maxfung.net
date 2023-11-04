@@ -23,7 +23,7 @@ export const AutoScrollText: React.FC<any> = ({ text }) => {
           <Text
             variant="link"
             className="text"
-            width="100%"
+            width="min-content"
             animation={isScrolling ? "scrollText 20s ease-in-out infinite" : ""}
             whiteSpace="nowrap"
             position="relative"

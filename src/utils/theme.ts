@@ -89,8 +89,8 @@ const styles = {
 
     "@keyframes scrollText": {
       "25%": { transform: "translateX(0%)" },
-      "50%": { transform: "translateX(-60%)" },
-      "75%": { transform: "translateX(-60%)" },
+      "50%": { transform: "translateX(-50%)" },
+      "75%": { transform: "translateX(-50%)" },
       "100%": { transform: "translateX(0%)" },
     },
   },
@@ -111,6 +111,11 @@ const components = {
       },
       section: {
         fontSize: ["1.4rem", "1.4rem", "1.8rem"],
+        fontWeight: 800,
+        letterSpacing: "-1px",
+      },
+      subSection: {
+        fontSize: ["1.2rem", "1.2rem", "1.6rem"],
         fontWeight: 800,
         letterSpacing: "-1px",
       },
