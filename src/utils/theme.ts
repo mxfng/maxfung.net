@@ -12,8 +12,6 @@ const styles = {
   global: {
     body: {
       bg: "bg",
-      backgroundImage:
-        "linear-gradient(171deg, rgba(0,0,0,0.92), rgba(0,0,0,0.89)), url('grain.svg')",
       color: "primary",
     },
 
@@ -177,7 +175,7 @@ export const theme = extendTheme({
   colors: dark.colors,
   semanticTokens: {
     colors: {
-      bg: dark.colors.primary[100],
+      bg: "black",
       tertiary: dark.colors.primary[500],
       secondary: dark.colors.primary[700],
       primary: dark.colors.primary[900],

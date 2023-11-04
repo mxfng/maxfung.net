@@ -6,17 +6,6 @@ export const Footer = ({ ...props }) => {
     <>
       <Box px={3} pb={30} {...props}>
         <Box>
-          <Image
-            width={["90px", "120px"]}
-            height={["90px", "120px"]}
-            objectFit="cover"
-            mb={4}
-            src="/footer.jpg"
-            alt="footer"
-            borderRadius="full"
-          />
-        </Box>
-        <Box>
           <Text variant="darker" fontSize="10pt">
             Designed by Max Fung in California.{" "}
             <Link
