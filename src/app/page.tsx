@@ -51,20 +51,20 @@ export default async function Home() {
   function renderAbout() {
     return (
       <>
-        <Text mb={[3, 6]} variant="big">
-          I&apos;m a full stack software engineer who loves designing, building,
-          and shipping creative products with intuitive experiences from start
-          to finish.
-        </Text>
+        <Flex>
+          <Text mb={3} pb={10} variant="big">
+            I&apos;m a full stack software engineer who loves designing,
+            building, and shipping creative products with intuitive experiences
+            from start to finish.
+          </Text>
+        </Flex>
         <Text mb={3}>
           As a self-taught developer, I learned how to build code first,
           sharpening my craft through curiosity and grit. I&apos;ve developed
           and contributed to a variety of exciting projects since starting my
-          journey back in 2018.
-        </Text>
-        <Text mb={3}>
-          I work best at the intersection of boundless creativity and unwavering
-          precision, where imaginative design meets methodical development.
+          journey back in 2018. I work best at the intersection of boundless
+          creativity and unwavering precision, where imaginative design meets
+          methodical development.
         </Text>
         <Text mb={[6, 10]}>
           I&apos;m passionate about both product and engineering, and love

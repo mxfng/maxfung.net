@@ -17,10 +17,6 @@ const styles = {
       color: "primary",
     },
 
-    html: {
-      fontSize: "16px",
-    },
-
     ".navbar-visible": {
       transform: "translateY(0)",
       transition: "transform 0.3s ease-in-out",
@@ -109,23 +105,18 @@ const components = {
     },
     variants: {
       name: {
-        fontSize: ["1.8rem", "2rem", "3rem"],
+        fontSize: ["2rem", "2.2rem", "3.2rem"],
         fontWeight: 800,
         letterSpacing: "-1px",
       },
       section: {
-        fontSize: ["1.2rem", "1.2rem", "1.5rem"],
+        fontSize: ["1.4rem", "1.4rem", "1.8rem"],
         fontWeight: 800,
         letterSpacing: "-1px",
       },
-      link: {
-        fontSize: ["0.9rem", "1.2rem", "1.2rem"],
-        fontWeight: 500,
-        letterSpacing: ["-0.2px", "-0.5px"],
-      },
       bigLink: {
         fontFamily: `'Victor Mono Variable', sans-serif`,
-        fontSize: ["1.2rem", "1.2rem", "1.5rem"],
+        fontSize: ["1.6rem", "1.8rem", "2rem"],
         fontWeight: 100,
       },
     },
@@ -148,7 +139,7 @@ const components = {
   },
   Text: {
     baseStyle: {
-      fontSize: ["0.9rem", "1.1rem"],
+      fontSize: ["1.0rem", "1.2rem"],
       color: "secondary",
       letterSpacing: ["-0.2px", "-0.5px"],
       fontWeight: 300,
@@ -159,7 +150,7 @@ const components = {
       },
       big: {
         fontFamily: `'Victor Mono Variable', sans-serif`,
-        fontSize: ["1.2rem", "1.2rem", "1.5rem"],
+        fontSize: ["1.6rem", "1.8rem", "2rem"],
         fontWeight: 100,
         color: "primary",
       },
