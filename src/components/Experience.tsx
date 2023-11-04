@@ -33,7 +33,7 @@ export const Experience: React.FC<any> = ({
 
   return (
     <>
-      <Box>
+      <Box px="4">
         <Grid
           as="a"
           href={href}

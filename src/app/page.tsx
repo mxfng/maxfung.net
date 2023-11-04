@@ -93,7 +93,7 @@ export default async function Home() {
           href="https://www.boeing.com/"
           from="2021"
           to="2022"
-          title="Project Manager and Technologist"
+          title="Technologist and Project Manager"
           company="Boeing"
           desc="Developed, maintained, and shipped internal production tracking software using
             Python and Excel, providing project managers with comprehensive data to track products through
@@ -104,7 +104,7 @@ export default async function Home() {
           href="https://www.l3harris.com/company/aerojet-rocketdyne"
           from="2018"
           to="2019"
-          title="Software Engineer"
+          title="Engineer"
           company="Aeroject Rocketdyne"
           desc="Independently architected an internal desktop application for pressure transducer and load cell
             calibration tests using Python and PyQt5"
