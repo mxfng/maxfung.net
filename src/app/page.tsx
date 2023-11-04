@@ -1,11 +1,8 @@
-import { Box, Flex, Link, Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { Experience } from "@/components/Experience";
 import { BigLink } from "@/components/link/BigLink";
 import { Banner } from "@/components/Banner";
 import { Section } from "@/components/Section";
-import { SocialLink } from "@/components/link/SocialLink";
-import { nowPlaying, recentlyPlayed, songOfTheMonth } from "@/utils/spotify";
-import { SpotifyLogo } from "@/components/svg/SpotifyLogo";
 
 export default async function Home() {
   const pageW = 900;
@@ -71,36 +68,33 @@ export default async function Home() {
       <>
         <Experience
           href="https://www.flexe.com/"
-          side="2022 - present"
-          title="Software Development Engineer · Flexe"
+          from="2022"
+          to="present"
+          title="Software Development Engineer"
+          company="Flexe"
           desc="Deliver high-quality, robust production code for Flexe’s proprietary warehouse management
             system serving a diverse array of large enterprise clients. Led the design and deployment of reusable mobile front end components,
             architected  a refactored Android application, and contributed to the decomposition of
             a monolithic Ruby on Rails application to a modern Kotlin microservices architecture."
-          stack={[
-            "Kotlin",
-            "Ruby on Rails",
-            "Android",
-            "Ktor",
-            "React",
-            "TypeScript",
-            "Docker",
-            "GCP",
-          ]}
+          stack={["Kotlin", "Rails", "Android", "React", "TS"]}
         />
         <Experience
           href="https://www.boeing.com/"
-          side="2021 - 2022"
-          title="Project Manager and Technologist · Boeing"
+          from="2021"
+          to="2022"
+          title="Project Manager and Technologist"
+          company="Boeing"
           desc="Developed, maintained, and shipped internal production tracking software using
             Python and Excel, providing project managers with comprehensive data to track products through
             the entire supply chain, reducing overhead costs by around $5,000, per project, per week"
-          stack={["Python", "Pandas", "Shell Scripting", "SQL"]}
+          stack={["Python", "Analytics", "Shell", "SQL"]}
         />
         <Experience
           href="https://www.l3harris.com/company/aerojet-rocketdyne"
-          side="2018, 2019"
-          title="Software Engineer · Aeroject Rocketdyne"
+          from="2018"
+          to="2019"
+          title="Software Engineer"
+          company="Aeroject Rocketdyne"
           desc="Independently architected an internal desktop application for pressure transducer and load cell
             calibration tests using Python and PyQt5"
           stack={["Python", "PyQt", "NI-VISA"]}

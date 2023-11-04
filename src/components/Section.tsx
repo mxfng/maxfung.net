@@ -17,7 +17,6 @@ export const Section: React.FC<any> = ({
           {title}
         </Heading>
       )}
-      <Line mb={[6, 10]} />
       <Box maxW={width} mx="auto" px={3} {...props}>
         {children}
       </Box>
