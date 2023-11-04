@@ -1,5 +1,13 @@
 import React from "react";
-import { Text, Grid, GridItem, Image, Box, Flex } from "@chakra-ui/react";
+import {
+  Text,
+  Grid,
+  GridItem,
+  Image,
+  Box,
+  Flex,
+  LinkBox,
+} from "@chakra-ui/react";
 import { ArrowUp } from "./svg/ArrowUp";
 
 export const Experience: React.FC<any> = ({
@@ -24,26 +32,30 @@ export const Experience: React.FC<any> = ({
           href={href}
           target="_blank"
           className="linkify"
-          templateColumns="repeat(1, 1fr)"
+          templateColumns="repeat(2, 1fr)"
           mb={[10, 20]}
           {...props}
         >
-          <GridItem colSpan={1}>
-            <Text variant="darker" mb={1} mr={1}>
-              {side}
-            </Text>
-          </GridItem>
-          <GridItem colSpan={1} mt={1}>
+          <GridItem colSpan={2}>
             {image && (
               <Image
-                width="48px"
-                mb={4}
+                width="100%"
+                h="222"
+                objectFit="cover"
                 src={image}
                 alt={title}
-                borderRadius="full"
               />
             )}
-            <Flex display="inline-flex" mb={[1, 5]}>
+          </GridItem>
+          {side && (
+            <GridItem colSpan={2}>
+              <Text variant="darker" mb={1} mr={1}>
+                {side}
+              </Text>
+            </GridItem>
+          )}
+          <GridItem colSpan={1} mt={2}>
+            <Flex display="inline-flex">
               <Text variant="experience" className="text" width="max-content">
                 {title}
               </Text>
@@ -55,7 +67,18 @@ export const Experience: React.FC<any> = ({
                 className="icon"
               />
             </Flex>
-            <Text mb={[3, 5]}>{desc}</Text>
+          </GridItem>
+          <GridItem colSpan={1}>
+            <Box w="fit-content" mr={0} ml="auto">
+              <Text variant="experience">{company}</Text>
+            </Box>
+          </GridItem>
+          <GridItem colSpan={2}>
+            {desc && (
+              <Box textAlign="justify">
+                <Text mb={[2, 2]}>{desc}</Text>
+              </Box>
+            )}
             {stack && <Text variant="darker">{formatStack(stack)}</Text>}
           </GridItem>
         </Grid>

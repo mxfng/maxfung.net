@@ -114,12 +114,11 @@ export default async function Home() {
     return (
       <>
         <Experience
-          side="2023 - present"
-          title="Software Engineer · Streets For All"
+          title="Streets For All"
+          company="Web Design"
           href="https://github.com/streetsforall"
-          desc="Part of a team of volunteer web developers supporting full stack web design for a local transportation advocacy group"
           stack={["JavaScript", "React", "Python"]}
-          image="/sfa-logo-square.png"
+          image="/sfa.png"
         />
       </>
     );
