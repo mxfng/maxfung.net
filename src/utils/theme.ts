@@ -150,8 +150,9 @@ const components = {
       },
       big: {
         fontSize: ["1.6rem", "1.8rem", "2rem"],
-        fontWeight: 300,
+        fontWeight: 500,
         color: "primary",
+        letterSpacing: "-0.5px",
       },
       wide: {
         color: "primary",
