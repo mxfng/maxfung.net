@@ -3,48 +3,33 @@ import React from "react";
 import { Line } from "./Line";
 import { SocialLink } from "./link/SocialLink";
 
-export const Links: React.FC<any> = ({ width, contentWidth, title }) => {
+export const Links: React.FC<any> = () => {
   return (
     <>
-      <Box mb={[4, 0]} overflow="hidden">
+      <Box mb={[8, 10]} overflow="hidden">
         <Line mb={[4, 4]} />
         <Grid px={3} templateColumns="repeat(5, 1fr)">
           <GridItem colSpan={1}>
-            <Heading
-              variant="section"
-              mb={[10, 10]}
-              maxW={width}
-              mx="auto"
-              my="auto"
-            >
-              Links
-            </Heading>
+            <Heading variant="section">Links</Heading>
           </GridItem>
           <GridItem colSpan={1}>
             <SocialLink
-              side="Email"
-              title="maxhfung@gmail.com"
+              title="Email"
               href="mailto:maxhfung@gmail.com?subject=Hello Max"
             />
           </GridItem>
           <GridItem>
-            <SocialLink
-              side="GitHub"
-              title="@mxfng"
-              href="https://github.com/mxfng"
-            />
+            <SocialLink title="GitHub" href="https://github.com/mxfng" />
           </GridItem>
           <GridItem>
             <SocialLink
-              side="LinkedIn"
-              title="@maxfung"
+              title="LinkedIn"
               href="https://www.linkedin.com/in/maxfung/"
             />
           </GridItem>
           <GridItem>
             <SocialLink
-              side="Instagram"
-              title="@fungkadelic"
+              title="Instagram"
               href="https://www.instagram.com/fungkadelic/"
             />
           </GridItem>
