@@ -50,6 +50,8 @@ export const Navbar = () => {
         <Box height={88} width={1300}>
           {/* Signature Logo */}
           <Box
+            as="a"
+            href="/"
             width="fit-content"
             transition="0.25s cubic-bezier(0.68, -0.6, 0.32, 1.6)"
             _hover={{

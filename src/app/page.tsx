@@ -4,10 +4,10 @@ import { BigLink } from "@/components/link/BigLink";
 import { Banner } from "@/components/Banner";
 import { Section } from "@/components/Section";
 
-export default async function Home() {
+export default function Home() {
   return (
     <>
-      <Box px="3">
+      <Box pt={100} px="3">
         <Banner />
       </Box>
       <Box>

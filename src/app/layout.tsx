@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Providers } from "./providers";
 import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import { Footer } from "@/components/footer/Footer";
 import { Box } from "@chakra-ui/react";
 import { nowPlaying, recentlyPlayed, songOfTheMonth } from "@/utils/spotify";
-import { Spotify } from "@/components/spotify/Spotify";
+import { Spotify } from "@/components/footer/spotify/Spotify";
+import { Banner } from "@/components/Banner";
 
 export const metadata: Metadata = {
   title: {
@@ -51,7 +52,7 @@ export default async function RootLayout({
       <body>
         <Providers>
           <Navbar />
-          <Box pt={100} overflow="hidden" maxWidth={900} mx="auto">
+          <Box overflow="hidden" maxWidth={900} mx="auto">
             {children}
           </Box>
           <Box id="coolFooter" pb={4} maxWidth={900} mx="auto">
