@@ -59,10 +59,13 @@ export const Spotify: React.FC<any> = ({
             target="_blank"
             fontWeight={500}
             display="inline-flex"
+            className="spotifyLink"
           >
-            Spotify Web API{" "}
+            <Text variant="tiny" display="inline" className="text">
+              Spotify Web API{" "}
+            </Text>
             <SpotifyLogo
-              fill="var(--chakra-colors-primary)"
+              className="icon"
               width="18px"
               display="inline"
               ml={2}

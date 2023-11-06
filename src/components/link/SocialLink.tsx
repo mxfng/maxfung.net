@@ -5,15 +5,14 @@ import { ArrowUp } from "../svg/ArrowUp";
 export const SocialLink: React.FC<any> = ({ title, href }) => {
   return (
     <>
-      <Flex as="a" href={href}>
+      <Flex as="a" href={href} className="linkify">
         <Text variant="link" fontSize={["0.8rem", "1.2rem"]}>
           {title}
         </Text>
         <ArrowUp
           stroke="var(--chakra-colors-primary)"
-          width="16px"
+          width={["12px", "16px"]}
           ml={[1, 2]}
-          my="auto"
           className="icon"
         />
       </Flex>

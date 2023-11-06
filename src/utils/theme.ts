@@ -31,11 +31,11 @@ const styles = {
       },
       "& .icon": {
         transform: "translateX(0) translateY(3px)",
-        transition: "all 0.2s ease",
+        transition: "all 500ms ease",
       },
       "& .text": {
         textDecoration: "underline transparent",
-        transition: "text-decoration 500ms ease",
+        transition: "all 500ms ease",
       },
       _hover: {
         cursor: "pointer",
@@ -47,6 +47,27 @@ const styles = {
         },
         "& .text": {
           textDecorationColor: "primary",
+        },
+      },
+    },
+
+    "& .spotifyLink": {
+      "& .icon": {
+        fill: "var(--chakra-colors-primary)",
+        transition: "all 500ms ease",
+      },
+      "& .text": {
+        textDecoration: "underline transparent",
+        transition: "all 500ms ease",
+      },
+      _hover: {
+        cursor: "pointer",
+        "& .icon": {
+          fill: "#1ED760",
+        },
+        "& .text": {
+          color: "#1ED760",
+          textDecorationColor: "#1ED760",
         },
       },
     },
@@ -139,6 +160,20 @@ const components = {
     variants: {
       darker: {
         color: "tertiary",
+      },
+      spotify: {
+        transition: "all 500ms ease",
+        "& .icon": {
+          transition: "all 0.2s ease",
+          fill: "yellow",
+          _hover: {
+            fill: "green",
+          },
+        },
+        _hover: {
+          color: "green",
+          textDecorationColor: "green",
+        },
       },
     },
   },

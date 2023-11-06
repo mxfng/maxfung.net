@@ -38,7 +38,6 @@ export const AutoScrollText: React.FC<any> = ({ text }) => {
           stroke="var(--chakra-colors-primary)"
           width="16px"
           ml={[1, 2]}
-          my="auto"
           className="icon"
         />
       </Flex>

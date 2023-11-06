@@ -77,9 +77,8 @@ export const Experience: React.FC<any> = ({
               </Text>
               <ArrowUp
                 stroke="var(--chakra-colors-primary)"
-                width="16px"
+                width={["16px", "24px"]}
                 ml={[1, 2]}
-                my="auto"
                 className="icon"
               />
             </Flex>
