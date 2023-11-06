@@ -60,8 +60,9 @@ export default async function Home() {
               href="mailto:maxhfung@gmail.com?subject=Hello Max"
             >
               <Box>
-                <Heading variant="big">Say</Heading>
-                <Heading variant="big">Hello!</Heading>
+                <Heading variant="big">Let's</Heading>
+                <Heading variant="big">Build</Heading>
+                <Heading variant="big">Together</Heading>
               </Box>
             </BigLink>
           </GridItem>

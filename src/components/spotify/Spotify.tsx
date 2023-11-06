@@ -31,8 +31,8 @@ export const Spotify: React.FC<any> = ({
     <>
       <Grid templateColumns="repeat(2, 1fr)" gap={8} pb={8}>
         <GridItem colSpan={{ base: 2, md: 1 }}>
-          <HStack alignItems="start" mb={[3, 8]}>
-            <Heading px={3} variant="subSection" my="auto">
+          <HStack alignItems="start" mb={[4, 8]}>
+            <Heading px={4} variant="subSection" my="auto">
               {nowPlaying.isPlaying ? "Now Playing" : "Recently Played"}
             </Heading>
             <Box my="auto">
@@ -46,13 +46,13 @@ export const Spotify: React.FC<any> = ({
           )}
         </GridItem>
         <GridItem colSpan={{ base: 2, md: 1 }}>
-          <Heading variant="subSection" px={3} mb={[3, 8]}>
+          <Heading variant="subSection" px={4} mb={[4, 8]}>
             Song of the Month
           </Heading>
           {songOfTheMonth ? renderTrack(songOfTheMonth) : <SpotifyTrack />}
         </GridItem>
       </Grid>
-      <Flex pt={2} px={3}>
+      <Box pt={2} px={3}>
         <Text variant="tiny" pb={2}>
           Here are some of my favorite records, updated live using the{" "}
           <Link
@@ -62,22 +62,16 @@ export const Spotify: React.FC<any> = ({
             display="inline-flex"
           >
             Spotify Web API{" "}
+            <SpotifyLogo
+              fill="var(--chakra-colors-primary)"
+              width="18px"
+              display="inline"
+              ml={2}
+              my="auto"
+            />
           </Link>
         </Text>
-        <Link
-          href="https://developer.spotify.com/documentation/web-api"
-          target="_blank"
-          fontWeight={500}
-        >
-          <SpotifyLogo
-            fill="var(--chakra-colors-primary)"
-            width={["10px", "20px"]}
-            display="inline-flex"
-            ml={[0, 1]}
-            my="auto"
-          />
-        </Link>
-      </Flex>
+      </Box>
     </>
   );
 };

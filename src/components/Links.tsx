@@ -7,27 +7,26 @@ export const Links: React.FC<any> = () => {
   return (
     <>
       <Box mb={[8, 10]} overflow="hidden">
-        <Line mb={[4, 4]} />
-        <Grid px={3} templateColumns="repeat(5, 1fr)">
-          <GridItem colSpan={1}>
+        <Grid px={4} templateColumns="repeat(5, 1fr)">
+          <GridItem colSpan={1} my="auto">
             <Heading variant="section">Links</Heading>
           </GridItem>
-          <GridItem colSpan={1}>
+          <GridItem colSpan={1} my="auto" mr={0} ml="auto">
             <SocialLink
               title="Email"
               href="mailto:maxhfung@gmail.com?subject=Hello Max"
             />
           </GridItem>
-          <GridItem>
+          <GridItem my="auto" mr={0} ml="auto">
             <SocialLink title="GitHub" href="https://github.com/mxfng" />
           </GridItem>
-          <GridItem>
+          <GridItem my="auto" mr={0} ml="auto">
             <SocialLink
               title="LinkedIn"
               href="https://www.linkedin.com/in/maxfung/"
             />
           </GridItem>
-          <GridItem>
+          <GridItem my="auto" mr={0} ml="auto">
             <SocialLink
               title="Instagram"
               href="https://www.instagram.com/fungkadelic/"

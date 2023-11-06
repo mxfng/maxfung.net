@@ -20,7 +20,7 @@ export const SpotifyTrack: React.FC<any> = ({
             className="album-art"
           />
         </GridItem>
-        <GridItem colSpan={{ base: 3 }} my="auto" px={[0, 3]}>
+        <GridItem colSpan={{ base: 3 }} my="auto" px={[0, 4]}>
           {artist && title ? (
             <>
               <AutoScrollText text={title} />

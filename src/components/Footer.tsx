@@ -2,11 +2,13 @@ import { Box, Center, Image, Link, Text } from "@chakra-ui/react";
 import { SignatureLogo } from "./svg/SignatureLogo";
 import { Spotify } from "./spotify/Spotify";
 import { Links } from "./Links";
+import { Line } from "./Line";
 
 export const Footer: React.FC<any> = ({ children, ...props }) => {
   return (
     <>
-      <Box py={0} {...props}>
+      <Box py={0} overflow="hidden" {...props}>
+        <Line mb={[4, 8]} />
         <Links />
         {children}
         <Box px={3} textAlign="justify">
@@ -36,14 +38,7 @@ export const Footer: React.FC<any> = ({ children, ...props }) => {
             >
               Inter
             </Link>{" "}
-            and{" "}
-            <Link
-              href="https://fonts.google.com/specimen/Victor+Mono"
-              target="_blank"
-            >
-              Victor Mono
-            </Link>{" "}
-            typefaces.
+            typeface.
           </Text>
         </Box>
         <SignatureLogo
