@@ -101,7 +101,7 @@ export const recentlyPlayed = async () => {
     minute: "2-digit",
     timeZone: "America/Los_Angeles",
   });
-  const metadata = `${formattedDate} ${formattedTime} (LA)`;
+  const metadata = `${formattedDate} ${formattedTime} in Los Angeles`;
 
   return {
     title: song.name,

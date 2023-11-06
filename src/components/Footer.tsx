@@ -1,6 +1,5 @@
-import { Box, Center, Image, Link, Text } from "@chakra-ui/react";
+import { Box, Link, Text } from "@chakra-ui/react";
 import { SignatureLogo } from "./svg/SignatureLogo";
-import { Spotify } from "./spotify/Spotify";
 import { Links } from "./Links";
 import { Line } from "./Line";
 

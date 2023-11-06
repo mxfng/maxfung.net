@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Flex, Center } from "@chakra-ui/react";
+import { Text, Flex } from "@chakra-ui/react";
 import { ArrowUp } from "../svg/ArrowUp";
 
 export const SocialLink: React.FC<any> = ({ title, href }) => {

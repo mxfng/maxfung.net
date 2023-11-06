@@ -1,6 +1,3 @@
-"use client";
-//should figure out how to go SSR later
-
 import React from "react";
 import {
   Text,
@@ -9,12 +6,10 @@ import {
   Image,
   Box,
   Flex,
-  LinkBox,
   Spacer,
   Center,
 } from "@chakra-ui/react";
 import { ArrowUp } from "./svg/ArrowUp";
-import { SP } from "next/dist/shared/lib/utils";
 import { Line } from "./Line";
 
 export const Experience: React.FC<any> = ({

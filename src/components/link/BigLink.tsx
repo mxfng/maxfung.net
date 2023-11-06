@@ -1,8 +1,8 @@
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import React from "react";
 import { ArrowForward } from "../svg/ArrowForward";
 
-export const BigLink: React.FC<any> = ({ title, href, children }) => {
+export const BigLink: React.FC<any> = ({ children }) => {
   return (
     <>
       <Box

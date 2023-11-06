@@ -1,6 +1,5 @@
 import { Box, Grid, GridItem, Heading } from "@chakra-ui/react";
 import React from "react";
-import { Line } from "./Line";
 import { SocialLink } from "./link/SocialLink";
 
 export const Links: React.FC<any> = () => {
