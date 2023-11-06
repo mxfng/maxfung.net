@@ -28,10 +28,10 @@ export const Spotify: React.FC<any> = ({
 
   return (
     <>
-      <Grid templateColumns="repeat(2, 1fr)" gap={8} pb={8}>
+      <Grid templateColumns="repeat(2, 1fr)" gap={8} pb={8} px={4}>
         <GridItem colSpan={{ base: 2, md: 1 }}>
           <HStack alignItems="start" mb={[4, 8]}>
-            <Heading px={4} variant="subSection" my="auto">
+            <Heading variant="subSection" my="auto">
               {nowPlaying.isPlaying ? "Now Playing" : "Recently Played"}
             </Heading>
             <Box my="auto">
@@ -45,7 +45,7 @@ export const Spotify: React.FC<any> = ({
           )}
         </GridItem>
         <GridItem colSpan={{ base: 2, md: 1 }}>
-          <Heading variant="subSection" px={4} mb={[4, 8]}>
+          <Heading variant="subSection" mb={[4, 8]}>
             Song of the Month
           </Heading>
           {songOfTheMonth ? renderTrack(songOfTheMonth) : <SpotifyTrack />}
