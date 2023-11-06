@@ -25,8 +25,8 @@ export default async function Home() {
   function renderAbout() {
     return (
       <>
-        <Grid templateColumns="repeat(2, 1fr)" gap={8}>
-          <GridItem colSpan={{ base: 2, lg: 1 }}>
+        <Grid templateColumns="repeat(2, 1fr)" gap={8} textAlign="justify">
+          <GridItem colSpan={{ base: 2, lg: 1 }} textAlign="left">
             <Flex>
               <Text variant="big">
                 I&apos;m a full stack software engineer who loves designing,
@@ -35,7 +35,16 @@ export default async function Home() {
               </Text>
             </Flex>
           </GridItem>
-          <GridItem textAlign="justify" colSpan={{ base: 2, lg: 1 }}>
+          <GridItem colSpan={{ base: 2, lg: 1 }}>
+            <Text>
+              I work best at the intersection of boundless creativity and
+              unwavering precision, where imaginative design meets methodical
+              development. I&apos;m passionate about both product and
+              engineering, and love putting my problem solving skills to the
+              test.
+            </Text>
+          </GridItem>
+          <GridItem colSpan={{ base: 2, lg: 1 }}>
             <Text>
               As a self-taught developer, I learned how to build code first,
               sharpening my craft through curiosity and grit. I&apos;ve
@@ -45,16 +54,7 @@ export default async function Home() {
               photos with my film cameras, and out exploring the world.
             </Text>
           </GridItem>
-          <GridItem textAlign="justify" colSpan={{ base: 2, lg: 1 }}>
-            <Text>
-              I work best at the intersection of boundless creativity and
-              unwavering precision, where imaginative design meets methodical
-              development. I&apos;m passionate about both product and
-              engineering, and love putting my problem solving skills to the
-              test.
-            </Text>
-          </GridItem>
-          <GridItem p={1} colSpan={{ base: 2, lg: 1 }} overflow="hidden">
+          <GridItem p={1} overflow="hidden" colSpan={{ base: 2, lg: 1 }}>
             <BigLink
               title="Say Hello"
               href="mailto:maxhfung@gmail.com?subject=Hello Max"
@@ -117,7 +117,12 @@ export default async function Home() {
             />
           </GridItem>
           <GridItem>
-            <BigLink title="View Full Résumé" href="/resume.pdf" />
+            <BigLink href="/resume.pdf">
+              <Box>
+                <Heading variant="big">View</Heading>
+                <Heading variant="big">Full Résumé</Heading>
+              </Box>
+            </BigLink>
           </GridItem>
         </Grid>
       </>

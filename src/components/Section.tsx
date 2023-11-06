@@ -11,13 +11,13 @@ export const Section: React.FC<any> = ({
 }) => {
   return (
     <>
-      <Line mb={[3, 8]} />
+      <Line mb={[4, 8]} />
       {title && (
-        <Heading variant="section" mb={[3, 8]} maxW={width} mx="auto" px={3}>
+        <Heading variant="section" mb={[4, 8]} maxW={width} mx="auto" px={4}>
           {title}
         </Heading>
       )}
-      <Box maxW={width} mx="auto" px={3} {...props}>
+      <Box maxW={width} mx="auto" px={[4, 8]} pb={[12, 24]} {...props}>
         {children}
       </Box>
     </>
