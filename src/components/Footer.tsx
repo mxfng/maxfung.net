@@ -22,7 +22,7 @@ export const Footer: React.FC<any> = ({ children, ...props }) => {
               >
                 This website
               </Link>{" "}
-              was written in TypeScript using{" "}
+              was drafted using pen and paper, written in TypeScript using{" "}
               <Link href="https://nextjs.org/" target="_blank">
                 Next.js
               </Link>{" "}

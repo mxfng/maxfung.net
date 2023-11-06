@@ -59,7 +59,7 @@ export default async function Home() {
               <Box>
                 <Heading variant="big">Let&apos;s</Heading>
                 <Heading variant="big">Build</Heading>
-                <Heading variant="big">Together</Heading>
+                <Heading variant="big">Together.</Heading>
               </Box>
             </BigLink>
           </GridItem>
