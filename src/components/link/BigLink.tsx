@@ -2,14 +2,30 @@ import { Box } from "@chakra-ui/react";
 import React from "react";
 import { ArrowForward } from "../svg/ArrowForward";
 
-export const BigLink: React.FC<any> = ({ children }) => {
+export const BigLink: React.FC<any> = ({ href, children, ...params }) => {
   return (
     <>
       <Box
         h="100%"
-        outline="1px solid var(--chakra-colors-tertiary)"
         p={8}
+        bg="rgb(6 6 6)"
+        position="relative"
+        overflow="hidden"
+        outline="1px solid var(--chakra-colors-tertiary)"
         css={{
+          ":before": {
+            content: '""',
+            backgroundColor: "transparent",
+            backgroundImage: "url(/bgs/grain.svg)",
+            backgroundSize: "182px",
+            backgroundRepeat: "repeat",
+            opacity: 0.12,
+            top: 0,
+            left: 0,
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+          },
           "& .icon": {
             transform: "translateX(0)",
             transition: "all 0.2s ease",
@@ -21,16 +37,18 @@ export const BigLink: React.FC<any> = ({ children }) => {
             transform: "translateX(8px)",
           },
         }}
-        position="relative"
+        {...params}
       >
-        {children}
-        <Box position="absolute" bottom="8" right="8">
-          <ArrowForward
-            stroke="var(--chakra-colors-primary)"
-            width={["36px", "48px"]}
-            ml={2}
-            className="icon"
-          />
+        <Box as="a" href={href}>
+          {children}
+          <Box position="absolute" bottom="8" right="8">
+            <ArrowForward
+              stroke="var(--chakra-colors-primary)"
+              width={["36px", "48px"]}
+              ml={2}
+              className="icon"
+            />
+          </Box>
         </Box>
       </Box>
     </>

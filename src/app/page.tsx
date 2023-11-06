@@ -55,10 +55,7 @@ export default async function Home() {
             </Text>
           </GridItem>
           <GridItem p={1} overflow="hidden" colSpan={{ base: 2, lg: 1 }}>
-            <BigLink
-              title="Say Hello"
-              href="mailto:maxhfung@gmail.com?subject=Hello Max"
-            >
+            <BigLink href="mailto:maxhfung@gmail.com?subject=Hello Max">
               <Box>
                 <Heading variant="big">Let's</Heading>
                 <Heading variant="big">Build</Heading>
