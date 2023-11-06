@@ -33,15 +33,13 @@ export const Experience: React.FC<any> = ({
 
   return (
     <>
-      <Box px="4">
+      <Box>
         <Grid
           as="a"
           href={href}
           target="_blank"
           className="linkify"
           templateColumns="repeat(2, 1fr)"
-          mt={[6, 0]}
-          mb={[10, 20]}
           {...props}
         >
           {from && (
@@ -105,21 +103,25 @@ export const Experience: React.FC<any> = ({
               </Text>
             </Box>
           </GridItem>
-          <GridItem colSpan={2}>
-            {desc && (
-              <Box my={4} textAlign="justify">
-                <Text mb={[2, 2]}>{desc}</Text>
+          {desc && (
+            <GridItem colSpan={2} my={2}>
+              <Box textAlign="justify">
+                <Text>{desc}</Text>
               </Box>
-            )}
-            <Grid templateColumns={`repeat(${stackLength}, 1fr)`} gap={2}>
-              {stack.map((stackItem: string) => (
-                <GridItem key={stackItem} overflow="hidden">
-                  <Text variant="tiny">{stackItem}</Text>
-                  <Line />
-                </GridItem>
-              ))}
-            </Grid>
-          </GridItem>
+            </GridItem>
+          )}
+          {stack && (
+            <GridItem colSpan={2} my={2}>
+              <Grid templateColumns={`repeat(${stackLength}, 1fr)`} gap={2}>
+                {stack.map((stackItem: string) => (
+                  <GridItem key={stackItem} overflow="hidden">
+                    <Text variant="tiny">{stackItem}</Text>
+                    <Line />
+                  </GridItem>
+                ))}
+              </Grid>
+            </GridItem>
+          )}
         </Grid>
       </Box>
     </>
