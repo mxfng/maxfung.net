@@ -51,7 +51,7 @@ export const Spotify: React.FC<any> = ({
           {songOfTheMonth ? renderTrack(songOfTheMonth) : <SpotifyTrack />}
         </GridItem>
       </Grid>
-      <Box pt={[4, 8]}>
+      <Box pt={8}>
         <Text variant="tiny">
           Here are some of my favorite records, updated live using the{" "}
           <Link
