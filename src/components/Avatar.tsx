@@ -76,7 +76,7 @@ export const Avatar = () => {
               left="0px"
               zIndex={3}
               css={{
-                "mask-image":
+                maskImage:
                   "radial-gradient(circle, rgba(0,0,0, 1) 70%, rgba(0, 0, 0, 0) 71%)",
               }}
               style={{
@@ -96,7 +96,7 @@ export const Avatar = () => {
             left="0px"
             zIndex={2}
             css={{
-              "mask-image":
+              maskImage:
                 "radial-gradient(circle, rgba(0,0,0, 1) 69.5%, rgba(0, 0, 0, 0) 70.5%)",
             }}
           />
