@@ -61,7 +61,7 @@ export const Spotify: React.FC<any> = ({
             display="inline-flex"
             className="spotifyLink"
           >
-            <Text variant="tiny" display="inline" className="text">
+            <Text as="span" variant="tiny" display="inline" className="text">
               Spotify Web API{" "}
             </Text>
             <SpotifyLogo
