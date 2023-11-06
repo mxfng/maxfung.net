@@ -6,7 +6,7 @@ export const Links: React.FC<any> = () => {
   return (
     <>
       <Box mb={[8, 10]} overflow="hidden">
-        <Grid px={4} templateColumns="repeat(5, 1fr)">
+        <Grid templateColumns="repeat(5, 1fr)">
           <GridItem colSpan={1} my="auto">
             <Heading variant="section">Links</Heading>
           </GridItem>

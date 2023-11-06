@@ -28,7 +28,7 @@ export const Spotify: React.FC<any> = ({
 
   return (
     <>
-      <Grid templateColumns="repeat(2, 1fr)" gap={8} pb={8} px={4}>
+      <Grid templateColumns="repeat(2, 1fr)" gap={8}>
         <GridItem colSpan={{ base: 2, md: 1 }}>
           <HStack alignItems="start" mb={[4, 8]}>
             <Heading variant="subSection" my="auto">
@@ -51,8 +51,8 @@ export const Spotify: React.FC<any> = ({
           {songOfTheMonth ? renderTrack(songOfTheMonth) : <SpotifyTrack />}
         </GridItem>
       </Grid>
-      <Box pt={2} px={3}>
-        <Text variant="tiny" pb={2}>
+      <Box pt={[4, 8]}>
+        <Text variant="tiny">
           Here are some of my favorite records, updated live using the{" "}
           <Link
             href="https://developer.spotify.com/documentation/web-api"
