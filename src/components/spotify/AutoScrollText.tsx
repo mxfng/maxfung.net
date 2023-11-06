@@ -14,7 +14,7 @@ export const AutoScrollText: React.FC<any> = ({ text }) => {
           css={
             isScrolling
               ? {
-                  "mask-image":
+                  maskImage:
                     "linear-gradient(to left, transparent 0%, white 3%, white 97%, transparent 100%)",
                 }
               : {}
