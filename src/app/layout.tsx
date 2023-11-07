@@ -53,6 +53,9 @@ export default async function RootLayout({
         <Providers>
           <Navbar />
           <Box overflow="hidden" maxWidth={900} mx="auto">
+            <Box pt={{ base: 100, xl: 8 }} px="3">
+              <Banner />
+            </Box>
             {children}
           </Box>
           <Box id="coolFooter" mx="auto">
