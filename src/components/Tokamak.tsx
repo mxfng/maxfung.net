@@ -5,12 +5,13 @@ import { midpointOf } from "../utils/tokamak";
 import { TokamakCircle } from "./TokamakCircle";
 
 export const Tokamak: React.FC = () => {
-  const r = 100; // Circle radius
+  const circleCount = 20; // number of circles displayed
+  const scrollThreshold = 200; // threshold for final color effect in px
+  const r = 100; // radii in px
 
-  const startX = 0;
-  const endX = 100;
-  const numIntervals = 20; // Adjust the number of intervals
-  const midpoints = midpointOf(startX, endX, numIntervals);
+  const startX = 0; // percent
+  const endX = 100; // percent
+  const midpoints = midpointOf(startX, endX, circleCount);
 
   return (
     <>
@@ -20,10 +21,10 @@ export const Tokamak: React.FC = () => {
             <TokamakCircle
               key={index}
               index={index}
-              total={midpoints.length}
-              point={point}
+              circleCount={circleCount}
               r={r}
-              threshold={200}
+              scrollThreshold={scrollThreshold}
+              point={point}
               startX={startX}
               endX={endX}
             />

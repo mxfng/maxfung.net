@@ -1,4 +1,3 @@
-"use client";
 export function midpointOf(
   startX: number,
   endX: number,
@@ -60,10 +59,20 @@ export function getCssRgbFromIndex(index: number, totalColors: number): string {
 
   return `rgb(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}`;
 }
-export function weightIndexOf(index: number, total: number) {
+
+export function weightIndexOf(index: number, total: number): number {
   let midPointIndex = midpointOf(0, total, 1)[0];
   return Math.abs(index - midPointIndex) / (total / 2); // 0-1 value
 }
+
+// adjusts the scroll threshold value for mobile devices
+export function mobileFriendlyThresholdOf(
+  scrollThreshold: number,
+  shiftBy: number = 400
+): number {
+  return window.innerWidth <= 768 ? scrollThreshold + shiftBy : scrollThreshold;
+}
+
 // Calculate the weighted scroll threshold using the scroll threshold and midpoint index
 export function weightedScrollThresholdOf(
   index: number,
@@ -71,23 +80,9 @@ export function weightedScrollThresholdOf(
   scrollThreshold: number
 ): number {
   let weightIndex = weightIndexOf(index, total);
-  let mobileFriendlyThreshold =
-    window.innerWidth <= 768 ? scrollThreshold + 300 : scrollThreshold;
-  return mobileFriendlyThreshold * weightIndex;
+  return scrollThreshold * weightIndex;
 }
-export function mirrorPointOf(
-  point: number,
-  midPoint: number,
-  endX: number
-): number {
-  let mirrorPoint;
-  if (point > endX / 2) {
-    mirrorPoint = midPoint - point + endX;
-  } else {
-    mirrorPoint = midPoint - point;
-  }
-  return mirrorPoint;
-}
+
 export function cssPointValueOf(point: number, r: number) {
   return `calc(${point}% - ${r}px)`;
 }

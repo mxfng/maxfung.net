@@ -6,27 +6,29 @@ import {
   weightedScrollThresholdOf,
   weightIndexOf,
   midpointOf,
-  mirrorPointOf,
   getCssRgbFromIndex,
   cssPointValueOf,
+  mobileFriendlyThresholdOf,
 } from "../utils/tokamak";
 
 export const TokamakCircle: React.FC<any> = ({
   index,
-  total,
+  circleCount,
   r,
   point,
-  threshold: scrollThreshold,
+  scrollThreshold,
   startX,
   endX,
 }) => {
+  let mobileFriendlyThreshold = mobileFriendlyThresholdOf(scrollThreshold);
   let weightedScrollThreshold = weightedScrollThresholdOf(
     index,
-    total,
-    scrollThreshold
+    circleCount,
+    mobileFriendlyThreshold
   );
 
   const [resting, setResting] = useState(true);
+  const [revert, setRevert] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -45,18 +47,22 @@ export const TokamakCircle: React.FC<any> = ({
     } else {
       setResting(true);
     }
+
+    if (scrollY > mobileFriendlyThreshold) {
+      setRevert(true);
+    } else {
+      setRevert(false);
+    }
   }, [scrollY]);
 
-  let weightIndex = weightIndexOf(index, total);
+  let weightIndex = weightIndexOf(index, circleCount);
 
   // Additional Points
   let midPoint = midpointOf(startX, endX, 1)[0];
-  let mirrorPoint = mirrorPointOf(point, midPoint, endX);
 
-  let color = getCssRgbFromIndex(index, total);
+  let color = getCssRgbFromIndex(index, circleCount);
   let pointValue = cssPointValueOf(point, r);
   let midPointValue = cssPointValueOf(midPoint, r);
-  let mirrorPointValue = cssPointValueOf(mirrorPoint, r);
 
   return (
     <>
@@ -65,7 +71,7 @@ export const TokamakCircle: React.FC<any> = ({
         animationProps={{
           "0%": { left: `${pointValue}` },
           "50%": { left: `${midPointValue}` },
-          "100%": { left: `${mirrorPointValue}` },
+          "100%": { left: `${pointValue}` },
         }}
       />
 
@@ -74,14 +80,9 @@ export const TokamakCircle: React.FC<any> = ({
         w={`${r * 2}px`}
         borderRadius="full"
         position="absolute"
-        left={
-          pointValue
-          // resting ? `calc(${point}% - ${r}px)` : `calc(${midPoint}% - ${r}px)`
-        }
+        left={pointValue}
         style={{
-          animation: resting
-            ? `move-circle-${index} 1s ease-in-out`
-            : `move-circle-${index} 1s ease-in-out reverse`,
+          animation: revert ? `` : `move-circle-${index} 1s ease-in-out`,
           outline: resting
             ? "1px solid var(--chakra-colors-secondary)"
             : `1px solid ${color}`,
