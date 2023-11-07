@@ -3,11 +3,12 @@ import { Experience } from "@/components/Experience";
 import { BigLink } from "@/components/link/BigLink";
 import { Banner } from "@/components/Banner";
 import { Section } from "@/components/Section";
+import { Avatar } from "@/components/Avatar";
 
 export default function Home() {
   return (
     <>
-      <Box pt={100} px="3">
+      <Box pt={{ base: 100, xl: 8 }} px="3">
         <Banner />
       </Box>
       <Box>
@@ -48,7 +49,7 @@ export default function Home() {
             </Text>
           </GridItem>
           <GridItem colSpan={{ base: 2, lg: 1 }}>
-            <Text></Text>
+            <Avatar />
           </GridItem>
           <GridItem p={1} overflow="hidden" colSpan={{ base: 2, lg: 1 }}>
             <BigLink href="mailto:maxhfung@gmail.com?subject=Hello Max">

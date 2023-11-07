@@ -55,7 +55,7 @@ export default async function RootLayout({
           <Box overflow="hidden" maxWidth={900} mx="auto">
             {children}
           </Box>
-          <Box id="coolFooter" pb={4} maxWidth={900} mx="auto">
+          <Box id="coolFooter" mx="auto">
             <Footer>
               <Spotify
                 nowPlaying={_nowPlaying}
