@@ -65,14 +65,6 @@ export function weightIndexOf(index: number, total: number): number {
   return Math.abs(index - midPointIndex) / (total / 2); // 0-1 value
 }
 
-// adjusts the scroll threshold value for mobile devices
-export function mobileFriendlyThresholdOf(
-  scrollThreshold: number,
-  shiftBy: number = 400
-): number {
-  return window.innerWidth <= 768 ? scrollThreshold + shiftBy : scrollThreshold;
-}
-
 // Calculate the weighted scroll threshold using the scroll threshold and midpoint index
 export function weightedScrollThresholdOf(
   index: number,
