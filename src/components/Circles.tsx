@@ -26,7 +26,7 @@ export const Circles: React.FC = () => {
     // Calculate the number of additional circles based on scroll position
     const additionalCircles = Math.min(
       maxAdditionalCircles,
-      Math.ceil(scrollY / 40)
+      Math.ceil(scrollY / 200) // scroll sensitivity
     );
 
     // Add the additional circles
