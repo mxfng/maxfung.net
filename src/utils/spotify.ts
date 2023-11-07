@@ -1,132 +1,264 @@
 import querystring from "querystring";
 
-const client_id = process.env.SPOTIFY_CLIENT_ID;
-const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
-const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
+const client_id: string = process.env.SPOTIFY_CLIENT_ID || "";
+const client_secret: string = process.env.SPOTIFY_CLIENT_SECRET || "";
+const refresh_token: string = process.env.SPOTIFY_REFRESH_TOKEN || "";
 
-const basic = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
-const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
-const RECENTLY_PLAYED_ENDPOINT = `https://api.spotify.com/v1/me/player/recently-played?limit=1`;
-const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/me/top/tracks`;
-const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
+const basic: string = Buffer.from(`${client_id}:${client_secret}`).toString(
+  "base64"
+);
+const NOW_PLAYING_ENDPOINT: string = `https://api.spotify.com/v1/me/player/currently-playing`;
+const RECENTLY_PLAYED_ENDPOINT: string = `https://api.spotify.com/v1/me/player/recently-played?limit=1`;
+const TOP_TRACKS_ENDPOINT: string = `https://api.spotify.com/v1/me/top/tracks`;
+const TOKEN_ENDPOINT: string = `https://accounts.spotify.com/api/token`;
 
-const getAccessToken = async () => {
-  const response = await fetch(TOKEN_ENDPOINT, {
-    method: "POST",
-    headers: {
-      Authorization: `Basic ${basic}`,
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: querystring.stringify({
-      grant_type: "refresh_token",
-      refresh_token,
-    }),
-  });
+interface AccessTokenResponse {
+  access_token: string;
+}
 
-  return response.json();
+interface SpotifySong {
+  name: string;
+  artists: { name: string }[];
+  external_urls: { spotify: string };
+  album: { images: { url: string }[] };
+  is_playing?: boolean;
+  metadata?: string;
+}
+
+interface SpotifyError {
+  error: string;
+  isPlaying?: boolean;
+}
+
+const getAccessToken = async (): Promise<AccessTokenResponse | null> => {
+  try {
+    const response = await fetch(TOKEN_ENDPOINT, {
+      method: "POST",
+      headers: {
+        Authorization: `Basic ${basic}`,
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: querystring.stringify({
+        grant_type: "refresh_token",
+        refresh_token,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to get access token");
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error(error);
+    return null; // or return an error object if needed
+  }
 };
 
-const getNowPlaying = async () => {
-  const { access_token } = await getAccessToken();
-
-  return fetch(NOW_PLAYING_ENDPOINT, {
-    next: {
-      revalidate: 60,
-    },
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    },
-  });
+const handleFetchError = (response: Response) => {
+  if (!response.ok) {
+    console.error(`Fetch error: ${response.statusText}`);
+    throw new Error(`Fetch error: ${response.statusText}`);
+  }
+  return response;
 };
 
-const getRecentlyPlayed = async () => {
-  const { access_token } = await getAccessToken();
+const getNowPlaying = async (): Promise<SpotifySong | SpotifyError> => {
+  const accessTokenData = await getAccessToken();
 
-  return fetch(RECENTLY_PLAYED_ENDPOINT, {
-    next: {
-      revalidate: 60,
-    },
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    },
-  });
-};
-
-const getSongOfTheMonth = async () => {
-  const { access_token } = await getAccessToken();
-
-  return fetch(`${TOP_TRACKS_ENDPOINT}?time_range=short_term&limit=1`, {
-    next: {
-      revalidate: 86400,
-    },
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    },
-  });
-};
-
-export const nowPlaying = async () => {
-  const res = await getNowPlaying();
-
-  if (res.status === 204 || res.status > 400) {
-    return { isPlaying: false };
+  if (!accessTokenData) {
+    return { isPlaying: false, error: "Failed to get access token" };
   }
 
-  const song = await res.json();
+  try {
+    const { access_token } = accessTokenData;
 
-  return {
-    title: song.item.name,
-    artist: song.item.artists.map((_artist: any) => _artist.name).join(", "),
-    songUrl: song.item.external_urls.spotify,
-    albumImageUrl: song.item.album.images[0].url,
-    isPlaying: song.is_playing,
-  };
+    const response = await fetch(NOW_PLAYING_ENDPOINT, {
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+      },
+    });
+
+    handleFetchError(response);
+
+    const song: SpotifySong = await response.json();
+
+    return {
+      name: song.name,
+      artists: song.artists, //.map((artist: { name: string}) => artist.name).join(", "),
+      external_urls: { spotify: song.external_urls.spotify },
+      album: song.album,
+      isPlaying: song.is_playing,
+    };
+  } catch (error) {
+    console.error(error);
+    return { isPlaying: false, error: "Failed to fetch now playing data" };
+  }
 };
 
-export const recentlyPlayed = async () => {
-  const res = await getRecentlyPlayed();
-  const { items } = await res.json();
+const getRecentlyPlayed = async (): Promise<SpotifySong | SpotifyError> => {
+  const accessTokenData = await getAccessToken();
 
-  if (typeof items === "undefined") {
-    console.error(res.statusText);
-    return { error: res.status };
+  if (!accessTokenData) {
+    return { error: "Failed to get access token" };
   }
 
-  const song = items[0].track;
-  const playedAt = new Date(items[0].played_at);
-  const formattedDate = playedAt.toLocaleDateString();
-  const formattedTime = playedAt.toLocaleTimeString("en-US", {
-    hour12: false,
-    hour: "2-digit",
-    minute: "2-digit",
-    timeZone: "America/Los_Angeles",
-  });
-  const metadata = `${formattedDate} ${formattedTime} in Los Angeles`;
+  try {
+    const { access_token } = accessTokenData;
 
-  return {
-    title: song.name,
-    artist: song.artists.map((_artist: any) => _artist.name).join(", "),
-    songUrl: song.external_urls.spotify,
-    albumImageUrl: song.album.images[1].url,
-    metadata: metadata,
-  };
+    const response = await fetch(RECENTLY_PLAYED_ENDPOINT, {
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+      },
+    });
+
+    handleFetchError(response);
+
+    const { items } = await response.json();
+
+    if (items && items.length > 0) {
+      const song = items[0].track;
+      const playedAt = new Date(items[0].played_at);
+      const formattedDate = playedAt.toLocaleDateString();
+      const formattedTime = playedAt.toLocaleTimeString("en-US", {
+        hour12: false,
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZone: "America/Los_Angeles",
+      });
+      const metadata = `${formattedDate} ${formattedTime} in Los Angeles`;
+
+      return {
+        name: song.name,
+        artists: song.artists,
+        external_urls: song.external_urls.spotify,
+        album: song.album,
+        metadata: metadata,
+      };
+    } else {
+      return { error: "No recently played songs found" };
+    }
+  } catch (error) {
+    console.error(error);
+    return { error: "Failed to fetch recently played data" };
+  }
 };
 
-export const songOfTheMonth = async () => {
-  const res = await getSongOfTheMonth();
-  const { items } = await res.json();
+const getSongOfTheMonth = async (): Promise<SpotifySong | SpotifyError> => {
+  const accessTokenData = await getAccessToken();
 
-  if (typeof items === "undefined") {
-    console.error(res.statusText);
-    return { error: res.status };
+  if (!accessTokenData) {
+    return { error: "Failed to get access token" };
   }
 
-  const song = items[0];
+  try {
+    const { access_token } = accessTokenData;
 
-  return {
-    title: song.name,
-    artist: song.artists.map((_artist: any) => _artist.name).join(", "),
-    songUrl: song.external_urls.spotify,
-    albumImageUrl: song.album.images[1].url,
-  };
+    const response = await fetch(
+      `${TOP_TRACKS_ENDPOINT}?time_range=short_term&limit=1`,
+      {
+        headers: {
+          Authorization: `Bearer ${access_token}`,
+        },
+      }
+    );
+
+    handleFetchError(response);
+
+    const { items } = await response.json();
+
+    if (items && items.length > 0) {
+      const song = items[0];
+
+      return {
+        name: song.name,
+        artists: song.artists,
+        external_urls: song.external_urls,
+        album: song.album,
+      };
+    } else {
+      return { error: "No top tracks found" };
+    }
+  } catch (error) {
+    console.error(error);
+    return { error: "Failed to fetch song of the month data" };
+  }
+};
+
+interface Track {
+  title: string;
+  artist: string;
+  songUrl: string;
+  albumImageUrl: string;
+  isPlaying?: string;
+  metadata?: string;
+}
+
+interface TrackError {
+  error: string;
+  isPlaying?: boolean;
+}
+
+export const nowPlaying = async (): Promise<Track | TrackError> => {
+  try {
+    const response = await getNowPlaying();
+
+    if ("error" in response) {
+      return { error: response.error };
+    }
+
+    const song: SpotifySong = response as SpotifySong;
+
+    return {
+      title: song.name,
+      artist: song.artists.map((artist) => artist.name).join(", "),
+      songUrl: song.external_urls.spotify,
+      albumImageUrl: song.album.images[0].url,
+      isPlaying: song.is_playing ? "true" : "false",
+    };
+  } catch (error) {
+    console.error(error);
+    return { error: "An error occurred", isPlaying: false };
+  }
+};
+
+export const recentlyPlayed = async (): Promise<Track | TrackError> => {
+  try {
+    const response = await getRecentlyPlayed();
+
+    if ("error" in response) {
+      return { error: response.error };
+    }
+
+    const song: SpotifySong = response as SpotifySong;
+
+    return {
+      title: song.name,
+      artist: song.artists.map((artist) => artist.name).join(", "),
+      songUrl: song.external_urls.spotify,
+      albumImageUrl: song.album.images[1].url,
+      metadata: song.metadata,
+    };
+  } catch (error) {
+    console.error(error);
+    return { error: "An error occurred" };
+  }
+};
+
+export const songOfTheMonth = async (): Promise<Track | TrackError> => {
+  try {
+    const response = await getSongOfTheMonth();
+
+    const song: SpotifySong = response as SpotifySong;
+
+    return {
+      title: song.name,
+      artist: song.artists.map((artist) => artist.name).join(", "),
+      songUrl: song.external_urls.spotify,
+      albumImageUrl: song.album.images[1].url,
+    };
+  } catch (error) {
+    console.error(error);
+    return { error: "An error occurred" };
+  }
 };
