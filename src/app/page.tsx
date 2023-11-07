@@ -44,7 +44,7 @@ export default function Home() {
             </Text>
           </GridItem>
           <GridItem colSpan={{ base: 2, lg: 1 }}></GridItem>
-          <GridItem p={1} overflow="hidden" colSpan={{ base: 2, lg: 1 }}>
+          <GridItem p={1} colSpan={{ base: 2, lg: 1 }}>
             <BigLink href="mailto:maxhfung@gmail.com?subject=Hello Max">
               <Box>
                 <Heading variant="big">Let&apos;s</Heading>

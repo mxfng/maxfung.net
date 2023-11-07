@@ -11,9 +11,8 @@ export const BigLink: React.FC<any> = ({ href, children, ...params }) => {
           p={8}
           bg="rgb(6 6 6)"
           position="relative"
-          overflow="hidden"
           outline="1px solid var(--chakra-colors-tertiary)"
-          transition="all 0.2s ease"
+          transition="all 0.25s cubic-bezier(0.68, -0.6, 0.32, 1.6)"
           css={{
             ":before": {
               content: '""',
@@ -36,6 +35,7 @@ export const BigLink: React.FC<any> = ({ href, children, ...params }) => {
           _hover={{
             cursor: "pointer",
             outline: "4px solid var(--chakra-colors-primary)",
+            transform: "scale(1.03)",
             "& .icon": {
               transform: "translateX(8px)",
             },
