@@ -1,6 +1,6 @@
 import { Box, Link, Text } from "@chakra-ui/react";
 import { SignatureLogo } from "../svg/SignatureLogo";
-import { Links } from "./Links";
+import { FooterLinks } from "./FooterLinks";
 import { Line } from "../Line";
 
 export const Footer: React.FC<any> = ({ children, ...props }) => {
@@ -9,7 +9,7 @@ export const Footer: React.FC<any> = ({ children, ...props }) => {
       <Box py={0} overflow="hidden" {...props}>
         <Line mb={[4, 8]} />
         <Box px={4}>
-          <Links />
+          <FooterLinks />
           <Box>{children}</Box>
           <Box py={2} textAlign="justify">
             <Text variant="tiny" pb={2}>

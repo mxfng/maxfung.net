@@ -2,7 +2,7 @@ import { Box, Grid, GridItem, Heading } from "@chakra-ui/react";
 import React from "react";
 import { SocialLink } from "../link/SocialLink";
 
-export const Links: React.FC<any> = () => {
+export const FooterLinks: React.FC<any> = () => {
   return (
     <>
       <Box mb={[8, 10]} overflow="hidden">
