@@ -2,6 +2,7 @@ import { Box, Flex, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
 import { Experience } from "@/components/Experience";
 import { BigLink } from "@/components/link/BigLink";
 import { Section } from "@/components/Section";
+import { Circles } from "@/components/Circles";
 
 export default function Home() {
   return (
@@ -43,7 +44,9 @@ export default function Home() {
               taking photos with my film cameras, and out exploring the world.
             </Text>
           </GridItem>
-          <GridItem colSpan={{ base: 2, lg: 1 }}></GridItem>
+          <GridItem colSpan={{ base: 2, lg: 1 }}>
+            <Circles />
+          </GridItem>
           <GridItem p={1} colSpan={{ base: 2, lg: 1 }}>
             <BigLink href="mailto:maxhfung@gmail.com?subject=Hello Max">
               <Box>
