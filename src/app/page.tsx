@@ -39,20 +39,16 @@ export default function Home() {
             <Text>
               I work best at the intersection of boundless creativity and
               unwavering precision, where imaginative design meets methodical
-              development. I&apos;m passionate about both product and
-              engineering, and love putting my problem solving skills to the
-              test.
+              development. As a self-taught developer, I learned how to build
+              code first, sharpening my craft through curiosity and grit.
+              I&apos;ve developed and contributed to a variety of exciting
+              projects since starting my journey back in 2018. When I&apos;m not
+              coding, I&apos;m producing my own music, surfing, snowboarding,
+              taking photos with my film cameras, and out exploring the world.
             </Text>
           </GridItem>
           <GridItem colSpan={{ base: 2, lg: 1 }}>
-            <Text>
-              As a self-taught developer, I learned how to build code first,
-              sharpening my craft through curiosity and grit. I&apos;ve
-              developed and contributed to a variety of exciting projects since
-              starting my journey back in 2018. When I&apos;m not coding,
-              I&apos;m producing my own music, surfing, snowboarding, taking
-              photos with my film cameras, and out exploring the world.
-            </Text>
+            <Text></Text>
           </GridItem>
           <GridItem p={1} overflow="hidden" colSpan={{ base: 2, lg: 1 }}>
             <BigLink href="mailto:maxhfung@gmail.com?subject=Hello Max">
