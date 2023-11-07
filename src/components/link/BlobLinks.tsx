@@ -24,14 +24,14 @@ export const BlobLinks = ({ ...params }) => {
       url: "https://github.com/mxfng",
       bg: "rgb(4,8,12)",
       bgImage:
-        "radial-gradient(at 48% 51%, hsla(254,79%,60%,0.5) 0px, transparent 50%),radial-gradient(at 69% 89%, hsla(324,80%,61%,0.5) 0px, transparent 50%),radial-gradient(at 86% 51%, hsla(304,81%,79%,0.5) 0px, transparent 50%),radial-gradient(at 59% 31%, hsla(70,81%,68%,0.5) 0px, transparent 50%),radial-gradient(at 68% 45%, hsla(84,92%,76%,0.5) 0px, transparent 50%),radial-gradient(at 45% 36%, hsla(38,85%,64%,0.5) 0px, transparent 50%),radial-gradient(at 40% 56%, hsla(224,93%,79%,0.5) 0px, transparent 50%)",
+        "linear-gradient(to bottom, #0d0d1b, #090c18, #060b15, #040a11, #04080c)",
     },
     {
       title: "linkedin",
       url: "https://www.linkedin.com/in/maxfung/",
       bg: "#0077B5",
       bgImage:
-        "radial-gradient(at 98% 54%, hsla(14,65%,61%,1) 0px, transparent 50%),radial-gradient(at 0% 87%, hsla(233,78%,62%,1) 0px, transparent 50%),radial-gradient(at 26% 66%, hsla(214,83%,61%,1) 0px, transparent 50%),radial-gradient(at 89% 34%, hsla(117,91%,70%,1) 0px, transparent 50%),radial-gradient(at 62% 18%, hsla(236,86%,66%,1) 0px, transparent 50%),radial-gradient(at 74% 64%, hsla(350,62%,78%,1) 0px, transparent 50%),radial-gradient(at 0% 40%, hsla(341,86%,71%,1) 0px, transparent 50%)",
+        "linear-gradient(to left top, #008cc9, #0087c4, #0081bf, #007cba, #0077b5)",
     },
     {
       title: "IG",
