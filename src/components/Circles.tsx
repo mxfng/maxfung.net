@@ -40,6 +40,16 @@ export const Circles: React.FC = () => {
   return (
     <Center h="100%">
       <Box position="relative" w="100%" display="flex" h={`${maxRadius * 2}px`}>
+        <Box
+          key="alwaysOnStart"
+          transition="all 500ms ease"
+          position="absolute"
+          h={`${maxRadius * 2}px`}
+          w={`${maxRadius * 2}px`}
+          outline="1px solid var(--chakra-colors-primary)"
+          borderRadius="full"
+          left={`calc(0%)`}
+        />
         {Array.from({ length: circleCount + 1 }).map((_, index) => (
           <Box
             key={index}
@@ -47,13 +57,23 @@ export const Circles: React.FC = () => {
             position="absolute"
             h={`${maxRadius * 2}px`}
             w={`${maxRadius * 2}px`}
-            outline="1px solid white"
+            outline="1px solid var(--chakra-colors-primary)"
             borderRadius="full"
             left={`calc(${(100 / circleCount) * index}% - ${
               ((maxRadius * 2) / circleCount) * index
             }px)`}
           />
         ))}
+        <Box
+          key="alwaysOnEnd"
+          transition="all 500ms ease"
+          position="absolute"
+          h={`${maxRadius * 2}px`}
+          w={`${maxRadius * 2}px`}
+          outline="1px solid var(--chakra-colors-primary)"
+          borderRadius="full"
+          left={`calc(100% - ${maxRadius * 2}px)`}
+        />
       </Box>
     </Center>
   );
