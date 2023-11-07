@@ -1,5 +1,5 @@
 import { Box, Center, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
-import { LinkIcon } from "./svg/LinkIcon";
+import { LinkIcon } from "../svg/LinkIcon";
 
 interface BlobLink {
   title: string;

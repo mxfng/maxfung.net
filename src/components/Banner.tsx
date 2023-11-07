@@ -1,6 +1,6 @@
 import { Box, Flex, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
 import { Avatar } from "@/components/Avatar";
-import { BlobLinks } from "./BlobLinks";
+import { BlobLinks } from "./link/BlobLinks";
 import { LinkIcon } from "./svg/LinkIcon";
 
 export const Banner: React.FC<any> = () => {

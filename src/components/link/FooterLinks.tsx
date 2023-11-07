@@ -1,6 +1,6 @@
 import { Box, Grid, GridItem, Heading } from "@chakra-ui/react";
 import React from "react";
-import { SocialLink } from "../link/SocialLink";
+import { SocialLink } from "./SocialLink";
 
 export const FooterLinks: React.FC<any> = () => {
   return (
