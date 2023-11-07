@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 
 export const Circles: React.FC = () => {
   const maxRadius = 100; // Adjust the maximum radius as needed
-  const initialCircleCount = 8;
-  const maxAdditionalCircles = 30; // Maximum additional circles
+  const initialCircleCount = 10;
+  const maxAdditionalCircles = 20; // Maximum additional circles
   const [circleCount, setCircleCount] = useState(initialCircleCount);
   const [scrollY, setScrollY] = useState(0);
 
@@ -49,9 +49,9 @@ export const Circles: React.FC = () => {
             w={`${maxRadius * 2}px`}
             outline="1px solid white"
             borderRadius="full"
-            left={`calc(50% - ${maxRadius}px * ${Math.cos(
-              (Math.PI / circleCount) * index
-            )} - 100px)`}
+            left={`calc(${(100 / circleCount) * index}% - ${
+              ((maxRadius * 2) / circleCount) * index
+            }px)`}
           />
         ))}
       </Box>
