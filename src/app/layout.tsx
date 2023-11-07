@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Providers } from "./providers";
 import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/footer/Footer";
+import { Footer } from "@/components/Footer";
 import { Box } from "@chakra-ui/react";
 import { nowPlaying, recentlyPlayed, songOfTheMonth } from "@/utils/spotify";
-import { Spotify } from "@/components/footer/spotify/Spotify";
+import { Spotify } from "@/components/spotify/Spotify";
 import { Banner } from "@/components/Banner";
 
 export const metadata: Metadata = {
