@@ -85,7 +85,9 @@ const Circle: React.FC<any> = ({
     restPoint = midPoint[0] - point;
   }
 
-  const [scrollY, setScrollY] = useState(window.scrollY);
+  const [resting, setResting] = useState(true);
+
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -99,12 +101,10 @@ const Circle: React.FC<any> = ({
     };
   }, []);
 
-  const [resting, setResting] = useState(true);
-
-  let mobileFriendlyThreshold =
-    window.innerWidth <= 768 ? threshold + 300 : threshold;
-
   useEffect(() => {
+    let mobileFriendlyThreshold =
+      window.innerWidth <= 768 ? threshold + 300 : threshold;
+
     if (scrollY > mobileFriendlyThreshold) {
       setResting(false);
     } else {
