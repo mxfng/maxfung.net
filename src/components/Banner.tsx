@@ -1,6 +1,7 @@
-import { Box, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
 import { Avatar } from "@/components/Avatar";
 import { BlobLinks } from "./BlobLinks";
+import { LinkIcon } from "./svg/LinkIcon";
 
 export const Banner: React.FC<any> = () => {
   return (
@@ -27,9 +28,19 @@ export const Banner: React.FC<any> = () => {
           w="100%"
           position="relative"
         >
-          <Box position="absolute" bottom="0" left="0">
-            <BlobLinks />
-          </Box>
+          <Flex>
+            <LinkIcon
+              fill="var(--chakra-colors-primary)"
+              size="18px"
+              position="absolute"
+              bottom="0"
+              left="0"
+              m={1}
+            />
+            <Box position="absolute" bottom="0" left="8">
+              <BlobLinks />
+            </Box>
+          </Flex>
         </GridItem>
       </Grid>
     </>
