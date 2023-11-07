@@ -2,7 +2,7 @@ import { Box, Flex, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
 import { Experience } from "@/components/Experience";
 import { BigLink } from "@/components/link/BigLink";
 import { Section } from "@/components/Section";
-import { Circles } from "@/components/Circles";
+import { Tokamak } from "@/components/Tokamak";
 
 export default function Home() {
   return (
@@ -33,19 +33,22 @@ export default function Home() {
             </Flex>
           </GridItem>
           <GridItem colSpan={{ base: 2, lg: 1 }}>
-            <Text>
+            <Text mb={2}>
               I work best at the intersection of boundless creativity and
               unwavering precision, where imaginative design meets methodical
               development. As a self-taught developer, I learned how to build
               code first, sharpening my craft through curiosity and grit.
               I&apos;ve developed and contributed to a variety of exciting
-              projects since starting my journey back in 2018. When I&apos;m not
-              coding, I&apos;m producing my own music, surfing, snowboarding,
-              taking photos with my film cameras, and out exploring the world.
+              projects since starting my journey back in 2018.{" "}
+            </Text>
+            <Text>
+              When I&apos;m not coding, I&apos;m producing my own music,
+              surfing, snowboarding, taking photos with my film cameras, and out
+              exploring the world.
             </Text>
           </GridItem>
           <GridItem colSpan={{ base: 2, lg: 1 }}>
-            <Circles />
+            <Tokamak />
           </GridItem>
           <GridItem p={1} colSpan={{ base: 2, lg: 1 }}>
             <BigLink href="mailto:maxhfung@gmail.com?subject=Hello Max">
