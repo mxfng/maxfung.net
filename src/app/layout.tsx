@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { Providers } from "./providers";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
 import { Box } from "@chakra-ui/react";
-import { nowPlaying, recentlyPlayed, songOfTheMonth } from "@/utils/spotify";
-import { Spotify } from "@/components/spotify/Spotify";
-import { Banner } from "@/components/Banner";
-
+import { nowPlaying, recentlyPlayed, songOfTheMonth } from "../utils/spotify";
+import { Banner } from "../components/Banner";
+import { Footer } from "../components/Footer";
+import { Navbar } from "../components/Navbar";
+import { Spotify } from "../components/spotify/Spotify";
 export const metadata: Metadata = {
   title: {
     template: "%s | Max Fung",
