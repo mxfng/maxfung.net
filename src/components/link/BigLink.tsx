@@ -46,7 +46,7 @@ export const BigLink: React.FC<any> = ({ href, children, ...params }) => {
           <Box position="absolute" bottom="8" right="8">
             <ArrowForward
               stroke="var(--chakra-colors-primary)"
-              width={["36px", "48px"]}
+              w={["36px", "48px"]}
               ml={2}
               className="icon"
             />

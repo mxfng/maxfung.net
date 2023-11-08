@@ -46,8 +46,8 @@ export const Avatar = ({ ...props }) => {
   return (
     <>
       <Box
-        height={{ base: `${baseSize}px`, md: `${mdSize}px` }}
-        width={{ base: `${baseSize}px`, md: `${mdSize}px` }}
+        h={{ base: `${baseSize}px`, md: `${mdSize}px` }}
+        w={{ base: `${baseSize}px`, md: `${mdSize}px` }}
         onClick={() => {
           onImageLoading();
         }}
@@ -76,7 +76,7 @@ export const Avatar = ({ ...props }) => {
         <Flex alignItems="center" justifyContent="center" position="relative">
           <Image
             borderRadius="full"
-            width={{ base: "100%" }}
+            w={{ base: "100%" }}
             src="/avatar.png"
             alt=""
             position="absolute"
@@ -89,7 +89,7 @@ export const Avatar = ({ ...props }) => {
               src={bgSrc}
               alt=""
               borderRadius="full"
-              width={{ base: "100%" }}
+              w={{ base: "100%" }}
               objectFit="cover"
               position="absolute"
               top="0px"
@@ -109,7 +109,7 @@ export const Avatar = ({ ...props }) => {
             borderRadius="full"
             src={bgSrcCache}
             alt=""
-            width={{ base: "100%" }}
+            w={{ base: "100%" }}
             objectFit="cover"
             position="absolute"
             top="0px"

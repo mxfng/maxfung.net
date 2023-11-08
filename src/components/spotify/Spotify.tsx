@@ -66,7 +66,7 @@ export const Spotify: React.FC<any> = ({
             </Text>
             <SpotifyLogo
               className="icon"
-              width="18px"
+              w="18px"
               display="inline"
               ml={2}
               my="auto"

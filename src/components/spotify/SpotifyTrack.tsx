@@ -15,7 +15,7 @@ export const SpotifyTrack: React.FC<any> = ({
           <Image
             src={albumImageUrl ? albumImageUrl : "/placeholder.png"}
             alt="album art"
-            width={{ base: "70%", md: "80%" }}
+            w={{ base: "70%", md: "80%" }}
             mx="auto"
             className="album-art"
           />
@@ -34,16 +34,16 @@ export const SpotifyTrack: React.FC<any> = ({
           ) : (
             <>
               <Box
-                width="130px"
-                height="1.2rem"
+                w="130px"
+                h="1.2rem"
                 bg="tertiary"
                 mb={2}
                 opacity={0.5}
                 borderRadius="4px"
               />
               <Box
-                width="100px"
-                height={["0.9rem", "1.1rem"]}
+                w="100px"
+                h={["0.9rem", "1.1rem"]}
                 bg="tertiary"
                 mb={2}
                 opacity={0.5}

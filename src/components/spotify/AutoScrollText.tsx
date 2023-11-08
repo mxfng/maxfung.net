@@ -23,7 +23,7 @@ export const AutoScrollText: React.FC<any> = ({ text }) => {
           <Text
             variant="link"
             className="text"
-            width="min-content"
+            w="min-content"
             animation={isScrolling ? "scrollText 20s ease-in-out infinite" : ""}
             whiteSpace="nowrap"
             position="relative"
@@ -36,7 +36,7 @@ export const AutoScrollText: React.FC<any> = ({ text }) => {
 
         <ArrowUp
           stroke="var(--chakra-colors-primary)"
-          width="16px"
+          w="16px"
           ml={[1, 2]}
           className="icon"
         />

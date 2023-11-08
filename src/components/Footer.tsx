@@ -69,7 +69,7 @@ export const Footer: React.FC<any> = ({ children, ...props }) => {
             </Box>
             <SignatureLogo
               fill="var(--chakra-colors-primary)"
-              width={["48px", "64px"]}
+              w={["48px", "64px"]}
               pt={4}
             />
           </Box>

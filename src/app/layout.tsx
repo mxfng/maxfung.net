@@ -55,7 +55,7 @@ export default async function RootLayout({
           <Corner>
             <SignatureLogoAnimated
               stroke="var(--chakra-colors-primary)"
-              width="120px"
+              w="120px"
             />
           </Corner>
           <Corner which="right">

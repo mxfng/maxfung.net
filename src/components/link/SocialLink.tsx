@@ -11,7 +11,7 @@ export const SocialLink: React.FC<any> = ({ title, href }) => {
         </Text>
         <ArrowUp
           stroke="var(--chakra-colors-primary)"
-          width={["12px", "16px"]}
+          w={["12px", "16px"]}
           ml={[1, 2]}
           className="icon"
         />

@@ -59,7 +59,7 @@ export const Experience: React.FC<any> = ({
           <GridItem colSpan={2}>
             {image && (
               <Image
-                width="100%"
+                w="100%"
                 h="222"
                 objectFit="cover"
                 src={image}
@@ -72,12 +72,12 @@ export const Experience: React.FC<any> = ({
             colSpan={long ? { base: 2, md: 1 } : { base: 1 }}
           >
             <Flex display="inline-flex">
-              <Text variant="experience" className="text" width="max-content">
+              <Text variant="experience" className="text" w="max-content">
                 {title}
               </Text>
               <ArrowUp
                 stroke="var(--chakra-colors-primary)"
-                width={["16px", "24px"]}
+                w={["16px", "24px"]}
                 ml={[1, 2]}
                 className="icon"
               />

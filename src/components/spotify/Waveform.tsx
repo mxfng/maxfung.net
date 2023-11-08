@@ -9,10 +9,10 @@ export const Waveform = ({ isPlaying }: { isPlaying: boolean }) => {
       display="block"
       position="relative"
       background={isPlaying ? "primary" : "primary"}
-      height={isPlaying ? (index === 1 ? "80%" : "100%") : "20%"}
-      width="3px"
+      h={isPlaying ? (index === 1 ? "80%" : "100%") : "20%"}
+      w="3px"
       borderRadius="10px"
-      margin="0 2px"
+      m="0 2px"
       animation={isPlaying ? `wave ${delay}s linear infinite` : ""}
       style={{ animationDelay: isPlaying ? `${index * 0.15}s` : "0s" }}
     />
@@ -20,7 +20,7 @@ export const Waveform = ({ isPlaying }: { isPlaying: boolean }) => {
 
   return (
     <>
-      <Box height="16px" display="flex" alignItems="center" position="relative">
+      <Box h="16px" display="flex" alignItems="center" position="relative">
         {delays.map((delay, index) => waveBox(delay, index))}
       </Box>
     </>
