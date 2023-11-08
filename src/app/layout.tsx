@@ -52,7 +52,7 @@ export default async function RootLayout({
         <Providers>
           <SiteLogo />
           <Box overflow="hidden" maxWidth={900} mx="auto">
-            <Box pt={{ base: 100, xl: 8 }} px="3">
+            <Box pt={{ base: 100, xl: 8 }} pb={8} px="3">
               <Banner />
             </Box>
             {children}

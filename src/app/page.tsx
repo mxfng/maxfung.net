@@ -22,7 +22,7 @@ export default function Home() {
     return (
       <>
         <Grid templateColumns="repeat(2, 1fr)" gap={8}>
-          <GridItem colSpan={{ base: 2, lg: 1 }}>
+          <GridItem colSpan={{ base: 2, md: 1 }}>
             <Flex>
               <Text variant="big">
                 I&apos;m a full stack software engineer who loves designing,
@@ -31,7 +31,7 @@ export default function Home() {
               </Text>
             </Flex>
           </GridItem>
-          <GridItem colSpan={{ base: 2, lg: 1 }}>
+          <GridItem colSpan={{ base: 2, md: 1 }}>
             <Text mb={2}>
               As a self-taught developer, I learned how to build code first,
               sharpening my craft through curiosity and grit. I&apos;ve
@@ -43,10 +43,10 @@ export default function Home() {
               surfing, snowboarding, film photography, and travel.
             </Text>
           </GridItem>
-          <GridItem colSpan={{ base: 2, lg: 1 }}>
+          <GridItem colSpan={{ base: 2, md: 1 }}>
             <Tokamak />
           </GridItem>
-          <GridItem p={1} colSpan={{ base: 2, lg: 1 }}>
+          <GridItem p={1} colSpan={{ base: 2, md: 1 }}>
             <BigLink href="mailto:maxhfung@gmail.com?subject=Hello Max">
               <Box>
                 <Heading variant="big">Let&apos;s</Heading>

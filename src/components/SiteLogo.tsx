@@ -5,7 +5,7 @@ import { SignatureLogoAnimated } from "./svg/SignatureLogoAnimated";
 import { useEffect, useState } from "react";
 
 export const SiteLogo = () => {
-  const [isBelowThreshold] = useMediaQuery("(max-width: 1200px)");
+  const [isBelowThreshold] = useMediaQuery("(max-width: 1000px)");
   const [isVisible, setIsVisible] = useState(!isBelowThreshold);
 
   const handleScroll = () => {
@@ -33,20 +33,20 @@ export const SiteLogo = () => {
             : "navbar-hidden"
           : "navbar-visible"
       }
-      position={isBelowThreshold ? "absolute" : "fixed"}
+      position={{ base: "absolute", xl: "fixed" }}
       width="full"
-      height="100px"
-      p={5}
+      p={4}
+      pt={{ base: 8, xl: 10 }}
+      transition="all 1s ease"
       as="header"
       zIndex={999}
       pointerEvents="none"
     >
       <Center>
         {/* Navbar Contents */}
-        <Box height={88} width={1300}>
+        <Box width={{ base: 900, xl: 1200 }}>
           {/* Signature Logo */}
           <Box
-            width="fit-content"
             transition="0.25s cubic-bezier(0.68, -0.6, 0.32, 1.6)"
             _hover={{
               transform: "scale(1.09)",
