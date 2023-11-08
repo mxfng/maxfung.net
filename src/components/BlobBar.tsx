@@ -84,7 +84,7 @@ const blobs: BlobLink[] = [
     bg: "var(--chakra-colors-primary-500)",
     bgImage: "",
     icon: (
-      <LinkedInLogo fill="var(--chakra-colors-bg)" size={`${iconSize}px`} />
+      <LinkedInLogo fill="var(--chakra-colors-bg)" size={`${iconSize + 4}px`} />
     ),
     color: "var(--chakra-colors-primary-900)",
   },
@@ -107,7 +107,10 @@ const blobs: BlobLink[] = [
     bg: "var(--chakra-colors-primary-100)",
     bgImage: "",
     icon: (
-      <TikTokLogo fill="var(--chakra-colors-primary)" size={`${iconSize}px`} />
+      <TikTokLogo
+        fill="var(--chakra-colors-primary)"
+        size={`${iconSize - 2}px`}
+      />
     ),
     color: "var(--chakra-colors-primary-900)",
   },
