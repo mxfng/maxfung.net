@@ -38,7 +38,7 @@ export const Navbar = () => {
           ? "linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)"
           : "transparent"
       }
-      position="fixed"
+      position={isBelowThreshold ? "absolute" : "fixed"}
       width="full"
       height="100px"
       p={5}

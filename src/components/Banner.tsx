@@ -17,7 +17,7 @@ export const Banner: React.FC<any> = () => {
             Max Henry Fung
           </Heading>
           <Text>Software Engineer / Web Designer</Text>
-          <Text variant="darker">Los Angeles, California</Text>
+          <Text>Los Angeles, California</Text>
         </GridItem>
         <GridItem colSpan={{ base: 1, md: 1 }} rowSpan={{ base: 1, md: 2 }}>
           <Avatar />
