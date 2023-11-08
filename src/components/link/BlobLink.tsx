@@ -48,7 +48,7 @@ export const BlobLink = ({
             border: "3px solid var(--chakra-colors-primary)",
           },
           "& .icon": {
-            transform: "scale(1.2)",
+            transform: "scale(1)",
           },
         }}
         {...params}
@@ -62,7 +62,7 @@ export const BlobLink = ({
             h={size}
             w={size}
           >
-            <Center className="icon" h="100%" w="100%" style={{ opacity: 0.5 }}>
+            <Center className="icon" h="100%" w="100%" style={{ opacity: 0.2 }}>
               {icon}
             </Center>
           </Box>

@@ -24,27 +24,22 @@ export const Banner: React.FC<any> = () => {
           <Heading variant="name" mb={[-1, 0]}>
             Max Henry Fung
           </Heading>
-          <Text>Software Engineer / Web Designer</Text>
-          <Text>Los Angeles, California</Text>
+          <Text mb={-1}>Software Engineer</Text>
+          <Text fontWeight={300}>Los Angeles, California</Text>
         </GridItem>
         <GridItem colSpan={1} rowSpan={2}>
           <Center h="100%" w="100%" position="relative">
-            <Avatar position="absolute" bottom="0" right="0" />
+            <Avatar position="absolute" right="0" />
           </Center>
         </GridItem>
-        <GridItem minH="20px" colSpan={3} w="100%" position="relative" py={4}>
-          <Flex>
+        <GridItem colSpan={3} w="100%">
+          <Flex h="100%">
             <LinkIcon
               fill="var(--chakra-colors-primary)"
               size="18px"
-              position="absolute"
-              bottom="0"
-              left="0"
-              m={1}
+              my="auto"
             />
-            <Box position="absolute" bottom="0" left="8">
-              <BlobBar />
-            </Box>
+            <BlobBar />
           </Flex>
         </GridItem>
       </Grid>

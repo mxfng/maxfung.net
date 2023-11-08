@@ -25,10 +25,7 @@ export const BlobBar = ({ ...params }) => {
       <Flex>
         <Grid
           templateColumns="repeat(12,1fr)"
-          w={38 * 4}
-          h={blobSize}
-          py={6}
-          px={5}
+          px={2}
           css={{
             "& .text": {
               transform: "translateX(-100%)",
