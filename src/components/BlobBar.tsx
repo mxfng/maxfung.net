@@ -122,7 +122,7 @@ const blobs: BlobLink[] = [
     icon: (
       <SnapchatLogo
         fill="var(--chakra-colors-primary)"
-        size={`${iconSize}px`}
+        size={`${iconSize + 2}px`}
       />
     ),
     color: "var(--chakra-colors-primary-900)",
