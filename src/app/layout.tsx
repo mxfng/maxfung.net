@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Max Fung",
     description:
       "A full stack software engineer who loves designing, building, and shipping creative products with intuitive experiences from start to finish.",
-    images: "/og-image.png",
+    images: "/opengraph-image.png",
   },
 };
 
