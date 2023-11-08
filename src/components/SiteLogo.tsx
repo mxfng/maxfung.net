@@ -4,7 +4,7 @@ import { Box, Center, useMediaQuery } from "@chakra-ui/react";
 import { SignatureLogoAnimated } from "./svg/SignatureLogoAnimated";
 import { useEffect, useState } from "react";
 
-export const Navbar = () => {
+export const SiteLogo = () => {
   const [isBelowThreshold] = useMediaQuery("(max-width: 1200px)");
   const [isVisible, setIsVisible] = useState(!isBelowThreshold);
 
@@ -33,25 +33,19 @@ export const Navbar = () => {
             : "navbar-hidden"
           : "navbar-visible"
       }
-      bg={
-        isBelowThreshold
-          ? "linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)"
-          : "transparent"
-      }
       position={isBelowThreshold ? "absolute" : "fixed"}
       width="full"
       height="100px"
       p={5}
       as="header"
       zIndex={999}
+      pointerEvents="none"
     >
       <Center>
         {/* Navbar Contents */}
         <Box height={88} width={1300}>
           {/* Signature Logo */}
           <Box
-            as="a"
-            href="/"
             width="fit-content"
             transition="0.25s cubic-bezier(0.68, -0.6, 0.32, 1.6)"
             _hover={{

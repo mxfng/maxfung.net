@@ -61,13 +61,7 @@ const blobs: BlobLink[] = [
     url: "mailto:maxhfung@gmail.com?subject=Hello Max",
     bg: "var(--chakra-colors-primary-900)",
     bgImage: "",
-    icon: (
-      <EmailIcon
-        fill="var(--chakra-colors-bg)"
-        size="16px"
-        transform="rotate(55deg)"
-      />
-    ),
+    icon: <EmailIcon fill="var(--chakra-colors-bg)" size="16px" />,
     color: "var(--chakra-colors-primary-900)",
   },
   {
@@ -75,13 +69,7 @@ const blobs: BlobLink[] = [
     url: "https://github.com/mxfng",
     bg: "var(--chakra-colors-primary-700)",
     bgImage: "",
-    icon: (
-      <GitHubLogo
-        fill="var(--chakra-colors-bg)"
-        size="20px"
-        transform="rotate(55deg)"
-      />
-    ),
+    icon: <GitHubLogo fill="var(--chakra-colors-bg)" size="20px" />,
     color: "var(--chakra-colors-primary-900)",
   },
   {
@@ -89,13 +77,7 @@ const blobs: BlobLink[] = [
     url: "https://www.linkedin.com/in/maxfung/",
     bg: "var(--chakra-colors-primary-500)",
     bgImage: "",
-    icon: (
-      <LinkedInLogo
-        fill="var(--chakra-colors-bg)"
-        size="20px"
-        transform="rotate(55deg)"
-      />
-    ),
+    icon: <LinkedInLogo fill="var(--chakra-colors-bg)" size="20px" />,
     color: "var(--chakra-colors-primary-900)",
   },
   {
@@ -103,13 +85,7 @@ const blobs: BlobLink[] = [
     url: "https://www.instagram.com/fungkadelic/",
     bg: "var(--chakra-colors-primary-300)",
     bgImage: "",
-    icon: (
-      <InstagramLogo
-        fill="var(--chakra-colors-primary)"
-        size="20px"
-        transform="rotate(55deg)"
-      />
-    ),
+    icon: <InstagramLogo fill="var(--chakra-colors-primary)" size="20px" />,
     color: "var(--chakra-colors-primary-900)",
   },
   {
@@ -117,13 +93,7 @@ const blobs: BlobLink[] = [
     url: "https://www.tiktok.com/@fungkadelic?_t=8hB6dLExZMc&_r=1",
     bg: "var(--chakra-colors-primary-100)",
     bgImage: "",
-    icon: (
-      <TikTokLogo
-        fill="var(--chakra-colors-primary)"
-        size="20px"
-        transform="rotate(55deg)"
-      />
-    ),
+    icon: <TikTokLogo fill="var(--chakra-colors-primary)" size="20px" />,
     color: "var(--chakra-colors-primary-900)",
   },
   {
@@ -131,13 +101,7 @@ const blobs: BlobLink[] = [
     url: "https://t.snapchat.com/pnjW0bW6",
     bg: "var(--chakra-colors-primary-50)",
     bgImage: "",
-    icon: (
-      <SnapchatLogo
-        fill="var(--chakra-colors-primary)"
-        size="20px"
-        transform="rotate(55deg)"
-      />
-    ),
+    icon: <SnapchatLogo fill="var(--chakra-colors-primary)" size="20px" />,
     color: "var(--chakra-colors-primary-900)",
   },
 ];

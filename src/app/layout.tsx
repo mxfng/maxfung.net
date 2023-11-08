@@ -4,7 +4,7 @@ import { Box } from "@chakra-ui/react";
 import { nowPlaying, recentlyPlayed, songOfTheMonth } from "../lib/spotify";
 import { Banner } from "../components/Banner";
 import { Footer } from "../components/Footer";
-import { Navbar } from "../components/Navbar";
+import { SiteLogo } from "../components/SiteLogo";
 import { Spotify } from "../components/spotify/Spotify";
 export const metadata: Metadata = {
   title: {
@@ -50,7 +50,7 @@ export default async function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <Navbar />
+          <SiteLogo />
           <Box overflow="hidden" maxWidth={900} mx="auto">
             <Box pt={{ base: 100, xl: 8 }} px="3">
               <Banner />

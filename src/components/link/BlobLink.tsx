@@ -29,9 +29,17 @@ export const BlobLink = ({
             transition: "all 500ms ease",
             color: "tertiary",
           },
+          "& .icon": {
+            transition: "0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6)",
+          },
           "@media (min-width: 768px)": {
             "& .icon": {
-              display: "none",
+              transform: "scale(0) rotate(45deg)",
+            },
+          },
+          "@media (max-width: 768px)": {
+            "& .icon": {
+              transform: "scale(1)",
             },
           },
         }}
@@ -39,17 +47,10 @@ export const BlobLink = ({
           "& .blob": {
             border: "3px solid var(--chakra-colors-primary)",
           },
-          "& .text": {
-            color: "primary",
-          },
-          "@media (min-width: 768px)": {
-            "& .text": {
-              transform: "translateX(0%)",
-            },
+          "& .icon": {
+            transform: "scale(1.2)",
           },
         }}
-        transform="rotate(-55deg)"
-        transformOrigin="0% 100%"
         {...params}
       >
         <Flex w="fit-content">
@@ -61,21 +62,8 @@ export const BlobLink = ({
             h={size}
             w={size}
           >
-            <Center className="icon" h="100%" w="100%" style={{ opacity: 0.3 }}>
+            <Center className="icon" h="100%" w="100%" style={{ opacity: 0.5 }}>
               {icon}
-            </Center>
-          </Box>
-          <Box h="fit-content" overflow="hidden" my="auto">
-            <Center>
-              <Text
-                variant="tiny"
-                overflow="hidden"
-                pl={2}
-                color="tertiary"
-                className="text"
-              >
-                {title}
-              </Text>
             </Center>
           </Box>
         </Flex>
