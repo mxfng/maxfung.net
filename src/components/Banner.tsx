@@ -12,23 +12,15 @@ export const Banner: React.FC<any> = () => {
         className="banner"
         gap={4}
       >
-        <GridItem colSpan={{ base: 4, md: 3 }}>
+        <GridItem colSpan={4}>
           <Heading variant="name" mb={[-1, 0]}>
             Max Henry Fung
           </Heading>
           <Text>Software Engineer / Web Designer</Text>
           <Text>Los Angeles, California</Text>
         </GridItem>
-        <GridItem colSpan={{ base: 1, md: 1 }} rowSpan={{ base: 1, md: 2 }}>
-          <Avatar />
-        </GridItem>
-        <GridItem
-          minH="20px"
-          colSpan={{ base: 4, md: 3 }}
-          w="100%"
-          position="relative"
-          py={4}
-        >
+
+        <GridItem minH="20px" colSpan={4} w="100%" position="relative" py={4}>
           <Flex>
             <LinkIcon
               fill="var(--chakra-colors-primary)"
