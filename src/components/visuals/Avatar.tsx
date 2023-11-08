@@ -1,7 +1,8 @@
 "use client";
 
-import { Box, Flex, Image } from "@chakra-ui/react";
+import { Box, Center, Flex, Image } from "@chakra-ui/react";
 import { useReducer } from "react";
+import { ShuffleIcon } from "../svg/ShuffleIcon";
 
 const staticBg = "/gifs/8.gif";
 
@@ -53,7 +54,17 @@ export const Avatar = ({ ...props }) => {
       }}
       borderRadius="full"
       outline="1px solid var(--chakra-colors-tertiary)"
-      css={{
+      _hover={{
+        outline: "4px solid var(--chakra-colors-primary)",
+        "& .icon": {
+          opacity: 1,
+        },
+      }}
+      transition="all 200ms ease"
+      __css={{
+        "& .icon": {
+          opacity: 0,
+        },
         ":after": {
           content: '""',
           backgroundColor: "transparent",
@@ -73,7 +84,15 @@ export const Avatar = ({ ...props }) => {
       }}
       {...props}
     >
-      <Flex alignItems="center" justifyContent="center" position="relative">
+      <Flex
+        alignItems="center"
+        justifyContent="center"
+        position="relative"
+        h="100%"
+      >
+        <Center className="icon" transition="all 300ms ease-in-out" zIndex={6}>
+          <ShuffleIcon size="30px" fill="var(--chakra-colors-primary)" />
+        </Center>
         <Image
           borderRadius="full"
           w={{ base: "100%" }}
