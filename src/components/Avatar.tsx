@@ -43,8 +43,8 @@ export const Avatar = ({ ...props }) => {
   return (
     <>
       <Box
-        height={["100px", "160px"]}
-        width={["100px", "160px"]}
+        height={{ base: "88px", md: "121px" }}
+        width={{ base: "88px", md: "121px" }}
         transition="0.25s cubic-bezier(0.68, -0.6, 0.32, 1.6)"
         _hover={{
           transform: "scale(1.03)",

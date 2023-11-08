@@ -29,7 +29,7 @@ export const Banner: React.FC<any> = () => {
         </GridItem>
         <GridItem colSpan={1} rowSpan={2}>
           <Center h="100%" w="100%" position="relative">
-            <Avatar position="absolute" top="0" right="0" />
+            <Avatar position="absolute" bottom="0" right="0" />
           </Center>
         </GridItem>
         <GridItem minH="20px" colSpan={3} w="100%" position="relative" py={4}>
