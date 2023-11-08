@@ -7,7 +7,7 @@ import { Footer } from "../components/Footer";
 import { Corner } from "../components/Corner";
 import { Spotify } from "../components/spotify/Spotify";
 import { SignatureLogoAnimated } from "../components/svg/SignatureLogoAnimated";
-import { Avatar } from "../components/Avatar";
+import { Avatar } from "../components/visuals/Avatar";
 export const metadata: Metadata = {
   title: {
     template: "%s | Max Fung",

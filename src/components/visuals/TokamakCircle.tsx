@@ -57,7 +57,7 @@ export const TokamakCircle: React.FC<any> = ({
     } else {
       setRevert(false);
     }
-  }, [scrollY]);
+  }, [scrollY, scrollThreshold, index, circleCount]);
 
   let weightIndex = weightIndexOf(index, circleCount);
 
