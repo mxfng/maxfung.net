@@ -84,15 +84,15 @@ export const Avatar = ({ ...props }) => {
       }}
       {...props}
     >
+      <Center className="icon" transition="all 300ms ease-in-out" zIndex={6}>
+        <ShuffleIcon size="30px" fill="var(--chakra-colors-primary)" />
+      </Center>
       <Flex
         alignItems="center"
         justifyContent="center"
         position="relative"
         h="100%"
       >
-        <Center className="icon" transition="all 300ms ease-in-out" zIndex={6}>
-          <ShuffleIcon size="30px" fill="var(--chakra-colors-primary)" />
-        </Center>
         <Image
           borderRadius="full"
           w={{ base: "100%" }}
