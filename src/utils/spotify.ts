@@ -83,7 +83,6 @@ const getNowPlaying = async (): Promise<SpotifySong | SpotifyError> => {
     const { access_token } = accessTokenData;
 
     const response = await fetch(NOW_PLAYING_ENDPOINT, {
-      method: "GET",
       headers: {
         Authorization: `Bearer ${access_token}`,
       },
@@ -122,7 +121,6 @@ const getRecentlyPlayed = async (): Promise<SpotifySong | SpotifyError> => {
     const { access_token } = accessTokenData;
 
     const response = await fetch(RECENTLY_PLAYED_ENDPOINT, {
-      method: "GET",
       headers: {
         Authorization: `Bearer ${access_token}`,
       },
@@ -173,7 +171,6 @@ const getSongOfTheMonth = async (): Promise<SpotifySong | SpotifyError> => {
     const response = await fetch(
       `${TOP_TRACKS_ENDPOINT}?time_range=short_term&limit=1`,
       {
-        method: "GET",
         headers: {
           Authorization: `Bearer ${access_token}`,
         },
