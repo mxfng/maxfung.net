@@ -3,7 +3,7 @@
 import { Box, Flex, Image } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
-export const Avatar = () => {
+export const Avatar = ({ ...props }) => {
   const [hotBg, setHotBg] = useState<string>();
   const [cachedBg, setCachedBg] = useState<string>();
   const [showBg, setShowBg] = useState(true);
@@ -43,8 +43,8 @@ export const Avatar = () => {
   return (
     <>
       <Box
-        height={["150px", "210px"]}
-        width={["150px", "210px"]}
+        height={["100px", "160px"]}
+        width={["100px", "160px"]}
         transition="0.25s cubic-bezier(0.68, -0.6, 0.32, 1.6)"
         _hover={{
           transform: "scale(1.03)",
@@ -52,6 +52,9 @@ export const Avatar = () => {
         onClick={() => {
           onImageLoading();
         }}
+        borderRadius="full"
+        outline="1px solid var(--chakra-colors-tertiary)"
+        {...props}
       >
         <Flex alignItems="center" justifyContent="center" position="relative">
           <Image

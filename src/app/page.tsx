@@ -21,8 +21,8 @@ export default function Home() {
   function renderAbout() {
     return (
       <>
-        <Grid templateColumns="repeat(2, 1fr)" gap={8} textAlign="justify">
-          <GridItem colSpan={{ base: 2, lg: 1 }} textAlign="left">
+        <Grid templateColumns="repeat(2, 1fr)" gap={8}>
+          <GridItem colSpan={{ base: 2, lg: 1 }}>
             <Flex>
               <Text variant="big">
                 I&apos;m a full stack software engineer who loves designing,
@@ -33,17 +33,14 @@ export default function Home() {
           </GridItem>
           <GridItem colSpan={{ base: 2, lg: 1 }}>
             <Text mb={2}>
-              I work best at the intersection of boundless creativity and
-              unwavering precision, where imaginative design meets methodical
-              development. As a self-taught developer, I learned how to build
-              code first, sharpening my craft through curiosity and grit.
-              I&apos;ve developed and contributed to a variety of exciting
-              projects since starting my journey back in 2018.{" "}
+              As a self-taught developer, I learned how to build code first,
+              sharpening my craft through curiosity and grit. I&apos;ve
+              developed and contributed to a variety of exciting projects since
+              starting my journey back in 2018.{" "}
             </Text>
             <Text>
-              When I&apos;m not coding, I&apos;m producing my own music,
-              surfing, snowboarding, taking photos with my film cameras, and out
-              exploring the world.
+              I have many passions in life, including producing my own music,
+              surfing, snowboarding, film photography, and travel.
             </Text>
           </GridItem>
           <GridItem colSpan={{ base: 2, lg: 1 }}>

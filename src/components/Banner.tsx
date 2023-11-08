@@ -1,4 +1,12 @@
-import { Box, Flex, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Flex,
+  Grid,
+  GridItem,
+  Heading,
+  Text,
+} from "@chakra-ui/react";
 import { BlobBar } from "./BlobBar";
 import { LinkIcon } from "./svg/LinkIcon";
 import { Avatar } from "./Avatar";
@@ -12,15 +20,19 @@ export const Banner: React.FC<any> = () => {
         className="banner"
         gap={4}
       >
-        <GridItem colSpan={4}>
+        <GridItem colSpan={3}>
           <Heading variant="name" mb={[-1, 0]}>
             Max Henry Fung
           </Heading>
           <Text>Software Engineer / Web Designer</Text>
           <Text>Los Angeles, California</Text>
         </GridItem>
-
-        <GridItem minH="20px" colSpan={4} w="100%" position="relative" py={4}>
+        <GridItem colSpan={1} rowSpan={2}>
+          <Center h="100%" w="100%" position="relative">
+            <Avatar position="absolute" top="0" right="0" />
+          </Center>
+        </GridItem>
+        <GridItem minH="20px" colSpan={3} w="100%" position="relative" py={4}>
           <Flex>
             <LinkIcon
               fill="var(--chakra-colors-primary)"
