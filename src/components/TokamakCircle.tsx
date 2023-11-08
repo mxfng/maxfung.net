@@ -46,7 +46,6 @@ export const TokamakCircle: React.FC<any> = ({
       mobileFriendlyThreshold
     );
 
-    console.log(scrollY);
     if (scrollY > weightedScrollThreshold) {
       setResting(false);
     } else {
