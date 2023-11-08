@@ -7,13 +7,19 @@ export default function Home() {
   return (
     <>
       <Box>
-        <Section title="About">{renderAbout()}</Section>
+        <Section id="about" title="About">
+          {renderAbout()}
+        </Section>
       </Box>
       <Box>
-        <Section title="Experience">{renderExperience()}</Section>
+        <Section id="experience" title="Experience">
+          {renderExperience()}
+        </Section>
       </Box>
       <Box>
-        <Section title="Featured Projects">{renderFeaturedProjects()}</Section>
+        <Section id="projects" title="Featured Projects">
+          {renderFeaturedProjects()}
+        </Section>
       </Box>
     </>
   );
