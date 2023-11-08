@@ -7,34 +7,28 @@ export const Avatar = ({ ...props }) => {
   const [hotBg, setHotBg] = useState<string>();
   const [cachedBg, setCachedBg] = useState<string>();
   const [showBg, setShowBg] = useState(true);
+  const [imageLoading, setImageLoading] = useState(true);
   const [imageLoaded, setimageLoaded] = useState(false);
 
-  const onImageLoaded = () => {
+  useEffect(() => {
+    const getRandomBg = (): string => {
+      const randomInteger = Math.floor(Math.random() * 10) + 1;
+      const randomBg = `/gifs/${randomInteger}.gif`;
+      return randomBg === hotBg ? getRandomBg() : randomBg;
+    };
+
+    if (imageLoading) {
+      setShowBg(false);
+      setimageLoaded(false);
+      setHotBg(getRandomBg);
+      setCachedBg(hotBg);
+    }
+  }, [imageLoading]);
+
+  useEffect(() => {
     setShowBg(true);
     setimageLoaded(true);
-  };
-
-  const onImageLoading = () => {
-    setShowBg(false);
-    setimageLoaded(false);
-    setHotBg(getRandomBg);
-    setCachedBg(hotBg);
-  };
-
-  const getRandomBg = (): string => {
-    const randomInteger = Math.floor(Math.random() * 10) + 1;
-    const randomBg = `/gifs/${randomInteger}.gif`;
-    return randomBg === hotBg ? getRandomBg() : randomBg;
-  };
-
-  // on page load
-  useEffect(() => {
-    setHotBg(getRandomBg);
-    onImageLoading();
-  }, []);
-
-  useEffect(() => {
-    onImageLoaded();
+    setImageLoading(false);
   }, [imageLoaded]);
 
   const bgSrc = hotBg;
@@ -49,7 +43,7 @@ export const Avatar = ({ ...props }) => {
         h={{ base: `${baseSize}px`, md: `${mdSize}px` }}
         w={{ base: `${baseSize}px`, md: `${mdSize}px` }}
         onClick={() => {
-          onImageLoading();
+          setImageLoading(true);
         }}
         borderRadius="full"
         outline="1px solid var(--chakra-colors-tertiary)"

@@ -52,7 +52,7 @@ export default function Home() {
         <GridItem p={1} colSpan={{ base: 2, md: 1 }}>
           <BigLink href="mailto:maxhfung@gmail.com?subject=Hello Max">
             <Box>
-              <Heading variant="big">Let's</Heading>
+              <Heading variant="big">Let&apos;s</Heading>
               <Heading variant="big">Build</Heading>
               <Heading variant="big">Together.</Heading>
             </Box>
