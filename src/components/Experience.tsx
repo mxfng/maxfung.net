@@ -98,10 +98,8 @@ export const Experience: React.FC<any> = ({
             </Box>
           </GridItem>
           {desc && (
-            <GridItem colSpan={2} my={2}>
-              <Box textAlign="justify">
-                <Text>{desc}</Text>
-              </Box>
+            <GridItem colSpan={2} my={[2, 4]}>
+              <Text>{desc}</Text>
             </GridItem>
           )}
           {stack && (
