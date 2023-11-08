@@ -17,7 +17,7 @@ export const Section: React.FC<any> = ({
           {title}
         </Heading>
       )}
-      <Box maxW={width} mx="auto" px={[4, 8]} pb={[12, 24]} {...props}>
+      <Box maxW={width} mx="auto" px={[4, 8]} pb={[24, 40]} {...props}>
         {children}
       </Box>
     </>
