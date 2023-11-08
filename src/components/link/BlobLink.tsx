@@ -1,4 +1,4 @@
-import { Box, Center, Flex, GridItem, Text } from "@chakra-ui/react";
+import { Box, Center, Flex, GridItem } from "@chakra-ui/react";
 
 export const BlobLink = ({
   title,
