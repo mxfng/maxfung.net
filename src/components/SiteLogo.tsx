@@ -35,8 +35,8 @@ export const SiteLogo = () => {
       }
       position={{ base: "absolute", xl: "fixed" }}
       width="full"
-      p={4}
-      pt={{ base: 8, xl: 10 }}
+      p={{ base: 4, xl: 10 }}
+      pt={{ base: 6, xl: 10 }}
       transition="all 1s ease"
       as="header"
       zIndex={999}
@@ -44,7 +44,7 @@ export const SiteLogo = () => {
     >
       <Center>
         {/* Navbar Contents */}
-        <Box width={{ base: 900, xl: 1200 }}>
+        <Box width={{ base: 900, xl: "100%" }}>
           {/* Signature Logo */}
           <Box
             transition="0.25s cubic-bezier(0.68, -0.6, 0.32, 1.6)"

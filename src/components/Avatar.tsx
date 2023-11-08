@@ -54,6 +54,24 @@ export const Avatar = ({ ...props }) => {
         }}
         borderRadius="full"
         outline="1px solid var(--chakra-colors-tertiary)"
+        css={{
+          ":after": {
+            content: '""',
+            backgroundColor: "transparent",
+            backgroundImage: "url(/bgs/grain.svg)",
+            backgroundSize: "182px",
+            backgroundRepeat: "repeat",
+            borderRadius: "100%",
+            opacity: 0.3,
+            top: 0,
+            left: 0,
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            pointerEvents: "none",
+            zIndex: 1000,
+          },
+        }}
         {...props}
       >
         <Flex alignItems="center" justifyContent="center" position="relative">
