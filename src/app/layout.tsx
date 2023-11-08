@@ -8,6 +8,9 @@ import { Corner } from "../components/Corner";
 import { Spotify } from "../components/spotify/Spotify";
 import { SignatureLogoAnimated } from "../components/svg/SignatureLogoAnimated";
 import { Avatar } from "../components/visuals/Avatar";
+
+const no_spotify: string = process.env.NO_SPOTIFY_CALLS || "false";
+
 export const metadata: Metadata = {
   title: {
     template: "%s | Max Fung",
@@ -44,9 +47,18 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const _nowPlaying = await nowPlaying();
-  const _recentlyPlayed = await recentlyPlayed();
-  const _songOfTheMonth = await songOfTheMonth();
+  let _nowPlaying;
+  let _recentlyPlayed;
+  let _songOfTheMonth;
+  if (no_spotify === "false") {
+    _nowPlaying = await nowPlaying();
+    _recentlyPlayed = await recentlyPlayed();
+    _songOfTheMonth = await songOfTheMonth();
+  } else {
+    _nowPlaying = { error: "dev", is_playing: false };
+    _recentlyPlayed = { error: "dev", is_playing: false };
+    _songOfTheMonth = { error: "dev", is_playing: false };
+  }
 
   return (
     <html lang="en">
