@@ -1,10 +1,16 @@
 "use client";
 
 import { Box, Center, Flex, Image } from "@chakra-ui/react";
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { ShuffleIcon } from "../svg/ShuffleIcon";
 
 const staticBg = "/gifs/8.gif";
+
+const initialState = {
+  hotBg: staticBg,
+  cachedBg: staticBg,
+  showBg: true,
+};
 
 function reducer(state, action) {
   switch (action.type) {
@@ -32,18 +38,14 @@ function reducer(state, action) {
 }
 
 export const Avatar = ({ ...props }) => {
-  const initialBg = `/gifs/${Math.floor(Math.random() * 10) + 1}.gif`;
-
-  const initialState = {
-    hotBg: initialBg,
-    cachedBg: staticBg,
-    showBg: true,
-  };
-
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const baseSize = 65;
   const mdSize = 121;
+
+  useEffect(() => {
+    dispatch({ type: "SET_IMAGE_LOADING" });
+  }, []);
 
   return (
     <Box
