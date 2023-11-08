@@ -55,10 +55,19 @@ const getAccessToken = async (): Promise<AccessTokenResponse | null> => {
   }
 };
 
-const handleFetchError = (response: Response) => {
+const handleFetchResponse = (response: Response, origin: string) => {
+  const timestamp = new Date().toISOString();
   if (!response.ok) {
-    console.error(`Fetch error: ${response.statusText}`);
-    throw new Error(`Fetch error: ${response.statusText}`);
+    console.error(
+      `${timestamp} - Fetch ERROR at ${origin}: ${response.status} - ${response.statusText}`
+    );
+    throw new Error(
+      `${timestamp} - (Spotify API) Fetch ERROR at ${origin}: ${response.status} - ${response.statusText}`
+    );
+  } else {
+    console.log(
+      `${timestamp} - (Spotify API) Fetch SUCCESS at ${origin}: ${response.status} - ${response.body}`
+    );
   }
   return response;
 };
@@ -74,14 +83,19 @@ const getNowPlaying = async (): Promise<SpotifySong | SpotifyError> => {
     const { access_token } = accessTokenData;
 
     const response = await fetch(NOW_PLAYING_ENDPOINT, {
+      method: "GET",
       headers: {
         Authorization: `Bearer ${access_token}`,
       },
     });
 
-    handleFetchError(response);
+    handleFetchResponse(response, NOW_PLAYING_ENDPOINT);
 
-    const { item } = await response.json(); // returns song.item
+    if (response.status === 204) {
+      return { error: "Empty response body", is_playing: false };
+    }
+
+    const { item } = await response.json();
     const song: SpotifySong = item;
 
     return {
@@ -108,12 +122,13 @@ const getRecentlyPlayed = async (): Promise<SpotifySong | SpotifyError> => {
     const { access_token } = accessTokenData;
 
     const response = await fetch(RECENTLY_PLAYED_ENDPOINT, {
+      method: "GET",
       headers: {
         Authorization: `Bearer ${access_token}`,
       },
     });
 
-    handleFetchError(response);
+    handleFetchResponse(response, RECENTLY_PLAYED_ENDPOINT);
 
     const { items } = await response.json();
 
@@ -158,13 +173,14 @@ const getSongOfTheMonth = async (): Promise<SpotifySong | SpotifyError> => {
     const response = await fetch(
       `${TOP_TRACKS_ENDPOINT}?time_range=short_term&limit=1`,
       {
+        method: "GET",
         headers: {
           Authorization: `Bearer ${access_token}`,
         },
       }
     );
 
-    handleFetchError(response);
+    handleFetchResponse(response, TOP_TRACKS_ENDPOINT);
 
     const { items } = await response.json();
 
