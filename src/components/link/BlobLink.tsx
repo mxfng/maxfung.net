@@ -1,4 +1,4 @@
-import { Box, Center, Flex, GridItem } from "@chakra-ui/react";
+import { Box, Center, Flex, GridItem, Image } from "@chakra-ui/react";
 
 export const BlobLink = ({
   title,
@@ -53,7 +53,19 @@ export const BlobLink = ({
         }}
         {...params}
       >
-        <Flex w="fit-content">
+        <Flex w="fit-content" position="relative">
+          <Image
+            id="grain"
+            w={{ base: "100%" }}
+            src="/bgs/grain.svg"
+            alt=""
+            position="absolute"
+            top="0px"
+            left="0px"
+            borderRadius="full"
+            opacity="0.2"
+            zIndex={5}
+          />
           <Box
             className="blob"
             borderRadius="full"
