@@ -1,7 +1,7 @@
 import { Box, Link, Text } from "@chakra-ui/react";
 import { SignatureLogo } from "./svg/SignatureLogo";
 import { FooterLinks } from "./link/FooterLinks";
-import { Line } from "./Line";
+import { Line } from "./visuals/Line";
 
 export const Footer: React.FC<any> = ({ children, ...props }) => {
   return (

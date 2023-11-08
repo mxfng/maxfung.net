@@ -1,7 +1,7 @@
 import { Box, Flex, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
 import { Experience } from "../components/Experience";
 import { Section } from "../components/Section";
-import { Tokamak } from "../components/Tokamak";
+import { Tokamak } from "../components/visuals/Tokamak";
 import { BigLink } from "../components/link/BigLink";
 export default function Home() {
   return (

@@ -10,7 +10,7 @@ import {
   Center,
 } from "@chakra-ui/react";
 import { ArrowUp } from "./svg/ArrowUp";
-import { Line } from "./Line";
+import { Line } from "./visuals/Line";
 
 export const Experience: React.FC<any> = ({
   from,

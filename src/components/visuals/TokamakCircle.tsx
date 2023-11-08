@@ -1,7 +1,7 @@
 "use client";
 import { Box } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import Keyframe from "./keyframe/InlineKeyframe";
+import Keyframe from "../keyframe/InlineKeyframe";
 import {
   weightedScrollThresholdOf,
   weightIndexOf,
@@ -9,7 +9,7 @@ import {
   getCssRgbFromIndex,
   cssPointValueOf,
   mobileFriendlyThresholdOf,
-} from "../lib/tokamak";
+} from "../../lib/tokamak";
 
 export const TokamakCircle: React.FC<any> = ({
   index,

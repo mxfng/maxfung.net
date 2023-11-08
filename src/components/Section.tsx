@@ -1,6 +1,6 @@
 import { Box, Heading } from "@chakra-ui/react";
 import React from "react";
-import { Line } from "./Line";
+import { Line } from "./visuals/Line";
 
 export const Section: React.FC<any> = ({
   width,
