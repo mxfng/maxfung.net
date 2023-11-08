@@ -3,13 +3,7 @@
 import { Box, Flex, Image } from "@chakra-ui/react";
 import { useReducer } from "react";
 
-const initialState = {
-  hotBg: "",
-  cachedBg: "",
-  showBg: true,
-  imageLoading: true,
-  imageLoaded: false,
-};
+const staticBg = "/gifs/8.gif";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -22,17 +16,14 @@ function reducer(state, action) {
 
       return {
         ...state,
-        showBg: false,
-        imageLoaded: false,
-        hotBg: getRandomBg(),
         cachedBg: state.hotBg,
+        showBg: false,
+        hotBg: getRandomBg(),
       };
     case "SET_IMAGE_LOADED":
       return {
         ...state,
         showBg: true,
-        imageLoaded: true,
-        imageLoading: false,
       };
     default:
       return state;
@@ -40,6 +31,14 @@ function reducer(state, action) {
 }
 
 export const Avatar = ({ ...props }) => {
+  const initialBg = `/gifs/${Math.floor(Math.random() * 10) + 1}.gif`;
+
+  const initialState = {
+    hotBg: initialBg,
+    cachedBg: staticBg,
+    showBg: true,
+  };
+
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const baseSize = 65;
@@ -86,29 +85,27 @@ export const Avatar = ({ ...props }) => {
           zIndex={4}
         />
 
-        {
-          <Image
-            src={state.hotBg}
-            alt=""
-            borderRadius="full"
-            w={{ base: "100%" }}
-            objectFit="cover"
-            position="absolute"
-            top="0px"
-            left="0px"
-            zIndex={3}
-            animation={state.showBg ? "fadeIn 1s linear" : ""}
-            css={{
-              maskImage:
-                "radial-gradient(circle, rgba(0,0,0, 1) 70%, rgba(0, 0, 0, 0) 71%)",
-            }}
-            onLoad={() => dispatch({ type: "SET_IMAGE_LOADED" })}
-          />
-        }
+        <Image
+          src={state.hotBg}
+          alt=""
+          borderRadius="full"
+          w={{ base: "100%" }}
+          objectFit="cover"
+          position="absolute"
+          top="0px"
+          left="0px"
+          zIndex={3}
+          animation={state.showBg ? "fadeIn 400ms linear" : ""}
+          css={{
+            maskImage:
+              "radial-gradient(circle, rgba(0,0,0, 1) 70%, rgba(0, 0, 0, 0) 71%)",
+          }}
+          onLoad={() => dispatch({ type: "SET_IMAGE_LOADED" })}
+        />
 
         <Image
           borderRadius="full"
-          src={state.cachedBg ? state.cachedBg : "/checkers.jpg"}
+          src={state.cachedBg}
           alt=""
           w={{ base: "100%" }}
           objectFit="cover"
