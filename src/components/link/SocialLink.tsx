@@ -6,7 +6,7 @@ export const SocialLink: React.FC<any> = ({ title, href }) => {
   return (
     <>
       <Flex as="a" href={href} className="linkify">
-        <Text variant="link" fontSize={["0.8rem", "1.2rem"]}>
+        <Text variant="link" fontSize={["0.9rem", "1.2rem"]}>
           {title}
         </Text>
         <ArrowUp
