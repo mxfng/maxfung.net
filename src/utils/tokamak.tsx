@@ -78,3 +78,12 @@ export function weightedScrollThresholdOf(
 export function cssPointValueOf(point: number, r: number) {
   return `calc(${point}% - ${r}px)`;
 }
+
+// adjusts the scroll threshold value for mobile devices
+export function mobileFriendlyThresholdOf(
+  window: Window & typeof globalThis,
+  scrollThreshold: number,
+  shiftBy: number = 400
+): number {
+  return window.innerWidth <= 768 ? scrollThreshold + shiftBy : scrollThreshold;
+}

@@ -8,15 +8,8 @@ import {
   midpointOf,
   getCssRgbFromIndex,
   cssPointValueOf,
+  mobileFriendlyThresholdOf,
 } from "../utils/tokamak";
-
-// adjusts the scroll threshold value for mobile devices
-function mobileFriendlyThresholdOf(
-  scrollThreshold: number,
-  shiftBy: number = 400
-): number {
-  return window.innerWidth <= 768 ? scrollThreshold + shiftBy : scrollThreshold;
-}
 
 export const TokamakCircle: React.FC<any> = ({
   index,
@@ -27,9 +20,6 @@ export const TokamakCircle: React.FC<any> = ({
   startX,
   endX,
 }) => {
-  let mobileFriendlyThreshold = 0;
-  let weightedScrollThreshold = 0;
-
   const [resting, setResting] = useState(true);
   const [revert, setRevert] = useState(false);
   const [scrollY, setScrollY] = useState(0);
@@ -39,13 +29,6 @@ export const TokamakCircle: React.FC<any> = ({
       setScrollY(window.scrollY);
     };
 
-    mobileFriendlyThreshold = mobileFriendlyThresholdOf(scrollThreshold);
-    weightedScrollThreshold = weightedScrollThresholdOf(
-      index,
-      circleCount,
-      mobileFriendlyThreshold
-    );
-
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -53,6 +36,17 @@ export const TokamakCircle: React.FC<any> = ({
   }, []);
 
   useEffect(() => {
+    const mobileFriendlyThreshold = mobileFriendlyThresholdOf(
+      window,
+      scrollThreshold
+    );
+    const weightedScrollThreshold = weightedScrollThresholdOf(
+      index,
+      circleCount,
+      mobileFriendlyThreshold
+    );
+
+    console.log(scrollY);
     if (scrollY > weightedScrollThreshold) {
       setResting(false);
     } else {
