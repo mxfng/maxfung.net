@@ -1,3 +1,5 @@
+// back end functions to generate the tokamak
+
 export function midpointOf(
   startX: number,
   endX: number,

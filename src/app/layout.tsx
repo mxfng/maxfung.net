@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Providers } from "./providers";
 import { Box } from "@chakra-ui/react";
-import { nowPlaying, recentlyPlayed, songOfTheMonth } from "../utils/spotify";
+import { nowPlaying, recentlyPlayed, songOfTheMonth } from "../lib/spotify";
 import { Banner } from "../components/Banner";
 import { Footer } from "../components/Footer";
 import { Navbar } from "../components/Navbar";

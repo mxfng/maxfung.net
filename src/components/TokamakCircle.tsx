@@ -9,7 +9,7 @@ import {
   getCssRgbFromIndex,
   cssPointValueOf,
   mobileFriendlyThresholdOf,
-} from "../utils/tokamak";
+} from "../lib/tokamak";
 
 export const TokamakCircle: React.FC<any> = ({
   index,

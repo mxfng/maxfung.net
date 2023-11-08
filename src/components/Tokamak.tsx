@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Center } from "@chakra-ui/react";
-import { midpointOf } from "../utils/tokamak";
+import { midpointOf } from "../lib/tokamak";
 import { TokamakCircle } from "./TokamakCircle";
 
 export const Tokamak: React.FC = () => {
