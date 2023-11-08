@@ -81,12 +81,13 @@ const getNowPlaying = async (): Promise<SpotifySong | SpotifyError> => {
 
     handleFetchError(response);
 
-    const song: SpotifySong = await response.json();
+    const { item } = await response.json(); // returns song.item
+    const song: SpotifySong = item;
 
     return {
       name: song.name,
-      artists: song.artists, //.map((artist: { name: string}) => artist.name).join(", "),
-      external_urls: { spotify: song.external_urls.spotify },
+      artists: song.artists,
+      external_urls: song.external_urls,
       album: song.album,
       isPlaying: song.is_playing,
     };
