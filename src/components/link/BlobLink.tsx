@@ -29,9 +29,8 @@ export const BlobLink = ({
             color: "tertiary",
           },
           "@media (min-width: 768px)": {
-            // Apply styles for mobile view
             "& .icon": {
-              display: "none", // Hide the icon
+              display: "none",
             },
           },
         }}
@@ -41,7 +40,11 @@ export const BlobLink = ({
           },
           "& .text": {
             color: "primary",
-            transform: "translateX(0%)",
+          },
+          "@media (min-width: 768px)": {
+            "& .text": {
+              transform: "translateX(0%)",
+            },
           },
         }}
         transform="rotate(-55deg)"
