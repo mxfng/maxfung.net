@@ -7,6 +7,7 @@ import { InstagramLogo } from "./svg/logos/Instagram";
 import { BlobLink } from "./link/BlobLink";
 import { TikTokLogo } from "./svg/logos/TikTok";
 import { SnapchatLogo } from "./svg/logos/Snapchat";
+import { LinkIcon } from "./svg/LinkIcon";
 
 interface BlobLink {
   title: string;
@@ -18,11 +19,17 @@ interface BlobLink {
 }
 
 export const BlobBar = ({ ...params }) => {
-  const blobSize: string = " 30px";
+  const blobSize: string = "40px";
 
   return (
     <>
       <Flex>
+        <LinkIcon
+          fill="var(--chakra-colors-primary)"
+          size="22px"
+          p={2}
+          my="auto"
+        />
         <Grid
           templateColumns="repeat(12,1fr)"
           px={2}

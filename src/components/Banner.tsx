@@ -19,14 +19,7 @@ export const Banner: React.FC<any> = () => {
           <Text fontWeight={300}>Los Angeles, California</Text>
         </GridItem>
         <GridItem colSpan={3} w="100%">
-          <Flex h="100%">
-            <LinkIcon
-              fill="var(--chakra-colors-primary)"
-              size="18px"
-              my="auto"
-            />
-            <BlobBar />
-          </Flex>
+          <BlobBar />
         </GridItem>
       </Grid>
     </>
