@@ -15,14 +15,12 @@ const styles = {
       color: "primary",
     },
 
-    ".navbar-visible": {
+    ".cornerVisible": {
       transform: "translateY(0)",
-      transition: "transform 0.3s ease-in-out",
     },
 
-    ".navbar-hidden": {
+    ".cornerHidden": {
       transform: "translateY(-100%)",
-      transition: "transform 0.3s ease-in-out",
     },
 
     "& .linkify": {

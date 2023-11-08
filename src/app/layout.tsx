@@ -4,8 +4,10 @@ import { Box } from "@chakra-ui/react";
 import { nowPlaying, recentlyPlayed, songOfTheMonth } from "../lib/spotify";
 import { Banner } from "../components/Banner";
 import { Footer } from "../components/Footer";
-import { SiteLogo } from "../components/SiteLogo";
+import { Corner } from "../components/Corner";
 import { Spotify } from "../components/spotify/Spotify";
+import { SignatureLogoAnimated } from "../components/svg/SignatureLogoAnimated";
+import { Avatar } from "../components/Avatar";
 export const metadata: Metadata = {
   title: {
     template: "%s | Max Fung",
@@ -50,7 +52,15 @@ export default async function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <SiteLogo />
+          <Corner>
+            <SignatureLogoAnimated
+              stroke="var(--chakra-colors-primary)"
+              width="120px"
+            />
+          </Corner>
+          <Corner which="right">
+            <Avatar />
+          </Corner>
           <Box overflow="hidden" maxWidth={900} mx="auto">
             <Box pt={{ base: 100, xl: 8 }} pb={8} px="3">
               <Banner />

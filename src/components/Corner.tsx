@@ -1,12 +1,22 @@
 "use client";
 
 import { Box, Center, useMediaQuery } from "@chakra-ui/react";
-import { SignatureLogoAnimated } from "./svg/SignatureLogoAnimated";
 import { useEffect, useState } from "react";
 
-export const SiteLogo = () => {
+export const Corner = ({ which = "left", children, ...params }) => {
   const [isBelowThreshold] = useMediaQuery("(max-width: 1000px)");
   const [isVisible, setIsVisible] = useState(!isBelowThreshold);
+
+  let styleParams;
+  if (which === "right") {
+    styleParams = {
+      right: 0,
+    };
+  } else {
+    styleParams = {
+      left: 0,
+    };
+  }
 
   const handleScroll = () => {
     if (window.scrollY > 10) {
@@ -29,33 +39,29 @@ export const SiteLogo = () => {
       className={
         isBelowThreshold
           ? isVisible
-            ? "navbar-visible"
-            : "navbar-hidden"
-          : "navbar-visible"
+            ? "cornerVisible"
+            : "cornerHidden"
+          : "cornerVisible"
       }
       position={{ base: "absolute", xl: "fixed" }}
       width="full"
       p={{ base: 4, xl: 10 }}
       pt={{ base: 6, xl: 10 }}
-      transition="all 1s ease"
-      as="header"
-      zIndex={999}
-      pointerEvents="none"
+      transition="all 500ms ease"
+      zIndex={888}
+      {...params}
     >
-      <Center>
-        {/* Navbar Contents */}
-        <Box width={{ base: 900, xl: "100%" }}>
-          {/* Signature Logo */}
+      <Center h="65px" position="relative">
+        <Box h="100%" w={{ base: 900, xl: "100%" }}>
           <Box
             transition="0.25s cubic-bezier(0.68, -0.6, 0.32, 1.6)"
             _hover={{
-              transform: "scale(1.09)",
+              transform: "scale(1.04)",
             }}
+            position="absolute"
+            style={styleParams}
           >
-            <SignatureLogoAnimated
-              stroke="var(--chakra-colors-primary)"
-              width="120px"
-            />
+            {children}
           </Box>
         </Box>
       </Center>
