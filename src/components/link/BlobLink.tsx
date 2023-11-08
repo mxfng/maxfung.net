@@ -7,6 +7,7 @@ export const BlobLink = ({
   bg,
   bgImage = "",
   icon,
+  color,
   ...params
 }) => {
   return (

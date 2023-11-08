@@ -14,6 +14,7 @@ interface BlobLink {
   bg: string;
   bgImage: string;
   icon: ReactElement<any>;
+  color: string;
 }
 
 export const BlobBar = ({ ...params }) => {
@@ -45,6 +46,7 @@ export const BlobBar = ({ ...params }) => {
               bg={link.bg}
               bgImage={link.bgImage}
               icon={link.icon}
+              color={link.color}
             />
           ))}
         </Grid>
@@ -57,50 +59,50 @@ const blobs: BlobLink[] = [
   {
     title: "Email",
     url: "mailto:maxhfung@gmail.com?subject=Hello Max",
-    bg: "red",
+    bg: "var(--chakra-colors-primary-900)",
     bgImage: "",
     icon: (
       <EmailIcon
-        fill="var(--chakra-colors-primary)"
+        fill="var(--chakra-colors-bg)"
         size="16px"
         transform="rotate(55deg)"
       />
     ),
+    color: "var(--chakra-colors-primary-900)",
   },
   {
     title: "GitHub",
     url: "https://github.com/mxfng",
-    bg: "rgb(4,8,12)",
-    bgImage:
-      "linear-gradient(to bottom, #0d0d1b, #090c18, #060b15, #040a11, #04080c)",
+    bg: "var(--chakra-colors-primary-700)",
+    bgImage: "",
     icon: (
       <GitHubLogo
-        fill="var(--chakra-colors-primary)"
+        fill="var(--chakra-colors-bg)"
         size="20px"
         transform="rotate(55deg)"
       />
     ),
+    color: "var(--chakra-colors-primary-900)",
   },
   {
     title: "LinkedIn",
     url: "https://www.linkedin.com/in/maxfung/",
-    bg: "#0077B5",
-    bgImage:
-      "linear-gradient(to left top, #008cc9, #0087c4, #0081bf, #007cba, #0077b5)",
+    bg: "var(--chakra-colors-primary-500)",
+    bgImage: "",
     icon: (
       <LinkedInLogo
-        fill="var(--chakra-colors-primary)"
+        fill="var(--chakra-colors-bg)"
         size="20px"
         transform="rotate(55deg)"
       />
     ),
+    color: "var(--chakra-colors-primary-900)",
   },
   {
     title: "Instagram",
     url: "https://www.instagram.com/fungkadelic/",
-    bg: "#4158D0",
-    bgImage:
-      "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)",
+    bg: "var(--chakra-colors-primary-300)",
+    bgImage: "",
     icon: (
       <InstagramLogo
         fill="var(--chakra-colors-primary)"
@@ -108,13 +110,13 @@ const blobs: BlobLink[] = [
         transform="rotate(55deg)"
       />
     ),
+    color: "var(--chakra-colors-primary-900)",
   },
   {
     title: "TikTok",
     url: "https://www.tiktok.com/@fungkadelic?_t=8hB6dLExZMc&_r=1",
-    bg: "hsla(0,100%,50%,1)",
-    bgImage:
-      "radial-gradient(at 40% 20%, hsla(28,100%,74%,1) 0px, transparent 50%),radial-gradient(at 80% 0%, hsla(189,100%,56%,1) 0px, transparent 50%),radial-gradient(at 0% 50%, hsla(355,100%,93%,1) 0px, transparent 50%),radial-gradient(at 80% 50%, hsla(340,100%,76%,1) 0px, transparent 50%),radial-gradient(at 0% 100%, hsla(22,100%,77%,1) 0px, transparent 50%),radial-gradient(at 80% 100%, hsla(242,100%,70%,1) 0px, transparent 50%),radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0px, transparent 50%)",
+    bg: "var(--chakra-colors-primary-100)",
+    bgImage: "",
     icon: (
       <TikTokLogo
         fill="var(--chakra-colors-primary)"
@@ -122,11 +124,12 @@ const blobs: BlobLink[] = [
         transform="rotate(55deg)"
       />
     ),
+    color: "var(--chakra-colors-primary-900)",
   },
   {
     title: "Snapchat",
     url: "https://t.snapchat.com/pnjW0bW6",
-    bg: "yellow",
+    bg: "var(--chakra-colors-primary-50)",
     bgImage: "",
     icon: (
       <SnapchatLogo
@@ -135,5 +138,6 @@ const blobs: BlobLink[] = [
         transform="rotate(55deg)"
       />
     ),
+    color: "var(--chakra-colors-primary-900)",
   },
 ];
