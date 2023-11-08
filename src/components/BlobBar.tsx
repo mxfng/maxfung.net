@@ -19,7 +19,7 @@ interface BlobLink {
 }
 
 export const BlobBar = ({ ...params }) => {
-  const blobSize: string = "40px";
+  const blobSizePx: string = "40px";
 
   return (
     <>
@@ -46,7 +46,7 @@ export const BlobBar = ({ ...params }) => {
               key={link.title}
               title={link.title}
               url={link.url}
-              size={blobSize}
+              size={blobSizePx}
               bg={link.bg}
               bgImage={link.bgImage}
               icon={link.icon}
@@ -59,13 +59,15 @@ export const BlobBar = ({ ...params }) => {
   );
 };
 
+const iconSize = 22;
+
 const blobs: BlobLink[] = [
   {
     title: "Email",
     url: "mailto:maxhfung@gmail.com?subject=Hello Max",
     bg: "var(--chakra-colors-primary-900)",
     bgImage: "",
-    icon: <EmailIcon fill="var(--chakra-colors-bg)" size="16px" />,
+    icon: <EmailIcon fill="var(--chakra-colors-bg)" size={`${iconSize}px`} />,
     color: "var(--chakra-colors-primary-900)",
   },
   {
@@ -73,7 +75,7 @@ const blobs: BlobLink[] = [
     url: "https://github.com/mxfng",
     bg: "var(--chakra-colors-primary-700)",
     bgImage: "",
-    icon: <GitHubLogo fill="var(--chakra-colors-bg)" size="20px" />,
+    icon: <GitHubLogo fill="var(--chakra-colors-bg)" size={`${iconSize}px`} />,
     color: "var(--chakra-colors-primary-900)",
   },
   {
@@ -81,7 +83,9 @@ const blobs: BlobLink[] = [
     url: "https://www.linkedin.com/in/maxfung/",
     bg: "var(--chakra-colors-primary-500)",
     bgImage: "",
-    icon: <LinkedInLogo fill="var(--chakra-colors-bg)" size="20px" />,
+    icon: (
+      <LinkedInLogo fill="var(--chakra-colors-bg)" size={`${iconSize}px`} />
+    ),
     color: "var(--chakra-colors-primary-900)",
   },
   {
@@ -89,7 +93,12 @@ const blobs: BlobLink[] = [
     url: "https://www.instagram.com/fungkadelic/",
     bg: "var(--chakra-colors-primary-300)",
     bgImage: "",
-    icon: <InstagramLogo fill="var(--chakra-colors-primary)" size="20px" />,
+    icon: (
+      <InstagramLogo
+        fill="var(--chakra-colors-primary)"
+        size={`${iconSize}px`}
+      />
+    ),
     color: "var(--chakra-colors-primary-900)",
   },
   {
@@ -97,7 +106,9 @@ const blobs: BlobLink[] = [
     url: "https://www.tiktok.com/@fungkadelic?_t=8hB6dLExZMc&_r=1",
     bg: "var(--chakra-colors-primary-100)",
     bgImage: "",
-    icon: <TikTokLogo fill="var(--chakra-colors-primary)" size="20px" />,
+    icon: (
+      <TikTokLogo fill="var(--chakra-colors-primary)" size={`${iconSize}px`} />
+    ),
     color: "var(--chakra-colors-primary-900)",
   },
   {
@@ -105,7 +116,12 @@ const blobs: BlobLink[] = [
     url: "https://t.snapchat.com/pnjW0bW6",
     bg: "var(--chakra-colors-primary-50)",
     bgImage: "",
-    icon: <SnapchatLogo fill="var(--chakra-colors-primary)" size="20px" />,
+    icon: (
+      <SnapchatLogo
+        fill="var(--chakra-colors-primary)"
+        size={`${iconSize}px`}
+      />
+    ),
     color: "var(--chakra-colors-primary-900)",
   },
 ];
