@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { SpotifyTrack } from "./SpotifyTrack";
 import { Waveform } from "./Waveform";
-import { SpotifyLogo } from "../svg/SpotifyLogo";
+import { SpotifyLogo } from "../svg/logos/Spotify";
 
 export const Spotify: React.FC<any> = ({
   nowPlaying,
