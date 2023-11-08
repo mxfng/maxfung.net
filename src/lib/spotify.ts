@@ -86,6 +86,7 @@ const getNowPlaying = async (): Promise<SpotifySong | SpotifyError> => {
       headers: {
         Authorization: `Bearer ${access_token}`,
       },
+      next: { revalidate: 60 },
     });
 
     handleFetchResponse(response, NOW_PLAYING_ENDPOINT);
@@ -124,6 +125,7 @@ const getRecentlyPlayed = async (): Promise<SpotifySong | SpotifyError> => {
       headers: {
         Authorization: `Bearer ${access_token}`,
       },
+      next: { revalidate: 60 },
     });
 
     handleFetchResponse(response, RECENTLY_PLAYED_ENDPOINT);
@@ -174,6 +176,7 @@ const getSongOfTheMonth = async (): Promise<SpotifySong | SpotifyError> => {
         headers: {
           Authorization: `Bearer ${access_token}`,
         },
+        next: { revalidate: 3600 },
       }
     );
 
