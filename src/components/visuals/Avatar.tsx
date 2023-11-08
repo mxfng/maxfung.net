@@ -65,49 +65,56 @@ export const Avatar = ({ ...props }) => {
         "& .icon": {
           opacity: 0,
         },
-        ":after": {
-          content: '""',
-          backgroundColor: "transparent",
-          backgroundImage: "url(/bgs/grain.svg)",
-          backgroundSize: "182px",
-          backgroundRepeat: "repeat",
-          borderRadius: "100%",
-          opacity: 0.3,
-          top: 0,
-          left: 0,
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-          pointerEvents: "none",
-          zIndex: 5,
-        },
       }}
+      position="relative"
       {...props}
     >
-      <Center className="icon" transition="all 300ms ease-in-out" zIndex={6}>
+      <Center
+        className="icon"
+        transition="all 300ms ease-in-out"
+        zIndex={6}
+        position="absolute"
+        h="100%"
+        w="100%"
+      >
         <ShuffleIcon size="30px" fill="var(--chakra-colors-primary)" />
       </Center>
       <Flex
         alignItems="center"
         justifyContent="center"
-        position="relative"
+        position="absolute"
         h="100%"
+        w="100%"
       >
         <Image
+          id="grain"
+          w={{ base: "100%" }}
+          src="/bgs/grain.svg"
+          alt=""
+          position="absolute"
+          top="0px"
+          left="0px"
           borderRadius="full"
+          opacity="0.3"
+          zIndex={5}
+        />
+
+        <Image
+          id="avatar"
           w={{ base: "100%" }}
           src="/avatar.png"
           alt=""
           position="absolute"
           top="0px"
           left="0px"
+          borderRadius="full"
           zIndex={4}
         />
 
         <Image
+          id="hot-bg"
           src={state.hotBg}
           alt=""
-          borderRadius="full"
           w={{ base: "100%" }}
           objectFit="cover"
           position="absolute"
@@ -123,7 +130,7 @@ export const Avatar = ({ ...props }) => {
         />
 
         <Image
-          borderRadius="full"
+          id="cache-bag"
           src={state.cachedBg}
           alt=""
           w={{ base: "100%" }}
