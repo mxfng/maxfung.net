@@ -85,12 +85,12 @@ export const TokamakCircle: React.FC<any> = ({
         borderRadius="full"
         position="absolute"
         left={pointValue}
+        animation={revert ? `` : `move-circle-${index} 1s ease-in-out`}
+        transition={`all ${weightIndex * 1000}ms ease-in-out`}
         style={{
-          animation: revert ? `` : `move-circle-${index} 1s ease-in-out`,
           outline: resting
             ? "1px solid var(--chakra-colors-secondary)"
             : `1px solid ${color}`,
-          transition: `all ${weightIndex * 1000}ms ease-in-out`,
         }}
       />
     </>
