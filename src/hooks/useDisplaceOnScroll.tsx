@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export const displaceOnScroll = (
+export const useDisplaceOnScroll = (
   threshold = 2,
   maxScrollDisplacement = 100,
   timeoutDuration = 200,
@@ -74,7 +74,13 @@ export const displaceOnScroll = (
         clearTimeout(scrollTimeout);
       }
     };
-  }, [isScrolling]);
+  }, [
+    isScrolling,
+    maxScrollDisplacement,
+    threshold,
+    throttleDelay,
+    timeoutDuration,
+  ]);
 
   return { scrollDisplacement, isScrolling };
 };

@@ -2,13 +2,13 @@
 
 import { Box, Center, useMediaQuery } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { displaceOnScroll } from "../hooks/displaceOnScroll";
+import { useDisplaceOnScroll } from "../hooks/useDisplaceOnScroll";
 
 export const Corner = ({ which = "left", children, ...params }) => {
   const [isBelowThreshold] = useMediaQuery("(max-width: 1000px)");
   const [isVisible, setIsVisible] = useState(!isBelowThreshold);
 
-  const { scrollDisplacement, isScrolling } = displaceOnScroll();
+  const { scrollDisplacement, isScrolling } = useDisplaceOnScroll();
 
   const hideOnMobileScroll = () => {
     setIsVisible(window.scrollY <= 10);
