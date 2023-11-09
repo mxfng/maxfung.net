@@ -77,7 +77,7 @@ export default function Home() {
         title: "Software Development Engineer",
         company: "Flexe",
         desc: "Deliver high-quality, robust production code for Flexe’s proprietary warehouse management system serving a diverse array of large enterprise clients. Led the design and deployment of reusable mobile front end components, architected a refactored Android application, and contributed to the decomposition of a monolithic Ruby on Rails application to a modern Kotlin microservices architecture.",
-        stack: ["Kotlin", "Rails", "Android", "React", "TS"],
+        stack: ["Kotlin", "Rails", "Android", "React"],
         long: true,
       },
       {
