@@ -64,12 +64,14 @@ export default async function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <Corner>
-            <SignatureLogoAnimated
-              stroke="var(--chakra-colors-primary)"
-              w="120px"
-            />
-          </Corner>
+          <Box bg="blue" h="100%" w="100%" as="a" href="/">
+            <Corner>
+              <SignatureLogoAnimated
+                stroke="var(--chakra-colors-primary)"
+                w="120px"
+              />
+            </Corner>
+          </Box>
           <Corner which="right">
             <Avatar />
           </Corner>
