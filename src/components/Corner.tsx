@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Center, useMediaQuery } from "@chakra-ui/react";
+import { Box, useMediaQuery } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useDisplaceOnScroll } from "../hooks/useDisplaceOnScroll";
 
@@ -41,35 +41,32 @@ export const Corner = ({ which = "left", children, ...params }) => {
           : "cornerVisible"
       }
       position={{ base: "absolute", xl: "fixed" }}
-      p={{ base: 4, xl: 8 }}
       pt={{ base: 6, xl: 10 }}
       transition="all 500ms ease"
       style={{ [which]: 0 }}
-      {...params}
     >
-      <Center w="100px" h="65px" position="relative">
+      <Box
+        className="cornerScrollEffect"
+        transition={`transform ${isScrolling ? "200ms" : "400ms"} ease-in-out`}
+        transform={`translateY(${translation}px)`}
+        position="absolute"
+        style={{ [which]: 0 }}
+      >
         <Box
-          h="100%"
-          w={{ base: 900, xl: 0 }}
-          transition={`transform ${
-            isScrolling ? "200ms" : "400ms"
-          } ease-in-out`}
-          transform={`translateY(${translation}px)`}
+          className="cornerContents"
+          transition="0.25s cubic-bezier(0.68, -0.6, 0.32, 1.6)"
+          _hover={{
+            transform: "scale(1.04)",
+            cursor: "pointer",
+          }}
           position="absolute"
           style={{ [which]: 0 }}
+          mx={{ base: 4, xl: 8 }}
+          {...params}
         >
-          <Box
-            transition="0.25s cubic-bezier(0.68, -0.6, 0.32, 1.6)"
-            _hover={{
-              transform: "scale(1.04)",
-            }}
-            position="absolute"
-            style={{ [which]: 0 }}
-          >
-            {children}
-          </Box>
+          {children}
         </Box>
-      </Center>
+      </Box>
     </Box>
   );
 };
