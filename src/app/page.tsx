@@ -40,7 +40,7 @@ export default function Home() {
 
     const passionsText = `
       I have many passions in life, including producing my own music,
-      surfing, snowboarding, film photography, and travel.
+      surfing, snowboarding, urbanism, film photography, environmentalism, and travel.
     `;
 
     return (

@@ -1,3 +1,6 @@
+// this snippet allows me to dynamically create keyframe animations
+// used in the tokamak visual in my about section
+
 type IProps = {
   name: string;
   animationProps: Record<string, React.CSSProperties | string>;
