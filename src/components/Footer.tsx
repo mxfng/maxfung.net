@@ -51,11 +51,14 @@ export const Footer: React.FC<FooterProps> = ({ children, ...props }) => {
               </Link>{" "}
               was drafted using pen and paper, written in TypeScript using{" "}
               <Link href="https://nextjs.org/" target="_blank">
-                Next.js
+                Next.js,
+              </Link>{" "}
+              <Link href="https://chakra-ui.com/" target="_blank">
+                Chakra UI,
               </Link>{" "}
               and{" "}
-              <Link href="https://chakra-ui.com/" target="_blank">
-                Chakra UI
+              <Link href="https://www.framer.com/motion/" target="_blank">
+                Framer Motion
               </Link>
               , and deployed with{" "}
               <Link href="https://vercel.com/" target="_blank">
