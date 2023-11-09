@@ -28,20 +28,23 @@ export default function Home() {
   function renderAbout() {
     const introductionText = `
       I'm a full stack software engineer who loves designing,
-      building, and shipping creative products with intuitive
+      building, and shipping creative technical products with intuitive
       experiences from start to finish.
     `;
 
     const journeyText = `
-      As a self-taught developer, I learned how to build code first,
-      sharpening my craft through curiosity and grit. I've
-      developed and contributed to a variety of exciting projects since
-      starting my journey back in 2018.
+      I explore the intersection of technology and creativity
+      through programming, providing a unique mixture of
+      analytical and creative skills to every project.
+      Over the years, I've developed numerous applications in
+      a variety of technologies, always with a strong emphasis
+      on the end user.
     `;
 
     const passionsText = `
-      I have many passions in life, including producing my own music,
-      surfing, snowboarding, urbanism, film photography, environmentalism, and travel.
+      I draw inspiration from a long list of personal intersts,
+      including  tech, music, songwriting, surfing, snowboarding,
+      urbanism, film photography, environmentalism, and travel.
     `;
 
     return (
