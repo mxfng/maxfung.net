@@ -5,7 +5,7 @@ import { ArrowUp } from "../svg/ArrowUp";
 export const SocialLink: React.FC<any> = ({ title, href }) => {
   return (
     <>
-      <Flex as="a" href={href} className="linkify">
+      <Flex as="a" href={href} target="_blank" className="linkify">
         <Text variant="link" fontSize={["0.9rem", "1.2rem"]}>
           {title}
         </Text>

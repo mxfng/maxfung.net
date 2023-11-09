@@ -1,8 +1,10 @@
-import { Box, Flex, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
 import { Experience, ExperienceProps } from "../components/Experience";
 import { Section } from "../components/Section";
 import { Tokamak } from "../components/visuals/Tokamak";
 import { BigLink } from "../components/link/BigLink";
+import { BigHeadingConveyor } from "../components/animation/BigHeadingConveyor";
+import { ConveyorText } from "../components/ConveyorText";
 
 export default function Home() {
   return (
@@ -57,13 +59,12 @@ export default function Home() {
           <Tokamak />
         </GridItem>
         <GridItem p={1} colSpan={{ base: 2, md: 1 }}>
-          <BigLink href="mailto:maxhfung@gmail.com?subject=Hello Max">
-            <Box>
-              <Heading variant="big">Let&apos;s</Heading>
-              <Heading variant="big">Build</Heading>
-              <Heading variant="big">Together.</Heading>
-            </Box>
-          </BigLink>
+          <BigLink
+            href="mailto:maxhfung@gmail.com?subject=Hello Max"
+            line1="Let's"
+            line2="Build"
+            line3="Together"
+          />
         </GridItem>
       </Grid>
     );
@@ -74,7 +75,7 @@ export default function Home() {
       {
         href: "https://www.flexe.com/",
         from: "2022",
-        to: "present",
+        to: "2023",
         title: "Software Development Engineer",
         company: "Flexe",
         desc: "Deliver high-quality, robust production code for Flexe’s proprietary warehouse management system serving a diverse array of large enterprise clients. Led the design and deployment of reusable mobile front end components, architected a refactored Android application, and contributed to the decomposition of a monolithic Ruby on Rails application to a modern Kotlin microservices architecture.",
@@ -110,12 +111,7 @@ export default function Home() {
             <Experience key={index} {...experience} />
           ))}
           <GridItem>
-            <BigLink href="/resume.pdf">
-              <Box>
-                <Heading variant="big">View</Heading>
-                <Heading variant="big">Full Résumé</Heading>
-              </Box>
-            </BigLink>
+            <BigLink href="/resume.pdf" line1="View" line2="Full Résumé" />
           </GridItem>
         </Grid>
       </>

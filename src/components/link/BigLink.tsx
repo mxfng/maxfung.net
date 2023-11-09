@@ -1,11 +1,33 @@
-import { Box } from "@chakra-ui/react";
-import React from "react";
-import { ArrowForward } from "../svg/ArrowForward";
+"use client";
 
-export const BigLink: React.FC<any> = ({ href, children, ...params }) => {
+import { Box } from "@chakra-ui/react";
+import React, { useEffect, useRef } from "react";
+import { ArrowForward } from "../svg/ArrowForward";
+import { useAnimation, useInView } from "framer-motion";
+import { ConveyorText } from "../ConveyorText";
+
+export const BigLink: React.FC<any> = ({
+  href,
+  line1,
+  line2,
+  line3,
+  children,
+  ...params
+}) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-200px" });
+
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("bottom");
+    }
+  }, [isInView, mainControls]);
+
   return (
     <>
-      <Box as="a" href={href}>
+      <Box ref={ref} as="a" href={href}>
         <Box
           h="100%"
           p={8}
@@ -42,6 +64,12 @@ export const BigLink: React.FC<any> = ({ href, children, ...params }) => {
           }}
           {...params}
         >
+          <ConveyorText
+            line1={line1}
+            line2={line2}
+            line3={line3}
+            mainControls={mainControls}
+          />
           {children}
           <Box position="absolute" bottom="8" right="8">
             <ArrowForward
