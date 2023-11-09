@@ -1,10 +1,10 @@
 "use client";
 
-import { Box } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 import React, { useEffect, useRef } from "react";
 import { ArrowForward } from "../svg/ArrowForward";
 import { useAnimation, useInView } from "framer-motion";
-import { ConveyorText } from "../ConveyorText";
+import { BigLinkSlide } from "../animation/BigLinkSlide";
 
 export const BigLink: React.FC<any> = ({
   href,
@@ -15,7 +15,7 @@ export const BigLink: React.FC<any> = ({
   ...params
 }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { margin: "-200px" });
+  const isInView = useInView(ref, { once: true, margin: "-200px" });
 
   const mainControls = useAnimation();
 
@@ -66,12 +66,19 @@ export const BigLink: React.FC<any> = ({
           }}
           {...params}
         >
-          <ConveyorText
-            line1={line1}
-            line2={line2}
-            line3={line3}
-            mainControls={mainControls}
-          />
+          <BigLinkSlide animate={mainControls}>
+            <Heading variant="big">{line1}</Heading>
+          </BigLinkSlide>
+          {line2 && (
+            <BigLinkSlide delay={0.15} animate={mainControls}>
+              <Heading variant="big">{line2}</Heading>
+            </BigLinkSlide>
+          )}
+          {line3 && (
+            <BigLinkSlide delay={0.3} animate={mainControls}>
+              <Heading variant="big">{line3}</Heading>
+            </BigLinkSlide>
+          )}
           {children}
           <Box position="absolute" bottom="8" right="8">
             <ArrowForward

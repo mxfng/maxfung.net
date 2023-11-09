@@ -3,7 +3,7 @@
 import { Box } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
-export const BigHeadingConveyor: React.FC<any> = ({
+export const BigLinkSlide: React.FC<any> = ({
   duration = 0.5,
   delay = 0,
   animate,
