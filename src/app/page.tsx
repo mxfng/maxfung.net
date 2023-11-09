@@ -3,6 +3,7 @@ import { Experience, ExperienceProps } from "../components/Experience";
 import { Section } from "../components/Section";
 import { Tokamak } from "../components/visuals/Tokamak";
 import { BigLink } from "../components/link/BigLink";
+import SplashScreen from "../components/SplashScreen";
 
 export default function Home() {
   return (

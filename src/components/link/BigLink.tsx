@@ -28,7 +28,7 @@ export const BigLink: React.FC<any> = ({
     } else {
       mainControls.start("down");
     }
-  }, [isInView, mainControls]);
+  }, [isInView, mainControls, isMobile]);
 
   return (
     <>

@@ -6,8 +6,9 @@ import { Banner } from "../components/Banner";
 import { Footer } from "../components/Footer";
 import { Corner } from "../components/Corner";
 import { Spotify } from "../components/spotify/Spotify";
-import { SignatureLogoAnimated } from "../components/svg/SignatureLogoAnimated";
 import { Avatar } from "../components/visuals/Avatar";
+import SplashScreen from "../components/SplashScreen";
+import { SignatureLogo } from "../components/svg/SignatureLogo";
 
 const no_spotify: string = process.env.NO_SPOTIFY_CALLS || "false";
 
@@ -50,6 +51,7 @@ export default async function RootLayout({
   let _nowPlaying;
   let _recentlyPlayed;
   let _songOfTheMonth;
+
   if (no_spotify === "false") {
     _nowPlaying = await nowPlaying();
     _recentlyPlayed = await recentlyPlayed();
@@ -64,11 +66,9 @@ export default async function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <Corner>
-            <SignatureLogoAnimated
-              stroke="var(--chakra-colors-primary)"
-              w="120px"
-            />
+          <SplashScreen />
+          <Corner as="a" href="/">
+            <SignatureLogo fill="var(--chakra-colors-primary)" w="120px" />
           </Corner>
           <Corner which="right">
             <Avatar />

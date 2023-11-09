@@ -1,11 +1,11 @@
 import { Box } from "@chakra-ui/react";
 
-export const SignatureLogo: React.FC<any> = ({ fill, ...params }) => {
+export const SignatureLogo: React.FC<any> = ({ fill, width, ...params }) => {
   return (
     <Box {...params}>
       <svg
         height="100%"
-        width="100%"
+        width={width}
         fill={fill}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="-0.02 -0.02 148.4 91.47"
