@@ -1,8 +1,9 @@
 import { Box, Flex, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
-import { Experience } from "../components/Experience";
+import { Experience, ExperienceProps } from "../components/Experience";
 import { Section } from "../components/Section";
 import { Tokamak } from "../components/visuals/Tokamak";
 import { BigLink } from "../components/link/BigLink";
+
 export default function Home() {
   return (
     <>
@@ -68,8 +69,8 @@ export default function Home() {
     );
   }
 
-  function renderExperience() {
-    const experiences = [
+  function renderExperience(): JSX.Element {
+    const experiences: ExperienceProps[] = [
       {
         href: "https://www.flexe.com/",
         from: "2022",
@@ -121,8 +122,8 @@ export default function Home() {
     );
   }
 
-  function renderFeaturedProjects() {
-    const projects = [
+  function renderFeaturedProjects(): JSX.Element {
+    const projects: ExperienceProps[] = [
       {
         title: "Streets For All",
         company: "Web Design",

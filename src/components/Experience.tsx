@@ -14,9 +14,15 @@ import {
 import { ArrowUp } from "./svg/ArrowUp";
 import { Line } from "./visuals/Line";
 import { SlideIn } from "./animation/SlideIn";
-import { useAnimation, useInView } from "framer-motion";
+import { AnimationControls, useAnimation, useInView } from "framer-motion";
 
-const DateRange = ({ from, to, mainControls }) => (
+interface DateRangeProps {
+  from: string;
+  to: string;
+  mainControls: AnimationControls;
+}
+
+const DateRange: React.FC<DateRangeProps> = ({ from, to, mainControls }) => (
   <GridItem colSpan={2}>
     <Flex>
       <Box w="fit-content">
@@ -38,49 +44,60 @@ const DateRange = ({ from, to, mainControls }) => (
   </GridItem>
 );
 
-const ExperienceImage = ({ image, title }) => (
-  <GridItem colSpan={2}>
-    {image && (
-      <Image w="100%" h="222" objectFit="cover" src={image} alt={title} />
-    )}
-  </GridItem>
-);
+interface ExperienceHeadlineProps {
+  title: string;
+  company: string;
+  long?: boolean;
+}
 
-const ExperienceTitle = ({ title, long }) => (
-  <GridItem
-    id="experienceTitle"
-    colSpan={long ? { base: 2, md: 1 } : { base: 1 }}
-  >
-    <Flex display="inline-flex">
-      <Text variant="experience" className="text" w="max-content">
-        {title}
-      </Text>
-      <ArrowUp
-        stroke="var(--chakra-colors-primary)"
-        w={["16px", "24px"]}
-        ml={[1, 2]}
-        className="icon"
-      />
-    </Flex>
-  </GridItem>
-);
-
-const ExperienceCompany = ({ company, long }) => (
-  <GridItem
-    id="experienceCompany"
-    colSpan={long ? { base: 2, md: 1 } : { base: 1 }}
-  >
-    <Box
-      w="fit-content"
-      mr={long ? { base: "auto", md: 0 } : { base: 0 }}
-      ml={long ? { base: 0, md: "auto" } : { base: "auto" }}
+const ExperienceHeadline: React.FC<ExperienceHeadlineProps> = ({
+  title,
+  company,
+  long,
+}) => (
+  <>
+    <GridItem
+      id="experienceTitle"
+      colSpan={long ? { base: 2, md: 1 } : { base: 1 }}
     >
-      <Text variant={long ? "experienceSub" : "experience"}>{company}</Text>
-    </Box>
-  </GridItem>
+      <Flex display="inline-flex">
+        <Text variant="experience" className="text" w="max-content">
+          {title}
+        </Text>
+        <ArrowUp
+          stroke="var(--chakra-colors-primary)"
+          w={["16px", "24px"]}
+          ml={[1, 2]}
+          className="icon"
+        />
+      </Flex>
+    </GridItem>
+    <GridItem
+      id="experienceCompany"
+      colSpan={long ? { base: 2, md: 1 } : { base: 1 }}
+    >
+      <Box
+        w="fit-content"
+        mr={long ? { base: "auto", md: 0 } : { base: 0 }}
+        ml={long ? { base: 0, md: "auto" } : { base: "auto" }}
+      >
+        <Text variant={long ? "experienceSub" : "experience"}>{company}</Text>
+      </Box>
+    </GridItem>
+  </>
 );
 
-const ExperienceStack = ({ stack, mainControls, from }) => (
+interface ExperienceStackProps {
+  stack: string[];
+  mainControls: AnimationControls;
+  from?: string;
+}
+
+const ExperienceStack: React.FC<ExperienceStackProps> = ({
+  stack,
+  mainControls,
+  from,
+}) => (
   <GridItem colSpan={2} my={2}>
     <Grid templateColumns={`repeat(${stack.length}, 1fr)`} gap={2}>
       {stack.map((stackItem: string, index) => (
@@ -98,7 +115,19 @@ const ExperienceStack = ({ stack, mainControls, from }) => (
   </GridItem>
 );
 
-export const Experience: React.FC<any> = ({
+export interface ExperienceProps {
+  from?: string;
+  to?: string;
+  title: string;
+  company: string;
+  desc?: string;
+  stack?: string[];
+  image?: string;
+  href: string;
+  long?: boolean;
+}
+
+export const Experience: React.FC<ExperienceProps> = ({
   from,
   to,
   title,
@@ -122,36 +151,35 @@ export const Experience: React.FC<any> = ({
   }, [isInView, mainControls]);
 
   return (
-    <>
-      <Box ref={ref}>
-        <Grid
-          as="a"
-          href={href}
-          target="_blank"
-          className="linkify"
-          templateColumns="repeat(2, 1fr)"
-          {...props}
-        >
-          {from && (
-            <DateRange from={from} to={to} mainControls={mainControls} />
+    <Box ref={ref}>
+      <Grid
+        as="a"
+        href={href}
+        target="_blank"
+        className="linkify"
+        templateColumns="repeat(2, 1fr)"
+        {...props}
+      >
+        {from && <DateRange from={from} to={to} mainControls={mainControls} />}
+        <GridItem colSpan={2}>
+          {image && (
+            <Image w="100%" h="222" objectFit="cover" src={image} alt={title} />
           )}
-          <ExperienceImage image={image} title={title} />
-          <ExperienceTitle title={title} long={long} />
-          <ExperienceCompany company={company} long={long} />
-          {desc && (
-            <GridItem colSpan={2} my={[2, 4]}>
-              <Text>{desc}</Text>
-            </GridItem>
-          )}
-          {stack && (
-            <ExperienceStack
-              stack={stack}
-              mainControls={mainControls}
-              from={from}
-            />
-          )}
-        </Grid>
-      </Box>
-    </>
+        </GridItem>
+        <ExperienceHeadline title={title} company={company} long={long} />
+        {desc && (
+          <GridItem colSpan={2} my={[2, 4]}>
+            <Text>{desc}</Text>
+          </GridItem>
+        )}
+        {stack && (
+          <ExperienceStack
+            stack={stack}
+            mainControls={mainControls}
+            from={from}
+          />
+        )}
+      </Grid>
+    </Box>
   );
 };
