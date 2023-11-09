@@ -1,8 +1,12 @@
 import { Box } from "@chakra-ui/react";
 
-export const SignatureLogoAnimated: React.FC<any> = ({ stroke, ...params }) => {
+export const SignatureLogoAnimated: React.FC<any> = ({
+  stroke,
+  size,
+  ...params
+}) => {
   return (
-    <Box transform="rotate(2deg)" {...params}>
+    <Box {...params}>
       <svg
         width="100%"
         version="1.1"

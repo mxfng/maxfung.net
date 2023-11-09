@@ -58,6 +58,7 @@ export const Avatar = ({ ...props }) => {
       outline="1px solid var(--chakra-colors-tertiary)"
       _hover={{
         outline: "4px solid var(--chakra-colors-primary)",
+        cursor: "pointer",
         "& .icon": {
           opacity: 1,
         },

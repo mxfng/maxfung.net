@@ -41,7 +41,7 @@ export const Corner = ({ which = "left", children, ...params }) => {
           : "cornerVisible"
       }
       position={{ base: "absolute", xl: "fixed" }}
-      p={{ base: 4, xl: 10 }}
+      p={{ base: 4, xl: 8 }}
       pt={{ base: 6, xl: 10 }}
       transition="all 500ms ease"
       style={{ [which]: 0 }}
@@ -50,7 +50,7 @@ export const Corner = ({ which = "left", children, ...params }) => {
       <Center w="100px" h="65px" position="relative">
         <Box
           h="100%"
-          w={{ base: 900, xl: 20000 }}
+          w={{ base: 900, xl: 0 }}
           transition={`transform ${
             isScrolling ? "200ms" : "400ms"
           } ease-in-out`}
@@ -65,7 +65,6 @@ export const Corner = ({ which = "left", children, ...params }) => {
             }}
             position="absolute"
             style={{ [which]: 0 }}
-            zIndex={999}
           >
             {children}
           </Box>
