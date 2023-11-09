@@ -4,7 +4,6 @@ import { Center, Flex } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { SignatureLogoAnimated } from "./svg/SignatureLogoAnimated";
-import { useRouter } from "next/router";
 
 const SplashScreen = () => {
   const [isVisible, setIsVisible] = useState(true);

@@ -3,7 +3,38 @@ import { Experience, ExperienceProps } from "../components/Experience";
 import { Section } from "../components/Section";
 import { Tokamak } from "../components/visuals/Tokamak";
 import { BigLink } from "../components/link/BigLink";
-import SplashScreen from "../components/SplashScreen";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    template: "%s | Max Fung",
+    default: "Max Fung",
+  },
+
+  description:
+    "A full stack software engineer who loves designing, building, and shipping creative products with intuitive experiences from start to finish.",
+
+  keywords: [
+    "Max Fung",
+    "Engineer",
+    "Music",
+    "Software",
+    "Developer",
+    "Full Stack",
+    "Web Design",
+  ],
+
+  creator: "Max Fung",
+
+  category: "technology",
+
+  openGraph: {
+    title: "Max Fung",
+    description:
+      "A full stack software engineer who loves designing, building, and shipping creative products with intuitive experiences from start to finish.",
+    images: "/opengraph-image.png",
+  },
+};
 
 export default function Home() {
   return (

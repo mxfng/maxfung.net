@@ -66,7 +66,6 @@ export default async function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <SplashScreen />
           <Corner as="a" href="/">
             <SignatureLogo fill="var(--chakra-colors-primary)" w="120px" />
           </Corner>
@@ -77,6 +76,7 @@ export default async function RootLayout({
             <Box pt={{ base: 100, xl: 8 }} pb={8} px="3">
               <Banner />
             </Box>
+
             {children}
           </Box>
           <Box id="coolFooter" mx="auto">
