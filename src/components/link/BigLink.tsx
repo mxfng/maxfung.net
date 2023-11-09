@@ -15,13 +15,15 @@ export const BigLink: React.FC<any> = ({
   ...params
 }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-200px" });
+  const isInView = useInView(ref, { margin: "-200px" });
 
   const mainControls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
-      mainControls.start("bottom");
+      mainControls.start("up");
+    } else {
+      mainControls.start("down");
     }
   }, [isInView, mainControls]);
 

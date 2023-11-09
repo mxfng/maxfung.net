@@ -1,9 +1,7 @@
 "use client";
 
-import { Box, Heading } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
 import { BigHeadingConveyor } from "./animation/BigHeadingConveyor";
-import { useEffect, useRef } from "react";
-import { useAnimation, useInView } from "framer-motion";
 
 export const ConveyorText = ({ line1, line2, line3, mainControls }) => {
   return (

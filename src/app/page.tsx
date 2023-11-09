@@ -1,10 +1,8 @@
-import { Box, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Text } from "@chakra-ui/react";
 import { Experience, ExperienceProps } from "../components/Experience";
 import { Section } from "../components/Section";
 import { Tokamak } from "../components/visuals/Tokamak";
 import { BigLink } from "../components/link/BigLink";
-import { BigHeadingConveyor } from "../components/animation/BigHeadingConveyor";
-import { ConveyorText } from "../components/ConveyorText";
 
 export default function Home() {
   return (

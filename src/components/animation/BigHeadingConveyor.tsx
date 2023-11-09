@@ -14,8 +14,8 @@ export const BigHeadingConveyor: React.FC<any> = ({
       <Box position="relative" overflow="hidden">
         <motion.div
           variants={{
-            top: { y: 0 },
-            bottom: { y: -43 }, // super specific to the "big" variant heading
+            down: { y: 0 },
+            up: { y: -43 }, // super specific to the "big" variant heading
           }}
           initial="top"
           animate={animate}
