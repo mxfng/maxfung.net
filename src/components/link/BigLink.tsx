@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Heading, useMediaQuery } from "@chakra-ui/react";
 import React, { useEffect, useRef } from "react";
 import { ArrowForward } from "../svg/ArrowForward";
 import { useAnimation, useInView } from "framer-motion";
@@ -15,11 +15,14 @@ export const BigLink: React.FC<any> = ({
   ...params
 }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-200px" });
+  const isInView = useInView(ref, { margin: "-200px" });
+  const [isMobile] = useMediaQuery("(max-width: 768px)");
 
   const mainControls = useAnimation();
 
   useEffect(() => {
+    if (!isMobile) return;
+
     if (isInView) {
       mainControls.start("up");
     } else {
@@ -31,6 +34,12 @@ export const BigLink: React.FC<any> = ({
     <>
       <Box ref={ref} as="a" href={href}>
         <Box
+          onMouseEnter={() => {
+            if (!isMobile) mainControls.start("up");
+          }}
+          onMouseLeave={() => {
+            if (!isMobile) mainControls.start("down");
+          }}
           h="100%"
           p={8}
           bg="rgb(6 6 6)"
