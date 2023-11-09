@@ -40,6 +40,7 @@ export const Corner = ({ which = "left", children, ...params }) => {
             : "cornerHidden"
           : "cornerVisible"
       }
+      h="100px"
       position={{ base: "absolute", xl: "fixed" }}
       pt={{ base: 6, xl: 10 }}
       transition="all 500ms ease"
