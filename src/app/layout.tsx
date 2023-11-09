@@ -7,8 +7,6 @@ import { Footer } from "../components/Footer";
 import { Corner } from "../components/Corner";
 import { Spotify } from "../components/spotify/Spotify";
 import { Avatar } from "../components/visuals/Avatar";
-import SplashScreen from "../components/SplashScreen";
-import { SignatureLogo } from "../components/svg/SignatureLogo";
 import { SignatureLogoAnimated } from "../components/svg/SignatureLogoAnimated";
 
 const no_spotify: string = process.env.NO_SPOTIFY_CALLS || "false";
