@@ -1,7 +1,7 @@
 "use client";
 import { Box } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import Keyframe from "../keyframe/InlineKeyframe";
+import Keyframe from "../animation/Keyframe";
 import {
   weightedScrollThresholdOf,
   weightIndexOf,
