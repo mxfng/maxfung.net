@@ -2,7 +2,7 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import { ArrowUp } from "../svg/ArrowUp";
 
 export const AutoScrollText: React.FC<any> = ({ text }) => {
-  const isScrolling = text.length > 30;
+  const isScrolling = text.length > 22;
   return (
     <>
       <Flex display="inline-flex">
