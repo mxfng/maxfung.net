@@ -128,13 +128,6 @@ export default function Home() {
         stack: ["Tone.js", "Next.js 14", "TypeScript"],
         image: "/drumhaus.png",
       },
-      {
-        title: "Streets For All",
-        company: "Web Design",
-        href: "https://github.com/streetsforall",
-        stack: ["JavaScript", "React", "Python"],
-        image: "/sfa.png",
-      },
     ];
 
     return (
