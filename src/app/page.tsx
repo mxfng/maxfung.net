@@ -13,13 +13,13 @@ export default function Home() {
         </Section>
       </Box>
       <Box>
-        <Section id="experience" title="Experience">
-          {renderExperience()}
+        <Section id="projects" title="Featured Projects">
+          {renderFeaturedProjects()}
         </Section>
       </Box>
       <Box>
-        <Section id="projects" title="Featured Projects">
-          {renderFeaturedProjects()}
+        <Section id="experience" title="Experience">
+          {renderExperience()}
         </Section>
       </Box>
     </>
@@ -122,6 +122,13 @@ export default function Home() {
   function renderFeaturedProjects(): JSX.Element {
     const projects: ExperienceProps[] = [
       {
+        title: "Drumhaus",
+        company: "Drum Machine",
+        href: "https://github.com/mxfng/drumhaus",
+        stack: ["Tone.js", "Next.js 14", "TypeScript"],
+        image: "/drumhaus.png",
+      },
+      {
         title: "Streets For All",
         company: "Web Design",
         href: "https://github.com/streetsforall",
@@ -132,9 +139,11 @@ export default function Home() {
 
     return (
       <>
-        {projects.map((project, index) => (
-          <Experience key={index} {...project} />
-        ))}
+        <Grid gap={[10, 20]}>
+          {projects.map((project, index) => (
+            <Experience key={index} {...project} />
+          ))}
+        </Grid>
       </>
     );
   }
