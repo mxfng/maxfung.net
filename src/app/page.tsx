@@ -27,7 +27,7 @@ export default function Home() {
 
   function renderAbout() {
     const introductionText = `
-      I'm a full stack software engineer who loves designing,
+      I'm a passionate software engineer who loves designing,
       building, and shipping creative technical products with intuitive
       experiences from start to finish.
     `;
@@ -74,33 +74,33 @@ export default function Home() {
   function renderExperience(): JSX.Element {
     const experiences: ExperienceProps[] = [
       {
+        href: "https://www.maxfung.net/",
+        from: "2023",
+        to: "Present",
+        title: "Software Engineer",
+        company: "Freelance",
+        desc: "Collaborating with early-stage and pre-seed startups to develop full-stack web applications.",
+        stack: ["Next.js", "React", "Ktor", "Flask"],
+        long: true,
+      },
+      {
         href: "https://www.flexe.com/",
         from: "2022",
-        to: "2023",
+        to: "2024",
         title: "Software Development Engineer",
         company: "Flexe",
-        desc: "Deliver high-quality, robust production code for Flexe’s proprietary warehouse management system serving a diverse array of large enterprise clients. Led the design and deployment of reusable mobile front end components, architected a refactored Android application, and contributed to the decomposition of a monolithic Ruby on Rails application to a modern Kotlin microservices architecture.",
+        desc: "Delivered high-quality, robust production code across the entire stack for Flexe’s proprietary warehouse management system serving a diverse array of large enterprise clients. Worked on feature development, maintenance, and debugging for Kotlin microservices, a Rails application, a React/TypeScript client application, and an Android app.",
         stack: ["Kotlin", "Rails", "Android", "React"],
         long: true,
       },
       {
         href: "https://www.boeing.com/",
-        from: "2021",
+        from: "2020",
         to: "2022",
-        title: "Technologist and Project Manager",
+        title: "Software Engineer",
         company: "Boeing",
-        desc: "Developed, maintained, and shipped internal production tracking software using Python and Excel, providing project managers with comprehensive data to track products through the entire supply chain, reducing overhead costs by around $5,000, per project, per week",
+        desc: "Developed, shipped, and maintained internal production tracking software using Python and Excel, providing project managers with comprehensive data for materials, orders, and production activities. Extended existing manufacturing execution system with user-friendly front end and back end integration of numerous disconnected data sources to increase awareness of production bottlenecks.",
         stack: ["Python", "Analytics", "Shell", "SQL"],
-        long: true,
-      },
-      {
-        href: "https://www.l3harris.com/company/aerojet-rocketdyne",
-        from: "2018",
-        to: "2019",
-        title: "Engineer",
-        company: "Aeroject Rocketdyne",
-        desc: "Independently architected an internal desktop application for pressure transducer and load cell calibration tests using Python and PyQt5",
-        stack: ["Python", "PyQt", "NI-VISA"],
         long: true,
       },
     ];
