@@ -12,6 +12,8 @@ import { SignatureLogoAnimated } from "../components/svg/SignatureLogoAnimated";
 const no_spotify: string = process.env.NO_SPOTIFY_CALLS || "false";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://maxfung.net" || "http://localhost:3000"),
+
   title: {
     template: "%s | Max Fung",
     default: "Max Fung",
