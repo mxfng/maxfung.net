@@ -28,24 +28,19 @@ export default function Home() {
 
   function renderAbout() {
     const introductionText = `
-      I'm a passionate software engineer who loves designing,
-      building, and shipping creative technical products with intuitive
-      experiences from start to finish.
+      I'm a software engineer who loves designing,
+      collaborating, and creating new tech on the web
     `;
 
     const journeyText = `
-      I explore the intersection of technology and creativity
-      through programming, providing a unique mixture of
-      analytical and creative skills to every project.
-      Over the years, I've developed numerous applications in
-      a variety of technologies, always with a strong emphasis
-      on the end user.
+      I've built software for companies of all sizes, from startups to
+      large corporations, and have experience with a wide range of tools.
+      Always continually learning.
     `;
 
     const passionsText = `
-      I draw inspiration from a long list of personal intersts,
-      including  tech, music, songwriting, surfing, snowboarding,
-      urbanism, film photography, environmentalism, and travel.
+      I draw inspiration from a long list of personal passions,
+      including music, surfing, urbanism, environmentalism, and travel.
     `;
 
     return (
