@@ -7,7 +7,7 @@ export const experienceData: ExperienceProps[] = [
     to: "Present",
     title: "Software Engineer",
     company: "Dirac",
-    desc: "Focused on scaling a bootstrapped application into a mature technology platform. Working on the front end, back end, and infrastructure, helping to shape the engineering culture, and collaborating with a small team to deliver high-quality software in support of the first platform to codify mechanical assembly.",
+    desc: "Focused on scaling a bootstrapped application into a mature technology platform. Working on the front end, back end, and infrastructure, helping to shape the engineering culture, and collaborating with a small team to deliver high-quality software for the first platform to codify mechanical assembly.",
     stack: ["React", "Redux", "TypeScript", "AWS"],
     long: true,
   },
