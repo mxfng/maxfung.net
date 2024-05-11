@@ -12,7 +12,7 @@ export const Banner: React.FC<any> = () => {
       >
         <GridItem colSpan={3}>
           <Heading variant="name" mb={[-1, 0]}>
-            Max Henry Fung
+            Max Fung
           </Heading>
           <Text mb={-1}>Software Engineer</Text>
           <Text fontWeight={300}>Los Angeles, California</Text>
