@@ -7,7 +7,7 @@ export const experienceData: ExperienceProps[] = [
     to: "2025",
     title: "Lead Software Engineer",
     company: "Dirac",
-    desc: "Spearheaded the overhaul of Dirac’s flagship React app, improving scalability with TypeScript, Redux, and TailwindCSS. Developed a high-performance data structure and tree component, reducing load times by 90%, while standardizing best practices and mentoring the engineering team. Integrated gRPC for scalable API communication and collaborated on microservices development for the first platform to codify mechanical assembly.",
+    desc: "Spearheaded a ground-up rewrite of Dirac's flagship React application, enhancing scalability with Vite, TypeScript, and Redux Toolkit. Designed a high-performance tree data structure central to tracking every piece of information against an uploaded CAD file, where parts are arranged hierarchically. Built a virtualized, highly responsive tree component library that enables seamless manipulation on both the React side (optimistically) and the Go server. Reduced load times by over 90%.\nPlayed a key role in designing data schemas, system architecture, and API contracts for file uploads, exports, path planning, sequencing, Redis caching, and DynamoDB storage. Standardized engineering best practices, mentored a growing team, and integrated gRPC for scalable API communication, contributing to the first platform to codify mechanical assembly.",
     stack: [
       "React",
       "Redux",

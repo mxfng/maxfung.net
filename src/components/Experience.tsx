@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Text,
   Grid,
@@ -144,6 +144,14 @@ export const Experience: React.FC<ExperienceProps> = ({
 
   const mainControls = useAnimation();
 
+  const [descLines, setDescLines] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (desc) {
+      setDescLines(desc.split("\n"));
+    }
+  }, [desc]);
+
   useEffect(() => {
     if (isInView) {
       mainControls.start("visible");
@@ -169,7 +177,11 @@ export const Experience: React.FC<ExperienceProps> = ({
         <ExperienceHeadline title={title} company={company} long={long} />
         {desc && (
           <GridItem colSpan={2} my={[2, 4]}>
-            <Text>{desc}</Text>
+            <Flex flexDirection="column" gap={4}>
+              {descLines.map((line, index) => (
+                <Text key={index}>{line}</Text>
+              ))}
+            </Flex>
           </GridItem>
         )}
         {stack && (
