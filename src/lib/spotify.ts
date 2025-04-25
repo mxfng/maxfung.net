@@ -1,5 +1,6 @@
 import querystring from "querystring";
 
+// env
 const client_id = process.env.SPOTIFY_CLIENT_ID || "";
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET || "";
 const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN || "";
@@ -49,23 +50,28 @@ export const getAccessToken = async (): Promise<string | null> => {
   }
 };
 
-const fetchSpotify = async (endpoint: string, accessToken: string) => {
-  const response = await fetch(endpoint, {
+const fetchSpotify = async (url: string, accessToken: string) => {
+  const res = await fetch(url, {
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
     next: { revalidate: 60 },
   });
 
-  const timestamp = new Date().toISOString();
-  if (!response.ok) {
-    console.error(
-      `${timestamp} - Fetch ERROR at ${endpoint}: ${response.status} - ${response.statusText}`,
-    );
-    throw new Error(`Spotify API fetch failed: ${response.status}`);
+  if (
+    res.status === 204 ||
+    res.headers.get("content-length") === "0" ||
+    res.headers.get("content-type")?.includes("text/plain")
+  ) {
+    return null;
   }
 
-  return response.json();
+  try {
+    return await res.json();
+  } catch (err) {
+    console.error("[Spotify] Failed to parse JSON", err);
+    return null;
+  }
 };
 
 export const getNowPlaying = async (
@@ -73,6 +79,8 @@ export const getNowPlaying = async (
 ): Promise<Track | TrackError> => {
   try {
     const data = await fetchSpotify(NOW_PLAYING_ENDPOINT, accessToken);
+
+    if (!data) return { error: "Nothing currently playing", isPlaying: false };
 
     if (!data?.item)
       return { error: "No currently playing track", isPlaying: false };
@@ -95,6 +103,11 @@ export const getRecentlyPlayed = async (
 ): Promise<Track | TrackError> => {
   try {
     const data = await fetchSpotify(RECENTLY_PLAYED_ENDPOINT, accessToken);
+
+    if (!data)
+      return {
+        error: "Non-JSON response while fetching recently played tracks",
+      };
 
     const item = data.items?.[0];
     if (!item) return { error: "No recently played track found" };
@@ -131,6 +144,9 @@ export const getSongOfTheMonth = async (
       `${TOP_TRACKS_ENDPOINT}?time_range=short_term&limit=1`,
       accessToken,
     );
+
+    if (!data)
+      return { error: "Non-JSON response while getting song of the month" };
 
     const song = data.items?.[0];
     if (!song) return { error: "No top tracks found" };
