@@ -10,12 +10,36 @@ import {
 import { SpotifyTrack } from "./SpotifyTrack";
 import { Waveform } from "./Waveform";
 import { SpotifyLogo } from "../svg/logos/Spotify";
+import {
+  getAccessToken,
+  getNowPlaying,
+  getRecentlyPlayed,
+  getSongOfTheMonth,
+} from "../../lib/spotify";
 
-export const Spotify: React.FC<any> = ({
-  nowPlaying,
-  recentlyPlayed,
-  songOfTheMonth,
-}) => {
+export const Spotify: React.FC = async () => {
+  let nowPlaying = null;
+  let recentlyPlayed = null;
+  let songOfTheMonth = null;
+  let error = null;
+
+  try {
+    const accessToken = await getAccessToken();
+    if (accessToken) {
+      const [np, rp, sm] = await Promise.all([
+        getNowPlaying(accessToken),
+        getRecentlyPlayed(accessToken),
+        getSongOfTheMonth(accessToken),
+      ]);
+      nowPlaying = np;
+      recentlyPlayed = rp;
+      songOfTheMonth = sm;
+    }
+  } catch (error) {
+    console.error("[RootLayout] Failed to fetch Spotify data", error);
+    error = true;
+  }
+
   const renderTrack = (track: any) => (
     <SpotifyTrack
       artist={track.artist}
@@ -25,6 +49,8 @@ export const Spotify: React.FC<any> = ({
       metadata={track.metadata}
     />
   );
+
+  if (error) return;
 
   return (
     <>
